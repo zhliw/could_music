@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import "./assets/css/MyNavLink.css"
+import "./assets/js/rem.js"
+import "./assets/font/iconfont.css"
 import App from './App';
 import MyNav from "./router/NavLink"
 import * as serviceWorker from './serviceWorker';

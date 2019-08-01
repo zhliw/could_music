@@ -14,7 +14,6 @@ class App extends React.Component{
         return (
             <div className="App">
                 <Router>
-
                     {
                         router.map((v,i)=>{
                             return(

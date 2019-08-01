@@ -6,8 +6,9 @@ export default [
     {
         to:"/",
         path:"/",
-        context:"Find",
+        context:"发现",
         component:Find,
+        iconName:"icon-wangyiyunyinlezizhi-copy",
         meta:{
             title:"",
             keyword:"",
@@ -18,8 +19,9 @@ export default [
     {
         to:"/mymusic",
         path:"/mymusic",
-        context:"MyMusic",
+        context:"我的音乐",
         component:MyMusic,
+        iconName:"icon-yinle",
         meta:{
             title:"",
             keyword:"",
@@ -29,8 +31,9 @@ export default [
     {
         to:"/cloudvillage",
         path:"/cloudvillage",
-        context:"CloudVillage",
+        context:"云村",
         component:CloudVillage,
+        iconName:"icon-renqun",
         meta:{
             title:"",
             keyword:"",
@@ -40,8 +43,9 @@ export default [
     {
         to:"/my",
         path:"/my",
-        context:"My",
+        context:"我的",
         component:My,
+        iconName:"icon-sself",
         meta:{
             title:"",
             keyword:"",

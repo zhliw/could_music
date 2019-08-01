@@ -6,14 +6,30 @@ import router from "./"
 export default class MyNav extends React.Component {
     render() {
         return (
-            <div>
-                {
-                    router.map((v,i)=>{
-                        return(
-                            <NavLink key={i} to={v.to} exact={v.exact}>{v.context}|</NavLink>
-                        )
-                    })
-                }
+            <div className={"footer"}>
+                <div style={{width:"100%"}} className={"top"}>
+                    {
+                        router.map((v,i)=>{
+                            return(
+                                <NavLink style={{width:"0.54rem",height:"0.54rem",fontSize:"18px",lineHeight:"0.54rem",textAlign:"center",borderRadius:"50%"}} activeStyle={{color:"#fff",background:"#ff3f31"}} key={i} to={v.to} exact={v.exact}>
+                                    <div className={v.iconName+" iconfont"} style={{fontSize:"20px"}}></div>
+                                </NavLink>
+                            )
+                        })
+                    }
+                </div>
+                <div style={{width:"100%"}} className={"top"}>
+                    {
+                        router.map((v,i)=>{
+                            return(
+                                <NavLink activeStyle={{color:"#ff3d2f"}} key={i} to={v.to} exact={v.exact}>
+                                    <p style={{width:"50px"}}>{v.context}</p>
+                                </NavLink>
+                            )
+                        })
+                    }
+                </div>
+
             </div>
         )
     }
