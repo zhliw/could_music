@@ -2,11 +2,9 @@ import React from "react";
 import {
     NavLink,
     Route
-} from 'react-router-dom'
+} from "react-router-dom";
 import "../../assets/css/cloudVillage/main.scss"
 import Main from "./Main";
-
-
 export default class CloudVillage extends React.Component{
     render(){
         return(

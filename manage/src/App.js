@@ -7,7 +7,6 @@ import {
     Route
 } from "react-router-dom"
 import router from "./router"
-import axios from "axios"
 
 /***********************/
 class App extends React.Component{
