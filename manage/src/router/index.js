@@ -1,5 +1,5 @@
 import Find from "../views/Find"
-import My from "../views/My"
+import User from "../views/User"
 import MyMusic from "../views/MyMusic"
 import CloudVillage from "../views/CloudVillage"
 import Video from "../views/Video";
@@ -54,13 +54,13 @@ export default [
         }
     },
     {
-        to:"/my",
-        path:"/my",
+        to:"/user",
+        path:"/user",
         context:"账号",
-        component:My,
+        component:User,
         iconName:"icon-sself",
         meta:{
-            title:"",
+            title:"账号",
             keyword:"",
             descrieption:""
         }
