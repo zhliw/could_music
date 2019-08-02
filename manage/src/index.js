@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import "./assets/css/MyNavLink.css"
-import "./assets/js/rem.js"
+import "./assets/css/MyNavLink.css";
+import "./assets/js/rem.js";
 import App from './App';
-import MyNav from "./router/NavLink"
+import MyNav from "./router/NavLink";
 import * as serviceWorker from './serviceWorker';
+import "./assets/font/iconfont.css"
 
 React.Component.prototype.MyNav = MyNav
 ReactDOM.render(<App />, document.getElementById('root'));
