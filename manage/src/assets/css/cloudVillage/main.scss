@@ -1,0 +1,53 @@
+body,html,.App{
+  width: 100%;
+}
+.cloudVillage{
+  width:100%;
+  height: auto;
+  margin-top: .55rem;
+  overflow: auto;
+
+}
+.cloudVillage-header{
+  padding: 0 0.3rem;
+  margin-bottom: .12rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: .44rem;
+  .iconfont{
+    font-size: .44rem;
+    color: black;
+  }
+}
+.cloudVillage-header-m{
+  width: 2.8rem;
+  border: .02rem solid #d24734;
+  height: .58rem;
+  border-radius: .29rem;
+  overflow: hidden;
+  a{
+    width: 1.38rem;
+    height: 100%;
+    line-height: .5rem;
+    font-size: .3rem;
+    color: #ff3a2a;
+    float: left;
+    display: block;
+  }
+  .cloudVillage-m{
+    height: 100%;
+    background: #ff3a2a;
+    color: #fff;
+    border-radius: .29rem;
+    border: .02rem solid #d24734;
+  }
+}
+.cloudVillage-main{
+  padding: .18rem 0.3rem;
+  margin-top: .12rem;
+  background: #f7f7f7;
+  width: 100%;
+  height: auto;
+}
