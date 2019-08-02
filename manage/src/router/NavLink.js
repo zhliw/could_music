@@ -11,7 +11,7 @@ export default class MyNav extends React.Component {
                     {
                         router.map((v,i)=>{
                             return(
-                                <NavLink style={{width:"0.54rem",height:"0.54rem",lineHeight:"0.54rem",textAlign:"center",borderRadius:"50%"}} activeStyle={{color:"#fff",background:"linear-gradient(#ff3b32,#ff564d)"}} key={i} to={v.to} exact={v.exact}>
+                                <NavLink  style={{width:"0.54rem",height:"0.54rem",lineHeight:"0.54rem",textAlign:"center",borderRadius:"50%"}} activeStyle={{color:"#fff",background:"linear-gradient(#ff3b32,#ff564d)"}} key={i} to={v.to} exact={v.exact}>
                                     <div className={v.iconName+" iconfont"} style={{fontSize:"18px"}}></div>
                                 </NavLink>
                             )
