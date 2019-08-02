@@ -4,7 +4,7 @@ class GuardRouter extends React.Component{
     render(){
         return (
             <div>
-                <this.props.component></this.props.component>
+                <this.props.component {...this.props}></this.props.component>
                 <MyNav></MyNav>
             </div>
         )

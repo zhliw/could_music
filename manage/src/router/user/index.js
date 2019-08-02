@@ -18,22 +18,31 @@ export default {
         {
             to:'/user/message',
             path:'/user/message',
-            component:Message
-        },
-        {
-            to:'/user/perforMance',
-            path:'/user/perforMance',
-            component:PerforMance
-        },
-        {
-            to:'/user/skin',
-            path:'/user/skin',
-            component:Skin
+            component:Message,
+            context:'信息',
+            iconName:'icon-xiaoxi'
         },
         {
             to:'/user/store',
             path:'/user/store',
-            component:Store
+            component:Store,
+            context:'商城',
+            iconName:'icon-shangcheng'
+        },
+        {
+            to:'/user/perforMance',
+            path:'/user/perforMance',
+            component:PerforMance,
+            context:'演出',
+            iconName:'icon-ticket'
+        },
+        
+        {
+            to:'/user/skin',
+            path:'/user/skin',
+            component:Skin,
+            context:'个性换肤',
+            iconName:'icon-yifu'
         }
     ]
 }

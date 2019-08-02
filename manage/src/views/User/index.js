@@ -1,5 +1,9 @@
 import React from "react";
+import { Link,Route }  from 'react-router-dom'
 export default class My extends React.Component{
+    componentWillMount(){
+        console.log(this.props)
+    }
     render(){
         return(
             <div className={'ygz'}>
@@ -25,6 +29,18 @@ export default class My extends React.Component{
                         <span style={{marginRight:'0.1rem'}}>免费领福利</span>
                         <i className={'icon-lipinqia iconfont'}></i>
                     </div>
+                </div>
+                <div>
+                    {
+                        this.props.children.map((v,i)=>{
+                            return (
+                                <div key={i}>
+                                  <Link to={v.to}>{v.context}</Link>  
+                                  <Route path={v.path} component={v.component}></Route>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )
