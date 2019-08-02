@@ -19,7 +19,7 @@ export default [
     {
         to:"/mymusic",
         path:"/mymusic",
-        context:"我的音乐",
+        context:"我的",
         component:MyMusic,
         iconName:"icon-yinle",
         meta:{
@@ -43,7 +43,7 @@ export default [
     {
         to:"/my",
         path:"/my",
-        context:"我的",
+        context:"账号",
         component:My,
         iconName:"icon-sself",
         meta:{
