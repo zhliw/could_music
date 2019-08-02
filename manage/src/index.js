@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import "./assets/css/MyNavLink.css";
+import './assets/css/Login.css'
 import "./assets/js/rem.js";
 import App from './App';
 import MyNav from "./router/NavLink";
 import * as serviceWorker from './serviceWorker';
+<<<<<<< HEAD
 import "./assets/font/iconfont.css"
 import axios from "axios";
 React.Component.prototype.MyNav = MyNav;
@@ -18,6 +20,10 @@ axios.interceptors.response.use(({data})=>{
     return data
 })
 
+=======
+import "./assets/font/iconfont.css";
+import "./assets/css/all.css";
+>>>>>>> 12bcddd957def7e16ee18de00136f9ff9c8fdbae
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

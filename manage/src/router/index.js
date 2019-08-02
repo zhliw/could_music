@@ -1,8 +1,9 @@
 import Find from "../views/Find"
-import My from "../views/My"
+
 import MyMusic from "../views/MyMusic"
 import CloudVillage from "../views/CloudVillage"
 import Video from "../views/Video";
+import user from './user'
 export default [
     {
         to:"/",
@@ -53,16 +54,5 @@ export default [
             descrieption:""
         }
     },
-    {
-        to:"/my",
-        path:"/my",
-        context:"账号",
-        component:My,
-        iconName:"icon-sself",
-        meta:{
-            title:"",
-            keyword:"",
-            descrieption:""
-        }
-    }
+    user
 ]
