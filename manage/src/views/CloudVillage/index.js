@@ -1,10 +1,14 @@
 import React from "react";
+import {
+    NavLink,
+    Route
+} from "react-router-dom";
 export default class CloudVillage extends React.Component{
     render(){
         return(
             <div>
                 <this.MyNav></this.MyNav>
-               广场（Square） |  动态(event)
+                云村
             </div>
         )
     }

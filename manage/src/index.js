@@ -7,8 +7,18 @@ import App from './App';
 import MyNav from "./router/NavLink";
 import * as serviceWorker from './serviceWorker';
 import "./assets/font/iconfont.css"
+import axios from "axios";
+React.Component.prototype.MyNav = MyNav;
+React.Component.prototype.axios = axios;
+axios.interceptors.request.use(config=>{
+    config.url = "/wyy"+config.url;
+    return config
+})
+axios.interceptors.response.use(({data})=>{
+    return data
+})
 
-React.Component.prototype.MyNav = MyNav
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
