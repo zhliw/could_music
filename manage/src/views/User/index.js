@@ -36,7 +36,15 @@ export default class My extends React.Component{
                             return (
                                 <div key={i}>
                                   <Link to={v.to}>{v.context}</Link>  
-                                  <Route path={v.path} component={v.component}></Route>
+                                </div>
+                            )
+                        })
+                    }
+                    {
+                        this.props.children.map((v,i)=>{
+                            return (
+                                <div key={i}>
+                                  <Route path={v.path} component={v.component}></Route>  
                                 </div>
                             )
                         })

@@ -36,7 +36,6 @@ export default {
             context:'演出',
             iconName:'icon-ticket'
         },
-        
         {
             to:'/user/skin',
             path:'/user/skin',

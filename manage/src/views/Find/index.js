@@ -1,17 +1,33 @@
 import React from "react";
+import { Link,Route,BrowserRouter as Router } from 'react-router-dom'
 export default class Find extends React.Component{
+    componentDidMount(){
+        console.log(this.props)
+    }
     render(){
         return(
             <div>
                 <this.MyNav></this.MyNav>
-                <p>搜索框</p>
-                <p>banner</p>
-                <p>每日推荐 | 歌单 | 排行榜 | 电台</p>
-                <p>推荐歌单*6</p>
-                <p>新碟 | 新歌</p>
-                <p>云村精选</p>
-                <p>本周原创音乐推荐</p>
-                <p>......</p>
+                <Router>
+                {
+                    this.props.children.map((v,i)=>{
+                        return (
+                            <div key={i}>
+                                <Link to={v.to}>{v.context}</Link>
+                            </div>
+                        )
+                    })
+                }
+                {
+                    this.props.children.map((v,i)=>{
+                        return (
+                            <div key={i}>
+                                <Route path={v.path} component={v.component}></Route>
+                            </div>
+                        )
+                    })
+                }
+                </Router>
             </div>
         )
     }
