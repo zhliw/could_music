@@ -12,6 +12,8 @@ import Message from '../views/User/Message'
 import PerforMance from '../views/User/PerforMance'
 import Skin from '../views/User/Skin'
 import Store from '../views/User/Store'
+import Login from '../views/User/Login'
+import PhoneLogin from '../views/User/PhoneLogin'
 export default [
     {
         to: "/",
@@ -130,6 +132,7 @@ export default [
         component:User,
         iconName:"icon-sself",
         isShow:true,
+        exact:true,
         meta:{
             title:"账号",
             keyword:"",
@@ -141,7 +144,6 @@ export default [
         component:Message,
         context:'信息',
         iconName:'icon-xiaoxi',
-        
     },
     {
         to:'/user/store',
@@ -163,5 +165,15 @@ export default [
         component:Skin,
         context:'个性换肤',
         iconName:'icon-yifu'
+    },
+    {
+        to:'/user/login',
+        path:'/user/login',
+        component:Login,
+    },
+    {
+        to:'/user/phonelogin',
+        path:'/user/phonelogin',
+        component:PhoneLogin,
     }
 ]
