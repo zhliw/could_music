@@ -85,7 +85,7 @@ export default [
         exact: true
     },
     {
-        to: "/video",
+        to: "/video/4107",
         path: "/video",
         context: "视频",
         component: Video,

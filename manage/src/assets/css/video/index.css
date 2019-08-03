@@ -1,0 +1,89 @@
+body,html{
+    width:100%;
+    height: 100%;
+}
+#root{
+    width:100%;
+    height: 100%;
+    background: #f7f7f7;
+}
+.App{
+    width:100%;
+    height: 100%;
+}
+.video{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+.video .videoHeader{
+    background: #fff;
+}
+.video .videoCenter{
+    flex: 1;
+    overflow: auto;
+}
+.videoHeaderUl{
+    display:flex;
+    overflow: auto;
+    height:0.88rem;
+    flex-shrink:1
+}
+.videoHeaderUl li a{
+    font-size:0.3rem;
+    padding:0 0.2rem;
+    min-width:1.6rem;
+    display:inline-block;
+    line-height:0.88rem
+}
+.activeNav{
+    color:#f64057;
+    border-bottom:0.04rem solid #f64057;
+    height:0.88rem
+}
+.videoContent{
+    background:#fff;
+    width:100%;
+    height:auto;
+    padding:0.2rem 0.32rem;
+    margin-bottom:0.05rem
+}
+.videoContentImg{
+    width:6.86rem;
+    height:3.86rem;
+    border-radius:0.15rem
+}
+.videoContentP{
+    padding:0.2rem 0;
+    border-bottom:0.01rem solid #e1e1e1
+}
+.videoContentP p{
+    line-height:0.45rem;
+    text-align:left;
+    font-size:0.3rem;
+    font-weight:600
+}
+.videoContentBottom{
+    height:0.8rem;
+    overflow:hidden;
+    display:flex;
+    justify-content:space-between;
+    padding-top:0.18rem;
+    border-top:0.01rem solid #f6f6f6;
+    margin-top:0.01rem
+}
+.videoContentBottom img{
+    width:0.6rem;
+    height:0.6rem;
+    border-radius:50%
+}
+.videoContentBottom span{
+    font-size:0.24rem;
+    font-weight:600;
+    display:inline-block;
+    margin-left:0.1rem;
+}
+

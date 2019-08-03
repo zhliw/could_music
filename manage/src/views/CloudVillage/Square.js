@@ -14,8 +14,4 @@ export default class Square extends React.Component{
             </div>
         )
     }
-    async componentDidMount() {
-        const {data}= await axios.get("/wyy/comment/hot?id=186016&type=0")
-        console.log(data)
-    }
 }
