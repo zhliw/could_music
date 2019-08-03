@@ -1,0 +1,24 @@
+.myFindNav_wn{
+    display:flex;
+    justify-content:space-between;
+    padding:0.5rem;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:0.5rem;
+
+}
+img{
+    width:5rem;
+    height:2rem
+}
+input{
+    color:white;
+    width:5rem;
+    height:0.5rem;
+    background:yellow;
+    border:none;
+    border-radius: 0.3rem;
+    text-align: center;
+}

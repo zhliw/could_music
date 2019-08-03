@@ -3,7 +3,7 @@ import React from 'react'
 class RecommendedDaily extends React.Component{
     render(){
         return(
-            <div>每日推荐</div>
+            <div>  <this.Return />每日推荐</div>
         )
     }
 }

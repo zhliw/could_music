@@ -1,9 +1,12 @@
 //排行榜
 import React from 'react'
 class Leaderboard extends React.Component{
+    
+    
     render(){
+        console.log(this)
         return(
-            <div>排行榜</div>
+            <div> <this.Return />排行榜</div>
             // <this.MyNav></this.MyNav>
             // <p><span>小话筒</span><input type="text" placeholder='大家都在搜 心如止水'/><span  className={'icon-yinle1 iconfont'}></span></p>
             // <p>banner</p>

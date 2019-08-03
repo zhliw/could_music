@@ -4,6 +4,7 @@ import './index.css';
 import "./assets/css/MyNavLink.css";
 import './assets/css/Login.css'
 import "./assets/js/rem.js";
+import './assets/css/Find/find.css'
 import App from './App';
 import MyNav from "./router/NavLink";
 import "./assets/font/iconfont.css"
@@ -11,6 +12,12 @@ import "./assets/font/iconfont.css";
 import "./assets/css/all.css";
 import axios from "axios";
 import * as serviceWorker from './serviceWorker';
+//Find_Return
+import Return from './components/Find/return'
+import Play from './views/Find/indexComponent/Play'
+//Find返回的全局组件
+React.Component.prototype.Return=Return
+React.Component.prototype.Play=Play
 
 React.Component.prototype.MyNav = MyNav;
 React.Component.prototype.axios = axios;
