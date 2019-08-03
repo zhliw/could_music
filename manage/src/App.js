@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import GuardRouter from './router/GuardRouter'
 import {
     BrowserRouter as Router,
     NavLink,
@@ -17,7 +16,7 @@ class App extends React.Component{
                     {
                         router.map((v,i)=>{
                             return(
-                                <Route key={i} exact={v.exact} path={v.path} render={()=><GuardRouter {...v}></GuardRouter>}></Route>
+                                <Route key={i} exact={v.exact} path={v.path} component={v.component}></Route>
                             )
                         })
                     }
