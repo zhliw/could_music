@@ -12,18 +12,14 @@ export default class Find extends React.Component{
                 {
                     this.props.children.map((v,i)=>{
                         return (
-                            <div key={i}>
-                                <Link to={v.to}>{v.context}</Link>
-                            </div>
+                                <Link to={v.to} key={i}>{v.context}</Link>
                         )
                     })
                 }
                 {
                     this.props.children.map((v,i)=>{
                         return (
-                            <div key={i}>
-                                <Route path={v.path} component={v.component}></Route>
-                            </div>
+                                <Route key={i} path={v.path} component={v.component}></Route>
                         )
                     })
                 }
