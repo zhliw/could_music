@@ -43,8 +43,8 @@ export default [
         }
     },
     {
-        to:"/cloudvillage",
-        path:"/cloudvillage",
+        to:"/cloudvillage/1",
+        path:"/cloudvillage/:type",
         context:"云村",
         component:CloudVillage,
         iconName:"icon-renqun",
