@@ -8,9 +8,14 @@ import cloudVillageCreator from '../../store/actionCreator/CloudVillage'
 import cloudVillage from "../../store/reducers/CloudVillage";
 
 class Square extends React.Component {
+    constructor(){
+        super();
+        this.state={
+            _time:{}
+        }
+    }
     render() {
         let hotComments = this.props.hotComments || []
-        console.log(hotComments)
         return (
             <div className={"cloudVillage-square"}>
                 <div className={"cloudVillage-hot-comments"}>
@@ -30,6 +35,16 @@ class Square extends React.Component {
                         </div>
                     </div>
                     <div className={"cloudVillage-hot-comments-r"}>
+                        <div className={"c-month"}>
+                            {
+                                this.state._time._month
+                            }
+                        </div>
+                        <div className={"c-day"}>
+                            {
+                                this.state._time._day
+                            }
+                        </div>
 
                     </div>
                 </div>
@@ -39,7 +54,6 @@ class Square extends React.Component {
 
     componentDidMount() {
         this.props.getHotComments();
-
         function time() {
             let _date = new Date();
             let _month = _date.getMonth();
@@ -86,6 +100,10 @@ class Square extends React.Component {
                 _month,_day
             }
         }
+        let _time=time();
+        this.setState({
+            _time
+        })
     }
 }
 

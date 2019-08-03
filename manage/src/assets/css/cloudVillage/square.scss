@@ -30,4 +30,16 @@
       text-overflow: ellipsis;
     }
   }
+  .cloudVillage-hot-comments-r{
+    float: right;
+    .c-month{
+      font-size: .3rem;
+      margin-bottom: .12rem;
+    }
+    .c-day{
+      font-size: .5rem;
+      font-weight: bold;
+      font-family: Arial;
+    }
+  }
 }
