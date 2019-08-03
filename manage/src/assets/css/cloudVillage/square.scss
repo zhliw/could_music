@@ -5,7 +5,6 @@
   color: #dfe7f2;
   padding: .32rem;
   overflow: hidden;
-
   .cloudVillage-hot-comments-l {
     float: left;
     width: 4.98rem;
@@ -20,10 +19,12 @@
     width: 4.96rem;
     font-size: .24rem;
     clear: both;
-    padding-top: .2rem;
-    overflow: hidden;
-    height: .58rem;
-    p{
+    height: .55rem;
+    line-height: .55rem;
+    text-align: left;
+    position:relative;
+    .swiper-slide{
+      height: .55rem;
       width: 4.96rem;
       white-space: nowrap;
       overflow: hidden;
