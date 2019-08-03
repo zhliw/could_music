@@ -113,12 +113,11 @@ export default [
         }
     },
     {
-        to: "/cloudvillage",
-        path: "/cloudvillage",
-        context: "云村",
-        component: CloudVillage,
-        iconName: "icon-renqun",
-        isShow:true,
+        to:"/cloudvillage/1",
+        path:"/cloudvillage/:type",
+        context:"云村",
+        component:CloudVillage,
+        iconName:"icon-renqun",
         meta: {
             title: "",
             keyword: "",
