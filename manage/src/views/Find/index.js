@@ -9,20 +9,7 @@ export default class Find extends React.Component{
             <div>
                 <this.MyNav></this.MyNav>
                 <Router>
-                {
-                    this.props.children.map((v,i)=>{
-                        return (
-                                <Link to={v.to} key={i}>{v.context}</Link>
-                        )
-                    })
-                }
-                {
-                    this.props.children.map((v,i)=>{
-                        return (
-                                <Route key={i} path={v.path} component={v.component}></Route>
-                        )
-                    })
-                }
+               
                 </Router>
             </div>
         )

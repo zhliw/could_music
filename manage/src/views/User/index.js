@@ -1,6 +1,6 @@
 import React from "react";
-import { Link,Route }  from 'react-router-dom'
-export default class My extends React.Component{
+import { Route,withRouter }  from 'react-router-dom'
+class My extends React.Component{
     componentWillMount(){
         console.log(this.props)
     }
@@ -31,26 +31,10 @@ export default class My extends React.Component{
                     </div>
                 </div>
                 <div>
-                    {
-                        this.props.children.map((v,i)=>{
-                            return (
-                                <div key={i}>
-                                  <Link to={v.to}>{v.context}</Link>  
-                                </div>
-                            )
-                        })
-                    }
-                    {
-                        this.props.children.map((v,i)=>{
-                            return (
-                                <div key={i}>
-                                  <Route path={v.path} component={v.component}></Route>  
-                                </div>
-                            )
-                        })
-                    }
+                    
                 </div>
             </div>
         )
     }
 }
+export default withRouter(My)
