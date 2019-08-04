@@ -1,9 +1,10 @@
 import React from "react"
 import {
-    NavLink
+    NavLink,
+    withRouter
 } from "react-router-dom";
 import router from "./"
-export default class MyNav extends React.Component {
+class MyNav extends React.Component {
     render() {
         return (
             <div className={"footer"}>
@@ -34,3 +35,4 @@ export default class MyNav extends React.Component {
         )
     }
 }
+export default withRouter(MyNav);

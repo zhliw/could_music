@@ -11,6 +11,12 @@ import "./assets/font/iconfont.css";
 import "./assets/css/all.css";
 import axios from "axios";
 import * as serviceWorker from './serviceWorker';
+import store from './store'
+import {
+    Provider
+} from 'react-redux'
+import Swiper from 'swiper/dist/js/swiper.js';
+import 'swiper/dist/css/swiper.min.css'
 
 React.Component.prototype.MyNav = MyNav;
 React.Component.prototype.axios = axios;
@@ -23,7 +29,7 @@ axios.interceptors.response.use(({data})=>{
 })
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

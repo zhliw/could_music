@@ -6,31 +6,42 @@ import {
 } from "react-router-dom"
 import Content from "./Content"
 import MyLink from "../../router/NavLink"
+import router from "../../router/index"
 export default class Video extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            routerChildren:[]
+        }
     }
-    componentDidMount(){
+
+    componentWillMount(){
+        this.setState({
+            routerChildren:router.find(v=>v.to==="/video/").children
+        })
     }
     render(){
         return(
             <div className={"video"}>
                 <div className={"videoHeader"}>
                     <ul className={"videoHeaderUl"}>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/4107"}>说唱</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/3109"}>街舞</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/11106"}>热血动漫</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/26141"}>广告</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/58100"}>现场</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/60100"}>翻唱</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/1000"}>MV</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/1101"}>舞蹈</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/57104"}>ACG音乐</NavLink></li>
-                        <li><NavLink activeClassName={"activeNav"} to={"/video/58101"}>听BGM</NavLink></li>
+                        {
+                            this.state.routerChildren.map((v,i)=>{
+                                return(
+                                    <li key={i}><NavLink exact={v.exact} activeClassName={"activeNav"} to={v.to}>{v.content}</NavLink></li>
+                                )
+                            })
+                        }
                     </ul>
                 </div>
                 <div className={"videoCenter"}>
-                    <Route exact path={"/video/:id"} component={Content}></Route>
+                    {
+                        this.state.routerChildren.map((v,i)=>{
+                            return(
+                                <li key={i}><Route exact={v.exact} path={v.path} component={Content}></Route></li>
+                            )
+                        })
+                    }
                 </div>
                 <div className={"videoBottom"}>
                     <MyLink></MyLink>
