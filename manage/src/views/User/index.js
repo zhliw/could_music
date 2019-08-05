@@ -45,7 +45,7 @@ class My extends React.Component{
 
                 <div style={{display:localStorage.userInfo?'block':'none'}}>
                     <div>
-                        <img height={'70px'} width={'70px'} style={{borderRadius:'50%'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
+                        <img  style={{borderRadius:'50%',height:'70px',width:'70px'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
                         <span>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
                     </div>
                     <div>
@@ -53,9 +53,6 @@ class My extends React.Component{
                         粉丝：{this.state.userFans.length}
                     </div>
                 </div>
-
-
-
 
                 <div className={'VIP'}>
                     <div className={'left'}>
