@@ -36,6 +36,7 @@ export default[
         path: "/find/Search",
         context: "搜索",
         component: Search,
+        exact:true,
         meta: {
             title: "搜索",
             keyword: "",

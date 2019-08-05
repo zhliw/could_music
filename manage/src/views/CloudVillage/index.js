@@ -30,6 +30,8 @@ export default class CloudVillage extends React.Component{
                 </div>
                 {/*主体*/}
                 <Route className={"cloudVillage-main"} path={"/cloudvillage/:type"} component={Main}></Route>
+
+                {/*footer*/}
                 <this.MyNav></this.MyNav>
             </div>
 
