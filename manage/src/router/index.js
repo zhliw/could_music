@@ -178,7 +178,6 @@ export default [
         path:"/cloudvillage",
         context:"云村",
         component:CloudVillage,
-        isShow:true,
         iconName:"icon-renqun",
         isShow:true,
         meta: {
