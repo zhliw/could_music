@@ -3,11 +3,17 @@ import User from "../views/User"
 import MyMusic from "../views/MyMusic"
 import CloudVillage from "../views/CloudVillage"
 import Video from "../views/Video";
+/*-------------------------------Video---------------------------------------------*/
+
+
+
+/*------------------------------Find------------------------------------------*/
 import Leaderboard from './Find/Leaderboard'
 import LiveBroadcast from './Find/LiveBroadcast'
 import Radio from './Find/Radio'
 import RecommendedDaily from './Find/RecommendedDaily'
 import SongList from './Find/SongList'
+/*-----------------------------------User----------------------------------*/
 import Message from '../views/User/Message'
 import PerforMance from '../views/User/PerforMance'
 import Skin from '../views/User/Skin'
@@ -88,8 +94,8 @@ export default [
         exact: true
     },
     {
-        to: "/video",
-        path: "/video",
+        to: "/video/",
+        path: "/video/",
         context: "视频",
         component: Video,
         iconName: "icon-shipin",
@@ -98,7 +104,61 @@ export default [
             title: "",
             keyword: "",
             descrieption: ""
-        }
+        },
+        children:[
+            {
+                to:'/video/',
+                path:"/video/",
+                component:"",
+                exact:true,
+                content:"说唱"
+            },
+            {
+                to:'/video/3109',
+                path:"/video/3109",
+                content:"街舞"
+            },
+            {
+                to:'/video/11106',
+                path:"/video/11106",
+                content:"热血动漫"
+            },
+            {
+                to:'/video/26141',
+                path:"/video/26141",
+                content:"广告"
+            },
+            {
+                to:'/video/58100',
+                path:"/video/58100",
+                content:"现场"
+            },
+            {
+                to:'/video/60100',
+                path:"/video/60100",
+                content:"翻唱"
+            },
+            {
+                to:'/video/1000',
+                path:"/video/1000",
+                content:"MV"
+            },
+            {
+                to:'/video/1101',
+                path:"/video/1101",
+                content:"舞蹈"
+            },
+            {
+                to:'/video/57104',
+                path:"/video/57104",
+                content:"ACG音乐"
+            },
+            {
+                to:'/video/58101',
+                path:"/video/58101",
+                content:"听BGM"
+            }
+        ]
     },
     {
         to: "/mymusic",
@@ -114,10 +174,11 @@ export default [
         }
     },
     {
-        to:"/cloudvillage/1",
-        path:"/cloudvillage/:type",
+        to:"/cloudvillage",
+        path:"/cloudvillage",
         context:"云村",
         component:CloudVillage,
+        isShow:true,
         iconName:"icon-renqun",
         isShow:true,
         meta: {
