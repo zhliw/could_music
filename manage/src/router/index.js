@@ -7,11 +7,19 @@ import Video from "../views/Video";
 //FindNav
 import Find_Nav from './Find_Nav'
 //User
+/*-------------------------------Video---------------------------------------------*/
+/*------------------------------Find------------------------------------------*/
+
+/*-----------------------------------User----------------------------------*/
 import Message from '../views/User/Message'
 import PerforMance from '../views/User/PerforMance'
 import Skin from '../views/User/Skin'
 import Store from '../views/User/Store'
-export default [{
+import Login from '../views/User/Login'
+import PhoneLogin from '../views/User/PhoneLogin'
+import UserPassWord from '../views/User/UserPassWord'
+export default [
+    {
         to: "/",
         path: "/",
         context: "发现",
@@ -26,8 +34,8 @@ export default [{
         }
     },
     {
-        to: "/video",
-        path: "/video",
+        to: "/video/",
+        path: "/video/",
         context: "视频",
         component: Video,
         iconName: "icon-shipin",
@@ -36,7 +44,61 @@ export default [{
             title: "",
             keyword: "",
             descrieption: ""
-        }
+        },
+        children:[
+            {
+                to:'/video/',
+                path:"/video/",
+                component:"",
+                exact:true,
+                content:"说唱"
+            },
+            {
+                to:'/video/3109',
+                path:"/video/3109",
+                content:"街舞"
+            },
+            {
+                to:'/video/11106',
+                path:"/video/11106",
+                content:"热血动漫"
+            },
+            {
+                to:'/video/26141',
+                path:"/video/26141",
+                content:"广告"
+            },
+            {
+                to:'/video/58100',
+                path:"/video/58100",
+                content:"现场"
+            },
+            {
+                to:'/video/60100',
+                path:"/video/60100",
+                content:"翻唱"
+            },
+            {
+                to:'/video/1000',
+                path:"/video/1000",
+                content:"MV"
+            },
+            {
+                to:'/video/1101',
+                path:"/video/1101",
+                content:"舞蹈"
+            },
+            {
+                to:'/video/57104',
+                path:"/video/57104",
+                content:"ACG音乐"
+            },
+            {
+                to:'/video/58101',
+                path:"/video/58101",
+                content:"听BGM"
+            }
+        ]
     },
     {
         to: "/mymusic",
@@ -52,11 +114,13 @@ export default [{
         }
     },
     {
-        to: "/cloudvillage/1",
-        path: "/cloudvillage/:type",
-        context: "云村",
-        component: CloudVillage,
-        iconName: "icon-renqun",
+        to:"/cloudvillage",
+        path:"/cloudvillage",
+        context:"云村",
+        component:CloudVillage,
+        isShow:true,
+        iconName:"icon-renqun",
+        isShow:true,
         meta: {
             title: "",
             keyword: "",
@@ -64,83 +128,60 @@ export default [{
         }
     },
     {
-        to: '/user/message',
-        path: '/user/message',
-        component: Message,
-        context: '信息',
-        iconName: 'icon-xiaoxi',
-
-    },
-    {
-        to: '/user/store',
-        path: '/user/store',
-        component: Store,
-        context: '商城',
-        iconName: 'icon-shangcheng'
-    },
-    {
-        to: '/user/perforMance',
-        path: '/user/perforMance',
-        component: PerforMance,
-        context: '演出',
-        iconName: 'icon-ticket'
-    },
-    {
-        to: '/user/skin',
-        path: '/user/skin',
-        component: Skin,
-        context: '个性换肤',
-        iconName: 'icon-yifu'
-    },
-    {
-        to: "/cloudvillage",
-        path: "/cloudvillage",
-        context: "云村",
-        component: CloudVillage,
-        iconName: "icon-renqun",
-        isShow: true,
-        meta: {
-            title: "",
-            keyword: "",
-            descrieption: ""
-        }
-    }, {
-        to: "/user",
-        path: "/user",
-        context: "账号",
-        component: User,
-        iconName: "icon-sself",
-        isShow: true,
-        meta: {
-            title: "账号",
-            keyword: "",
-            descrieption: ""
+        to:"/user",
+        path:"/user",
+        context:"账号",
+        component:User,
+        iconName:"icon-sself",
+        isShow:true,
+        exact:true,
+        meta:{
+            title:"账号",
+            keyword:"",
+            descrieption:""
         },
-    }, {
-        to: '/user/message',
-        path: '/user/message',
-        component: Message,
-        context: '信息',
-        iconName: 'icon-xiaoxi',
-
-    }, {
+    },{
+        to:'/user/message',
+        path:'/user/message',
+        component:Message,
+        context:'信息',
+        iconName:'icon-xiaoxi',
+    },
+    {
         to: '/user/store',
         path: '/user/store',
         component: Store,
         context: '商城',
         iconName: 'icon-shangcheng'
-    }, {
+    },
+    {
         to: '/user/perforMance',
         path: '/user/perforMance',
         component: PerforMance,
         context: '演出',
         iconName: 'icon-ticket'
-    }, {
-        to: '/user/skin',
-        path: '/user/skin',
-        component: Skin,
-        context: '个性换肤',
-        iconName: 'icon-yifu'
+    },
+    {
+        to:'/user/skin',
+        path:'/user/skin',
+        component:Skin,
+        context:'个性换肤',
+        iconName:'icon-yifu'
+    },
+    {
+        to:'/user/login',
+        path:'/user/login',
+        component:Login,
+    },
+    {
+        to:'/user/phonelogin',
+        path:'/user/phonelogin',
+        component:PhoneLogin,
+    },
+    {
+        to:'/user/userPassWord',
+        path:'/user/userPassWord',
+        component:UserPassWord,
     },
     ...Find_Nav
 ]

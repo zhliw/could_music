@@ -6,30 +6,68 @@ import {
 import {bindActionCreators} from "redux"
 import cloudVillageCreator from '../../store/actionCreator/CloudVillage'
 import cloudVillage from "../../store/reducers/CloudVillage";
+import Swiper from 'swiper/dist/js/swiper.js';
 
+// import 'swiper/dist/css/swiper.min.css'
 class Square extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            _time: {}
+        }
+    }
+
     render() {
         let hotComments = this.props.hotComments || []
-        console.log(hotComments)
         return (
             <div className={"cloudVillage-square"}>
                 <div className={"cloudVillage-hot-comments"}>
                     <div className={"cloudVillage-hot-comments-l"}>
-                        <p className={"c-h-c-l-top"}>云村热评墙 ></p>
-                        <div className={"cloudVillage-hot-comments-list"}>
-                            {
-                                hotComments.map((v, i) => {
-                                    return (
-                                        <p key={i}>
-                                            <img style={{width: ".28rem", borderRadius: "50%"}}
-                                                 src={v.user.avatarUrl}></img> {v.content}
-                                        </p>
-                                    )
-                                })
-                            }
+                        <p className={"c-h-c-l-top"}  dangerouslySetInnerHTML={{__html: "云村热评墙&nbsp;>"}}></p>
+
+                        <div className="swiper-container cloudVillage-hot-comments-list">
+                            <div className="swiper-wrapper">
+                                {/*<div className="swiper-slide">Slide 1</div>*/}
+                                {/*<div className="swiper-slide">Slide 2</div>*/}
+                                {/*<div className="swiper-slide">Slide 3</div>*/}
+                                {
+                                    hotComments.map((v, i) => {
+                                        return (
+                                            <div className="swiper-slide" key={i}>
+                                                <img style={{width: ".28rem", borderRadius: "50%",display:"inlineBlock"}}
+                                                     src={v.user.avatarUrl}></img>
+                                                {v.content}
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
+
+                        {/*<div className={"cloudVillage-hot-comments-list"}>*/}
+                        {/*    {*/}
+                        {/*        hotComments.map((v, i) => {*/}
+                        {/*            return (*/}
+                        {/*                <p key={i}>*/}
+                        {/*                    <img style={{width: ".28rem", borderRadius: "50%"}}*/}
+                        {/*                         src={v.user.avatarUrl}></img> {v.content}*/}
+                        {/*                </p>*/}
+                        {/*            )*/}
+                        {/*        })*/}
+                        {/*    }*/}
+                        {/*</div>*/}
                     </div>
                     <div className={"cloudVillage-hot-comments-r"}>
+                        <div className={"c-month"}>
+                            {
+                                this.state._time._month
+                            }
+                        </div>
+                        <div className={"c-day"}>
+                            {
+                                this.state._time._day
+                            }
+                        </div>
 
                     </div>
                 </div>
@@ -83,10 +121,24 @@ class Square extends React.Component {
                     break;
             }
             return {
-                _month,_day
+                _month, _day
             }
         }
+
+        let _time = time();
+        this.setState({
+            _time
+        })
+    }
+
+    componentDidUpdate() {
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical', // 垂直切换选项
+            loop: true, // 循环模式选项
+            autoplay: true
+        })
     }
 }
 
 export default connect((state) => ({hotComments: state.cloudVillage.hotComments}), (dispatch) => bindActionCreators(cloudVillageCreator, dispatch))(Square)
+

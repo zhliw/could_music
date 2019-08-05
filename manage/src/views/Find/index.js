@@ -2,46 +2,81 @@ import React from "react";
 import {withRouter} from 'react-router-dom'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
+import axios from 'axios'
  class Find extends React.Component{
+     constructor(){
+         super()
+         this.state={
+             banner:[]
+         }
+     }
 //为了打包不出错
-    componentDidMount(){
-    var mySwiper = new Swiper('.swiper-container', {
-       slidesPerView : 1,
-       spaceBetween : 20,
-    })
+componentDidMount(){
+        this.getBanner()
+
+    //轮播图调用
+}
+ getBanner(){
+    this.axios.get('/banner').then(data=>{
+      console.log(data)
+    this.setState({
+        banner:data.banners
+        
+    }, ()=>{
+        new Swiper('.swiper-container', {
+          observer: true,
+           slidesPerView : 1,
+           loop: true,
+                autoplay:{
+                    delay:500 ,
+                    stopOnLastSlide:false,
+                    disableOnInteraction: false
+                },
+                pagination : {
+                  el:'.swiper-pagination',//这里是分页器设置
+              } ,
+    
+        })   
+      } )
+    
+    })   
 }
     render(){
-        getBanner(){
-            
-        }
         return(
             //导航栏
             <div>
                 <this.MyNav></this.MyNav>
             <header>
                 <span style={{fontSize:'0.48rem'}} onClick={()=>{
-                    this.props.history.push('/find/Identification')
+                    this.props.history.push('/Identification')
                 }}className={'icon-huatong iconfont'}></span>
-                <input type="text" placeholder='大家都在搜 陈奕迅' className={'serachIndex_wn'}onClick={()=>{
-                    this.props.history.push('/find/Search')
+                <input type="text" placeholder='大家都在搜 陈奕迅' className={'serachIndex_wn'} onClick={()=>{
+                    this.props.history.push('/Search')
                 }}/>
                 <span style={{fontSize:'0.48rem'}} onClick={()=>{
-                    this.props.history.push('/find/Play')
+                    this.props.history.push('/Play')
                 }} className={'icon-yinle1 iconfont'}></span>
             </header>
                         <div className="myFindBanner">
                             <div className="swiper-container">
                                 <div className="swiper-wrapper">
-                                <div className="swiper-slide"><img src="http://img3.imgtn.bdimg.com/it/u=1534088717,1570001692&fm=26&gp=0.jpg" alt=""/></div>
-                                <div className="swiper-slide"><img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D680%2C800/sign=d0235e53a2ec8a13144f5fe6cf33bdb7/0824ab18972bd407b2f5a94170899e510fb3095f.jpg" alt=""/></div>
-                                <div className="swiper-slide"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1564805152&di=52eaa9e0a16a064dc645e8145c9427cf&src=http://img44.ownskin.com/powertheme/big/1/ptv06rd6.gif" alt=""/></div>
-                                <div className="swiper-slide">Slide 3</div>
+                                {this.state.banner.map((v,i)=>{
+                            return( 
+                              <div key={i} className="swiper-slide"><img src={v.imageUrl} alt=""/>333</div>  
+                                     )  
+                                })}  
                             </div>
+                            <div className="swiper-pagination"></div>
+                    
+                
+                    
+                    {/* <!-- 如果需要滚动条 --> */}
+                    <div className="swiper-scrollbar"></div>
                             </div>
                         </div>
                 <div className='myFindNav_wn'>
                 <div onClick={()=>{
-                    this.props.history.push('/find/RecommendedDaily')
+                    this.props.history.push('/RecommendedDaily')
                 }}>
                       <span className={'navIconCircle_wn'} >
                           <i className={'icon-xinbaniconshangchuan- iconfont'}></i>
@@ -49,7 +84,7 @@ import 'swiper/dist/css/swiper.min.css'
                       <p>每日推荐</p> 
                       </div> 
                   <div onClick={()=>{
-                    this.props.history.push('/find/SongList')
+                    this.props.history.push('/SongList')
                   }}>
                       <span className={'navIconCircle_wn'} >
                       <i className={'icon-gedan iconfont'}></i>
@@ -57,7 +92,7 @@ import 'swiper/dist/css/swiper.min.css'
                       <p>歌单</p>
                       </div>
                   <div onClick={()=>{
-                    this.props.history.push('/find/Leaderboard')
+                    this.props.history.push('/Leaderboard')
                   }}>
                       <span className={'navIconCircle_wn'} >
                       <i className={'icon-paixingbang iconfont'}></i>
@@ -65,7 +100,7 @@ import 'swiper/dist/css/swiper.min.css'
                       <p>排行榜</p>
                       </div>
                   <div onClick={()=>{
-                    this.props.history.push('/find/Radio')
+                    this.props.history.push('/Radio')
                   }}>
                       <span className={'navIconCircle_wn'} >
                       <i className={'icon-xianxing_diantai iconfont'}></i>
@@ -73,7 +108,7 @@ import 'swiper/dist/css/swiper.min.css'
                       <p>电台</p>
                       </div>
                   <div onClick={()=>{
-                    this.props.history.push('/find/LiveBroadcast')
+                    this.props.history.push('/LiveBroadcast')
                   }}>
                       <span className={'navIconCircle_wn'} >
                       <i className={'icon-zhibo- iconfont'}></i>
@@ -82,7 +117,7 @@ import 'swiper/dist/css/swiper.min.css'
                       </div>
                 </div>
                  <div className='line_wn'></div>
-                 <div className='songList'>
+                 {/* <div className='songList'>
                      <div className='sonList_wn'>
                          <span>推荐歌单</span>
                          <span>歌单广场</span>
@@ -114,7 +149,7 @@ import 'swiper/dist/css/swiper.min.css'
                  <hr />
                  <div>
                      云村精选
-                 </div>
+                 </div> */}
             </div>
         )
     }

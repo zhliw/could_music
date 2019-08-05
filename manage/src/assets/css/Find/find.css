@@ -45,19 +45,19 @@ img{
     margin-top:0.4rem;
 }
 .serachIndex_wn{
-    color:white;
+    color:gray;
     width:5.25rem;
     height:0.7rem;
-    background:#f7f7f7;
+    background:#bfbfbf;
     border:none;
     border-radius: 0.3rem;
     text-align: center;
 }
 .search_search_wn{
-    color:white;
+    color:gray;
     width:5.25rem;
     height:0.7rem;
-    background:#f7f7f7;
+    background:#bfbfbf;
     border:none;
     border-radius: 0.3rem;
     text-align: center;

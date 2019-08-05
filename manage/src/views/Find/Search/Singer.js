@@ -8,7 +8,7 @@ class Singer extends React.Component{
              <div>  <this.Return />   
             歌手分类
            <span onClick={()=>{
-               this.props.history.push('./Play')
+               this.props.history.push('/Play')
            }}>播放</span>
                     <div>
                         <span>华语</span>
