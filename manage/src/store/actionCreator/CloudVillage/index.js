@@ -7,12 +7,24 @@ export const getHotComments = (payload) => {
         payload
     }
 }
+export const getNewMV = (payload)=>{
+    return{
+        type: actionType.GET_NEW_MV,
+        payload
+    }
+}
 
 export default {
     getHotComments(){
         return async (dispatch) => {
             const data = await axios.get("/comment/hot?id=186016&type=0");
             dispatch(getHotComments(data.hotComments));
+        }
+    },
+    getNewMV(){
+        return async (dispatch) =>{
+            const {data} =await axios.get("/mv/first?limit=10");
+            dispatch(getNewMV(data))
         }
     }
 }

@@ -4,8 +4,11 @@ import User from "../views/User"
 import MyMusic from "../views/MyMusic"
 import CloudVillage from "../views/CloudVillage"
 import Video from "../views/Video";
+
+import CloudVillageVideo from '../views/CloudVillage/Video';
+
 //FindNav
-import Find_Nav from './Find_Nav'
+import Find_Nav from './Find_Nav';
 //User
 /*-------------------------------Video---------------------------------------------*/
 /*------------------------------Find------------------------------------------*/
@@ -120,9 +123,20 @@ export default [
         path:"/cloudvillage",
         context:"云村",
         component:CloudVillage,
-        isShow:true,
         iconName:"icon-renqun",
         isShow:true,
+        meta: {
+            title: "",
+            keyword: "",
+            descrieption: ""
+        }
+    },
+    {
+        path:"/village/video/:id",
+        context:"云村视频",
+        component:CloudVillageVideo,
+        isShow:false,
+        iconName:"icon-renqun",
         meta: {
             title: "",
             keyword: "",
@@ -142,7 +156,8 @@ export default [
             keyword:"",
             descrieption:""
         },
-    },{
+    },
+    {
         to:'/user/message',
         path:'/user/message',
         component:Message,
