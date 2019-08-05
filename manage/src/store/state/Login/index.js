@@ -1,4 +1,6 @@
 export default {
     registerInfo:{},
-    userInfo:{}
+    userInfo:{},
+    userAttention:[],
+    userFans:[]
 }

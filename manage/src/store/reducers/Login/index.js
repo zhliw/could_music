@@ -8,5 +8,13 @@ export default function(state=initState,{type,payload}){
     if(type === actionType.USER_LOGIN){
         state.userInfo = payload
     }
+    if(type === actionType.ATTENTION){
+        localStorage.userAttention = JSON.stringify(payload)
+        state.userAttention =  payload
+    }
+    if(type === actionType.FANS){
+        localStorage.userFans = JSON.stringify(payload)
+        state.userFans =  payload
+    }
     return state
 }
