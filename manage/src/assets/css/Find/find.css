@@ -1,0 +1,74 @@
+*{
+    margin:0;
+    padding:0
+}
+.myFindNav_wn{
+    display:flex;
+    justify-content:space-between;
+    padding:0 0.32rem;
+    margin-top: 0.44rem;
+
+}
+.myFindNav_wn p{
+    margin-top: 0.24rem;
+    font-size:0.22rem;
+    color:#6a6f6b
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:0 0.5rem;
+    margin-top:0.3rem
+
+
+}
+img{
+    width:6.86rem;
+    height:2.67rem
+}
+.navIconCircle_wn{
+    display: inline-block;
+    width: 0.93rem;
+    height: 0.93rem;
+    border-radius: 50%;
+    background:#f6443a;
+    line-height: 0.93rem;
+    
+}
+.myFindNav_wn i{
+    font-size: 0.44rem;
+    color:white
+}
+.swiper-container{
+    height: 2.67rem;
+    width:6.86rem;
+    margin-top:0.4rem;
+}
+.serachIndex_wn{
+    color:gray;
+    width:5.25rem;
+    height:0.7rem;
+    background:#bfbfbf;
+    border:none;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+.search_search_wn{
+    color:gray;
+    width:5.25rem;
+    height:0.7rem;
+    background:#bfbfbf;
+    border:none;
+    border-radius: 0.3rem;
+    text-align: center;
+    margin-top:0.3rem
+}
+.myFindBanner{
+    margin-top:0.4rem
+}
+.line_wn{
+    width:100%;
+    height: 0.01rem;
+    background:#e4e4e4;
+    margin-top:0.44rem;
+}

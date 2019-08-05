@@ -1,6 +1,9 @@
 body,html,.App{
   width: 100%;
 }
+.App{
+  overflow: auto;
+}
 .cloudVillage{
   width:100%;
   height: auto;
@@ -45,9 +48,8 @@ body,html,.App{
   }
 }
 .cloudVillage-main{
-  padding: .18rem 0.3rem;
+  padding: .18rem 0.3rem 1rem;
   margin-top: .12rem;
   background: #f7f7f7;
   width: 100%;
-  height: auto;
 }

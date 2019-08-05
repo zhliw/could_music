@@ -3,7 +3,7 @@ import React from 'react'
 class LiveBroadcast extends React.Component{
     render(){
         return(
-            <div>直播</div>
+            <div>  <this.Return />直播</div>
         )
     }
 }

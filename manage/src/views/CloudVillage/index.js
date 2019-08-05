@@ -1,10 +1,14 @@
 import React from "react";
 import {
     NavLink,
+    Link,
     Route
 } from "react-router-dom";
 import "../../assets/css/cloudVillage/main.scss"
 import Main from "./Main";
+import Event from "./event";
+import Square from "./Square"
+
 export default class CloudVillage extends React.Component{
     render(){
         return(
@@ -18,7 +22,7 @@ export default class CloudVillage extends React.Component{
                         </div>
 
                         <div className={"cloudVillage-header-m"}>
-                            <NavLink activeClassName="cloudVillage-m" exact to={"/cloudvillage/1"}>广场</NavLink>
+                            <NavLink activeClassName="cloudVillage-m" exact to={"/cloudvillage"}>广场</NavLink>
                             <NavLink activeClassName="cloudVillage-m" to={"/cloudvillage/2"}>动态</NavLink>
                         </div>
 
@@ -29,8 +33,11 @@ export default class CloudVillage extends React.Component{
 
                 </div>
                 {/*主体*/}
-                <Route className={"cloudVillage-main"} path={"/cloudvillage/:type"} component={Main}></Route>
-
+                <div className="cloudVillage-main">
+                    <Route className={"cloudVillage-main"} exact path={"/cloudvillage"} component={Square}></Route>
+                    <Route className={"cloudVillage-main"} path={"/cloudvillage/2"} component={Event}></Route>
+                </div>
+                {/*底部*/}
                 {/*footer*/}
                 <this.MyNav></this.MyNav>
             </div>
