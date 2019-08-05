@@ -3,6 +3,7 @@ import User from "../views/User"
 import MyMusic from "../views/MyMusic"
 import CloudVillage from "../views/CloudVillage"
 import Video from "../views/Video";
+import CloudVillageVideo from '../views/CloudVillage/Video'
 /*-------------------------------Video---------------------------------------------*/
 
 
@@ -186,6 +187,18 @@ export default [
         }
     },
     {
+        path:"/village/video/:id",
+        context:"云村视频",
+        component:CloudVillageVideo,
+        isShow:false,
+        iconName:"icon-renqun",
+        meta: {
+            title: "",
+            keyword: "",
+            descrieption: ""
+        }
+    },
+    {
         to:"/user",
         path:"/user",
         context:"账号",
@@ -198,7 +211,8 @@ export default [
             keyword:"",
             descrieption:""
         },
-    },{
+    },
+    {
         to:'/user/message',
         path:'/user/message',
         component:Message,

@@ -5,6 +5,7 @@
   color: #dfe7f2;
   padding: .32rem;
   overflow: hidden;
+
   .cloudVillage-hot-comments-l {
     float: left;
     width: 4.98rem;
@@ -22,8 +23,7 @@
     height: .55rem;
     line-height: .55rem;
     text-align: left;
-    position:relative;
-    .swiper-slide{
+    .swiper-slide {
       height: .55rem;
       width: 4.96rem;
       white-space: nowrap;
@@ -31,16 +31,55 @@
       text-overflow: ellipsis;
     }
   }
-  .cloudVillage-hot-comments-r{
+
+  .cloudVillage-hot-comments-r {
     float: right;
-    .c-month{
+
+    .c-month {
       font-size: .3rem;
       margin-bottom: .12rem;
     }
-    .c-day{
+
+    .c-day {
       font-size: .5rem;
       font-weight: bold;
       font-family: Arial;
+    }
+  }
+}
+.c-m-list{
+  margin-top:.2rem;
+  overflow: hidden;
+  column-count: 2;
+  .mv-list{
+    width: 3.34rem;
+    height: auto;
+    break-inside: avoid;
+    margin-bottom: .15rem;
+    border: .01rem solid white;
+    overflow: hidden;
+    border-radius: .2rem;
+    .mv-list-b{
+      padding: .11rem .2rem .3rem .17rem;
+      text-align: left;
+    }
+    p{
+      font-size: .26rem;
+      line-height: .36rem;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2;
+      margin-bottom: .25rem;
+    }
+    .mv-artistName{
+      float: left;
+      width: 1.08rem;
+      font-size: .22rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }
