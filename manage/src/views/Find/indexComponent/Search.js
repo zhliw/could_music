@@ -8,7 +8,9 @@ class Search extends React.Component{
             num:1,
             search:[],
             searchHot:[],
-            isShow:true
+            isShow:true,
+            keyword:'',
+            isTrue:true
         }
     }
     componentDidMount(){
@@ -21,25 +23,31 @@ class Search extends React.Component{
         })
     }
     search(e){
-        let keyWords=this.refs.searchWords.value
-        if(keyWords!==null){
+        if(e.target.value!==''){
             this.setState({
+                [e.target.name]:e.target.value,
                 isShow:false
             })
-        }else{
+        }else {
             this.setState({
                 isShow:true
             })
             
         }
-        console.log(keyWords)
-        if(keyWords!==null){
-            this.axios(`/search/suggest?keywords=${keyWords}&type=mobile`).then(data=>{
-            console.log(1111,data)
-            this.setState({
-                search:data.result
+        if(e.target.value!==''){
+            this.axios(`/search/suggest?keywords=${e.target.value}&type=mobile`).then(data=>{
+                console.log(1111,data)
+                if(data.result.allMatch){
+                    this.setState({
+                        search:data.result.allMatch,
+                        isTrue:true
+                    })
+                }else{
+                    this.setState({
+                        isTrue:false
+                    })
+                }
             })
-        })
         }
     }
     //热搜
@@ -51,7 +59,7 @@ class Search extends React.Component{
     render(){
         return(
             <div className={'search'}>
-                    <input ref={'searchWords'} defaultValue='' onChange={this.search.bind(this)} onKeyUp={(e)=>{
+                    <input name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e)=>{
                         if(e.keyCode===13){
                             this.props.history.push('/Search_To')
                         }
@@ -64,10 +72,23 @@ class Search extends React.Component{
                     <span className={'icon-geshou iconfont Singers'} onClick={()=>{
                         this.props.history.push('/Singer')
                     }}></span>
-
+                    {
+                        <div style={{display:!this.state.isShow?'block':'none'}} className={'searchList'}>
+                            搜索 "{this.state.keyword}"
+                            {
+                               this.state.isTrue?this.state.search.map((v,i)=>{
+                                   if(v.keyword){
+                                       return <div key={i}>{v.keyword}</div>
+                                   }
+                                }):null
+                            }
+                            
+                        </div>
+                    }
                    <div className='historyAndHot' style={{display:this.state.isShow?'block':'none'}}>
                         <div>
-                        <span>搜索历史</span> <span className={'icon-icon-- iconfont'}></span>
+                        <span>搜索历史</span>
+                        <span className={'icon-icon-- iconfont'}></span>
                         </div>
                         <div>
                             <span>送别</span>
