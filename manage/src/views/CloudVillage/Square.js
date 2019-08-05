@@ -7,6 +7,7 @@ import {bindActionCreators} from "redux"
 import cloudVillageCreator from '../../store/actionCreator/CloudVillage'
 import cloudVillage from "../../store/reducers/CloudVillage";
 import Swiper from 'swiper/dist/js/swiper.js';
+import NewMV from './NewMV'
 
 // import 'swiper/dist/css/swiper.min.css'
 class Square extends React.Component {
@@ -24,12 +25,9 @@ class Square extends React.Component {
                 <div className={"cloudVillage-hot-comments"}>
                     <div className={"cloudVillage-hot-comments-l"}>
                         <p className={"c-h-c-l-top"}  dangerouslySetInnerHTML={{__html: "云村热评墙&nbsp;>"}}></p>
-
+                        {/*热评墙的轮播热评*/}
                         <div className="swiper-container cloudVillage-hot-comments-list">
                             <div className="swiper-wrapper">
-                                {/*<div className="swiper-slide">Slide 1</div>*/}
-                                {/*<div className="swiper-slide">Slide 2</div>*/}
-                                {/*<div className="swiper-slide">Slide 3</div>*/}
                                 {
                                     hotComments.map((v, i) => {
                                         return (
@@ -44,19 +42,8 @@ class Square extends React.Component {
                             </div>
                         </div>
 
-                        {/*<div className={"cloudVillage-hot-comments-list"}>*/}
-                        {/*    {*/}
-                        {/*        hotComments.map((v, i) => {*/}
-                        {/*            return (*/}
-                        {/*                <p key={i}>*/}
-                        {/*                    <img style={{width: ".28rem", borderRadius: "50%"}}*/}
-                        {/*                         src={v.user.avatarUrl}></img> {v.content}*/}
-                        {/*                </p>*/}
-                        {/*            )*/}
-                        {/*        })*/}
-                        {/*    }*/}
-                        {/*</div>*/}
                     </div>
+                    {/*右侧 日期*/}
                     <div className={"cloudVillage-hot-comments-r"}>
                         <div className={"c-month"}>
                             {
@@ -71,13 +58,13 @@ class Square extends React.Component {
 
                     </div>
                 </div>
+                <NewMV  {...this.props}></NewMV>
             </div>
         )
     }
 
     componentDidMount() {
         this.props.getHotComments();
-
         function time() {
             let _date = new Date();
             let _month = _date.getMonth();
@@ -140,5 +127,5 @@ class Square extends React.Component {
     }
 }
 
-export default connect((state) => ({hotComments: state.cloudVillage.hotComments}), (dispatch) => bindActionCreators(cloudVillageCreator, dispatch))(Square)
+export default connect((state) => ({hotComments: state.cloudVillage.hotComments,newMV:state.cloudVillage.newMV}), (dispatch) => bindActionCreators(cloudVillageCreator, dispatch))(Square)
 
