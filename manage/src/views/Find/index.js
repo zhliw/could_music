@@ -1,6 +1,7 @@
 import React from "react";
 import {withRouter} from 'react-router-dom'
 import Swiper from 'swiper/dist/js/swiper.js'
+import '../../assets/css/Find/find.css'
 import 'swiper/dist/css/swiper.min.css'
 import axios from 'axios'
  class Find extends React.Component{

@@ -22,14 +22,25 @@ class Search extends React.Component{
     }
     search(e){
         let keyWords=this.refs.searchWords.value
+        if(keyWords!==null){
+            this.setState({
+                isShow:false
+            })
+        }else{
+            this.setState({
+                isShow:true
+            })
+            
+        }
         console.log(keyWords)
-        this.axios(`/search/suggest?keywords=${keyWords}&type=mobile`).then(data=>{
-            console.log(data)
+        if(keyWords!==null){
+            this.axios(`/search/suggest?keywords=${keyWords}&type=mobile`).then(data=>{
+            console.log(1111,data)
             this.setState({
                 search:data.result
             })
         })
-        console.log()
+        }
     }
     //热搜
     searchHot(){
@@ -53,7 +64,8 @@ class Search extends React.Component{
                     <span className={'icon-geshou iconfont Singers'} onClick={()=>{
                         this.props.history.push('/Singer')
                     }}></span>
-                    <div className='historyAndHot'>
+
+                   <div className='historyAndHot' style={{display:this.state.isShow?'block':'none'}}>
                         <div>
                         <span>搜索历史</span> <span className={'icon-icon-- iconfont'}></span>
                         </div>
@@ -80,6 +92,7 @@ class Search extends React.Component{
 
                                 </div>
                     </div>
+                    
             </div>
         )
     }

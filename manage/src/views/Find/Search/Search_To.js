@@ -23,13 +23,11 @@ export default class Search_To extends React.Component{
         })
     }
     search(){
-        let keyWords=this.refs.keyWords.value
-        console.log(keyWords)
     }
     render(){
         return(
             <div><this.Return />
-                <input defaultValue='' onKeyUp={this.search().bind(this)} className={'search_search_wn'} type='text' />
+                <input defaultValue='' onKeyUp={this.search.bind(this)} className={'search_search_wn'} type='text' />
                 <div>你可能感兴趣</div>
                 <div>
                     <span>单曲</span><span>播放全部</span>
