@@ -21,6 +21,8 @@ import Store from '../views/User/Store'
 import Login from '../views/User/Login'
 import PhoneLogin from '../views/User/PhoneLogin'
 import UserPassWord from '../views/User/UserPassWord'
+import UpPassWord from '../views/User/UpPassWord'
+import Code from '../views/User/Code'
 export default [
     {
         to: "/",
@@ -197,6 +199,16 @@ export default [
         to:'/user/userPassWord',
         path:'/user/userPassWord',
         component:UserPassWord,
+    },
+    {
+        to:'/user/uppassword',
+        path:'/user/uppassword',
+        component:UpPassWord,
+    },
+    {
+        to:'/user/code',
+        path:'/user/code',
+        component:Code,
     },
     ...Find_Nav
 ]

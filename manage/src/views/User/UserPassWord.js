@@ -38,6 +38,9 @@ class UserPassWord extends React.Component{
                     <div className={'login'}>
                         <p className={'phone'} style={{top:'0'}}><input name={'passWord'} type={'password'} value={this.state.passWord} onChange={this.handlerChange.bind(this)} autoFocus placeholder={'输入密码'}/></p>
                         <div className={'loginBtn'} style={{top:'2.5rem'}} onClick={this.userLogin.bind(this)}>立即登录</div>
+                        <span className={'upps'} onClick={()=>{
+                            this.props.history.push('/user/uppassword')
+                        }}>重设密码 ></span>
                     </div>
                 </div>
             </div>
