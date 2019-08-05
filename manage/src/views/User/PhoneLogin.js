@@ -1,6 +1,29 @@
 import React from "react";
-import {withRouter} from "react-router-dom";
+import { connect } from 'react-redux'
+import actionCreator from '../../store/actionCreator/Login'
+import {bindActionCreators} from "redux"
 class PhoneLogin extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            phone:''
+        }
+    }
+    componentWillReceiveProps(nextProps){
+        console.log(2222,nextProps.registerInfo)
+        if(nextProps.registerInfo.exist===1){
+            localStorage.userPhone = this.state.phone
+            this.props.history.push('/user/userPassWord')
+        }
+    }
+    handlerChange(e){
+        this.setState({
+            [e.target.name]:e.target.value
+        })
+    }
+    isRegister(){
+        this.props.isRegister(this.state.phone)
+    }
     render(){
         return (
             <div className={'ygz_phonelogin'}>
@@ -10,9 +33,14 @@ class PhoneLogin extends React.Component{
                     }}></i>
                     <span>手机号登录</span>
                 </header>
+                <div className={'login'}>
+                    <p>未注册的手机号登录后将自动创建账号</p>
+                    <p className={'phone'}><span>+86</span><input name={'phone'} value={this.state.phone} onChange={this.handlerChange.bind(this)} type={'text'} autoFocus placeholder={'输入手机号'}/></p>
+                    <div className={'loginBtn'} onClick={this.isRegister.bind(this)}>下一步</div>
+                </div>
             </div>
         )
     }
 }
 
-export default withRouter(PhoneLogin)
+export default connect((state)=>({registerInfo:state.login.registerInfo}),(dispatch)=>bindActionCreators(actionCreator,dispatch))(PhoneLogin)

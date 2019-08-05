@@ -14,6 +14,7 @@ import Skin from '../views/User/Skin'
 import Store from '../views/User/Store'
 import Login from '../views/User/Login'
 import PhoneLogin from '../views/User/PhoneLogin'
+import UserPassWord from '../views/User/UserPassWord'
 export default [
     {
         to: "/",
@@ -118,6 +119,7 @@ export default [
         context:"云村",
         component:CloudVillage,
         iconName:"icon-renqun",
+        isShow:true,
         meta: {
             title: "",
             keyword: "",
@@ -174,5 +176,10 @@ export default [
         to:'/user/phonelogin',
         path:'/user/phonelogin',
         component:PhoneLogin,
+    },
+    {
+        to:'/user/userPassWord',
+        path:'/user/userPassWord',
+        component:UserPassWord,
     }
 ]
