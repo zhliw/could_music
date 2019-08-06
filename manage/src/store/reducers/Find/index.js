@@ -6,5 +6,8 @@ export default function (state=stateInit,{type,payload}) {
     if(type === searchType.SEARCHLIST){
         state.search.push(payload);
     }
+    if(type === searchType.THESONG){
+        state.theSong=payload;
+    }
     return state;
 }

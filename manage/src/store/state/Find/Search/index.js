@@ -1,4 +1,4 @@
 export default {
     search:[],
-    searchHot:[]
+    theSong:{}
 }

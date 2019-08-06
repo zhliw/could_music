@@ -7,12 +7,25 @@ function searchList(payload){
         payload
     }
 }
+function theSong(payload){
+    return{
+        type:searchType.THESONG,
+        payload
+    }
+}
 export default{ 
     searchList(keyword){
         return async (dispatch) => {
             const data=await axios(`/search?keywords=${keyword}`)
-            console.log(11111,data)
-            dispatch(searchList(data))
+            console.log(11111,data.result.songs)
+            dispatch(searchList(data.result.songs))
+        }
+    },
+
+    theSong(id){
+        return async(dispatch)=>{
+            const data=await axios(`/song/url?id=${id}`)
+            dispatch(theSong(data))
         }
     }
 }
