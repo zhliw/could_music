@@ -4,7 +4,6 @@ import User from "../views/User"
 import MyMusic from "../views/MyMusic"
 import CloudVillage from "../views/CloudVillage"
 import Video from "../views/Video";
-
 import CloudVillageVideo from '../views/CloudVillage/Video';
 
 //FindNav
@@ -54,7 +53,6 @@ export default [
             {
                 to:'/video/',
                 path:"/video/",
-                component:"",
                 exact:true,
                 content:"说唱"
             },

@@ -1,119 +1,140 @@
 //搜索
 import React from 'react'
 import '../../../assets/css/Find/SearchHot.css'
-class Search extends React.Component{
-    constructor(){
+class Search extends React.Component {
+    constructor() {
         super()
-        this.state={
-            num:1,
-            search:[],
-            searchHot:[],
-            isShow:true,
-            keyword:'',
-            isTrue:true
+        this.state = {
+            num: 1,
+            search: [],
+            searchHot: [],
+            isShow: true,
+            keyword: '',
+            isTrue: true
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         //热搜榜
-        this.axios('/search/hot/detail').then(data=>{
-            console.log(data)
+        this.axios('/search/hot/detail').then(data => {
             this.setState({
-                searchHot:data.data
+                searchHot: data.data
             })
         })
     }
-    search(e){
-        if(e.target.value!==''){
+    search(e) {
+        if (e.target.value !== '') {
             this.setState({
-                [e.target.name]:e.target.value,
-                isShow:false
+                [e.target.name]: e.target.value,
+                isShow: false
             })
-        }else {
+        } else {
             this.setState({
-                isShow:true
+                isShow: true
             })
-            
+
         }
-        if(e.target.value!==''){
-            this.axios(`/search/suggest?keywords=${e.target.value}&type=mobile`).then(data=>{
-                console.log(1111,data)
-                if(data.result.allMatch){
+        if (e.target.value !== '') {
+            this.axios(`/search/suggest?keywords=${e.target.value}&type=mobile`).then(data => {
+                // console.log(1111, data)
+                if (data.result.allMatch) {
                     this.setState({
-                        search:data.result.allMatch,
-                        isTrue:true
+                        search: data.result.allMatch,
+                        isTrue: true
                     })
-                }else{
+                } else {
                     this.setState({
-                        isTrue:false
+                        isTrue: false
                     })
                 }
             })
         }
     }
     //热搜
-    searchHot(){
-        this.axios('/search/hot/detail').then(data=>{
-            console.log(data)
+    searchHot() {
+        this.axios('/search/hot/detail').then(data => {
         })
     }
-    render(){
-        return(
-            <div className={'search'}>
-                    <input name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e)=>{
-                        if(e.keyCode===13){
-                            this.props.history.push('/Search_To')
+    render() {
+        return (
+            <div>
+                <this.MyNav></this.MyNav>
+                <div className={'search'}>
+                    <input name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e) => {
+                        if (e.keyCode === 13) {
+                            this.props.history.push({
+                                pathname: '/Search_To/All',
+                                state: {
+                                    searchWord: e.target.value
+                                }
+                            })
+
                         }
                     }} className={'search_search_wn'} type='text' placeholder='大家都在搜 陈奕迅' />
-                        <span onClick={()=>{
-                            this.props.history.go(-1)
-                         }}>
-                         取消
+                    <span onClick={() => {
+                        this.props.history.go(-1)
+                    }}>
+                        取消
                         </span>
-                    <span className={'icon-geshou iconfont Singers'} onClick={()=>{
+                    <span className={'icon-geshou iconfont Singers'} onClick={() => {
                         this.props.history.push('/Singer')
                     }}></span>
                     {
-                        <div style={{display:!this.state.isShow?'block':'none'}} className={'searchList'}>
+                        <div style={{ display: !this.state.isShow ? 'block' : 'none' }} className={'searchList'}>
                             搜索 "{this.state.keyword}"
                             {
-                               this.state.isTrue?this.state.search.map((v,i)=>{
-                                   if(v.keyword){
-                                       return <div key={i}>{v.keyword}</div>
-                                   }
-                                }):null
+                                this.state.isTrue ? this.state.search.map((v, i) => {
+                                    if (v.keyword) {
+                                        return <div onClick={() => {
+                                            this.props.history.push({
+                                                pathname: '/Search_To',
+                                                state: {
+                                                    searchWord: v.keyword
+                                                }
+                                            })
+                                        }} key={i}>{v.keyword}</div>
+                                    }
+                                }) : null
                             }
-                            
+
                         </div>
                     }
-                   <div className='historyAndHot' style={{display:this.state.isShow?'block':'none'}}>
+                    <div className='historyAndHot' style={{ display: this.state.isShow ? 'block' : 'none' }}>
                         <div>
-                        <span>搜索历史</span>
-                        <span className={'icon-icon-- iconfont'}></span>
+                            <span>搜索历史</span>
+                            <span className={'icon-icon-- iconfont'}></span>
                         </div>
                         <div>
                             <span>送别</span>
                         </div>
-                                <div className={'SearchHot'}>
-                                    <p>热搜榜</p>
-                                    {
-                                        this.state.searchHot.map((v,i)=>{
-                                        return < React.Fragment key={i}>
-                                            <span style={{color:this.state.num<=3?'red':''}}>{this.state.num++}</span>
-                                            <span className={'searchWord'}>{v.searchWord}</span>
-                                            <span>{v.score}</span>
-                                            {
-                                                v.iconUrl?<img src={v.iconUrl} alt=""/>:null
+                        <div className={'SearchHot'}>
+                            <p>热搜榜</p>
+                            {
+                                this.state.searchHot.map((v, i) => {
+                                    return < div onClick={() => {
+                                        this.props.history.push({
+                                            pathname: '/Search_To',
+                                            state: {
+                                                searchWord: v.searchWord
                                             }
-                                            <div>{v.context}</div>
-                                        </ React.Fragment>
                                         })
-                                    }
-                                    
+                                    }} className={'SearchHotList'} key={i}>
+                                        <span style={{ color: i + 1 <= 3 ? 'red' : '', lineHeight: '0.7rem' }}>{i + 1}</span>
+                                        <span className={'searchWord'}>{v.searchWord}</span>
+                                        <span className={'score'}>{v.score}</span>
+                                        {
+                                            v.iconUrl ? <img src={v.iconUrl} alt="" /> : null
+                                        }
+                                        <div className={'content'}>{v.content}</div>
+                                    </ div>
+                                })
+                            }
 
 
-                                </div>
+
+                        </div>
                     </div>
-                    
+
+                </div>
             </div>
         )
     }

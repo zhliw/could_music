@@ -2,6 +2,9 @@
 .App {
   text-align: center;
 }
+.App a {
+  color:#959595;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;

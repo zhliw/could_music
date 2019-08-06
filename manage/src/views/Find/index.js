@@ -68,13 +68,13 @@ componentDidMount(){
                                 })}  
                             </div>
                             <div className="swiper-pagination"></div>
-                    
-                
-                    
                     {/* <!-- 如果需要滚动条 --> */}
-                    <div className="swiper-scrollbar"></div>
                             </div>
                         </div>
+
+
+
+
                 <div className='myFindNav_wn'>
                 <div onClick={()=>{
                     this.props.history.push('/RecommendedDaily')
