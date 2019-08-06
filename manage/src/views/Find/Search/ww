@@ -1,0 +1,48 @@
+//搜索完跳转页面
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    NavLink,
+} from 'react-router-dom'
+import findNav from '../../../router/Find_Nav'
+export default class Search_To extends React.Component{
+    constructor(){
+        super()
+        this.state={
+            findnav:[]
+        }
+    }
+    componentWillMount(){
+        let findnav=findNav.find(v=>v.to==="/Search_To").children
+        console.log(1212)
+        this.setState({
+            findnav
+        })
+    }
+    render(){
+        return(
+            <div><this.Return />
+                <input onKeyUp={(e)=>{
+                   
+                }} className={'search_search_wn'} type='text' />
+                <div>你可能感兴趣</div>
+                <div>
+                    <span>单曲</span><span>播放全部</span>
+                </div>
+                <Router> {this.state.findnav.map((v,i)=>{
+                    return( 
+                    <div>
+                        <NavLink to={v.to}>{v.context}</NavLink>
+                        <Route path={v.path} component={v.component}></Route>
+                    </div>
+                    )  
+                })}
+                </Router>
+               
+                        
+
+            </div>
+        )
+    }
+}
