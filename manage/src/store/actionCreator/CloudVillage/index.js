@@ -21,9 +21,9 @@ export default {
             dispatch(getHotComments(data.hotComments));
         }
     },
-    getNewMV(){
+    getNewMV(i=1){
         return async (dispatch) =>{
-            const {data} =await axios.get("/mv/first?limit=10");
+            const {data} =await axios.get("/mv/first?limit="+10*i);
             dispatch(getNewMV(data))
         }
     }
