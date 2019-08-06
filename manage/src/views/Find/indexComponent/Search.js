@@ -98,7 +98,7 @@ class Search extends React.Component{
                                     {
                                         this.state.searchHot.map((v,i)=>{
                                         return < React.Fragment key={i}>
-                                            <span style={{color:this.state.num<=3?'red':''}}>{this.state.num++}</span>
+                                            <span style={{color:i+1<=3?'red':''}}>{i+1}</span>
                                             <span className={'searchWord'}>{v.searchWord}</span>
                                             <span>{v.score}</span>
                                             {
