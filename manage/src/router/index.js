@@ -6,7 +6,6 @@ import Video from "../views/Video";
 /*-------------------------------Video---------------------------------------------*/
 
 
-
 /*------------------------------Find------------------------------------------*/
 import Leaderboard from './Find/Leaderboard'
 import LiveBroadcast from './Find/LiveBroadcast'
@@ -108,7 +107,6 @@ export default [
             {
                 to:'/video/',
                 path:"/video/",
-                component:"",
                 exact:true,
                 content:"说唱"
             },
