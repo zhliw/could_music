@@ -25,6 +25,8 @@ import Code from '../views/User/Code'
 import UserRegister from '../views/User/UserRegister'
 import CodeRegister from '../views/User/CodeRegister'
 import UserRegisterName from '../views/User/UserRegisterName'
+import UserAttention from '../views/User/UserAttention'
+import UserFans from "../views/User/UserFans";
 export default [
     {
         to: "/",
@@ -225,6 +227,16 @@ export default [
         to:'/user/userregistername',
         path:'/user/userregistername',
         component:UserRegisterName,
+    },
+    {
+        to:'/user/userattention',
+        path:'/user/userattention',
+        component:UserAttention,
+    },
+    {
+        to:'/user/userfans',
+        path:'/user/userfans',
+        component:UserFans,
     },
     ...Find_Nav
 ]

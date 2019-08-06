@@ -21,6 +21,12 @@ class My extends React.Component{
         this.state.userAttention = nextProps.userAttention
         this.state.userFans = nextProps.userFans
     }
+    goUserAttention(){
+        this.props.history.push('/user/userattention')
+    }
+    goUserFans(){
+        this.props.history.push('/user/userfans')        
+    }
     render(){
         return(
             <div className={'ygz'}>
@@ -49,7 +55,7 @@ class My extends React.Component{
                         <span style={{fontSize:'0.4rem',marginLeft:'0.2rem'}}>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
                     </div>
                     <div style={{display:'flex',justifyContent:'center',margin:'0.15rem 0'}}>
-                        <div style={{marginRight:'2rem'}}>
+                        <div style={{marginRight:'2rem'}} onClick={this.goUserAttention.bind(this)}>
                             <p style={{fontSize:'0.4rem',color:'#000'}}>
                                 {this.state.userAttention.length}
                             </p>
@@ -57,7 +63,7 @@ class My extends React.Component{
                                 关注
                             </p>
                         </div>
-                        <div>
+                        <div onClick={this.goUserFans.bind(this)}>
                             <p style={{fontSize:'0.4rem',color:'#000'}}>
                                 {this.state.userFans.length}
                             </p>
