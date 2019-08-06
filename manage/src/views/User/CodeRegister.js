@@ -14,6 +14,18 @@ class Code extends React.Component{
             [e.target.name]:e.target.value
         })
     }
+    async verifyCode(){
+        const data = await this.axios.get('/captcha/verify?phone='+localStorage.userPhone+'&captcha='+this.state.code)
+        console.log(data)
+        if(data.code===200){
+            this.props.history.push({
+                pathname:'/user/userregister',
+                state:{
+                    code:this.state.code
+                }
+            })
+        }
+    }
     render(){
         return(
             <div>
@@ -29,19 +41,15 @@ class Code extends React.Component{
                         <p className={'codeDown'}>+86{localStorage.userPhone}</p>
                     </div>
                     <input type={'text'} value={this.state.code} onChange={this.handlerChange.bind(this)} name={'code'} placeholder={'请输入四位验证码'}/>
-                    <div onClick={this.upPassWord.bind(this)} className={'upPSBtn'} style={{margin:'1rem auto'}}>提交</div>
+                    <div  className={'upPSBtn'} style={{margin:'1rem auto'}} onClick={this.verifyCode.bind(this)}>提交</div>
                 </div>
                 
             </div>
         )
     }
-    upPassWord(){
-        const data = this.axios.get(`/register/cellphone?phone=${this.props.location.state.userPhone}&password=${this.props.location.state.userPassWord}&captcha=${this.state.code}`)
-        if(data){
-            this.props.history.push('/user/userPassWord')
-        }else{
-            alert('服务器错误,请稍后再试!')
-        }
+    async componentDidMount(){
+        const data = await this.axios.get('/captcha/sent?phone='+localStorage.userPhone)
+        console.log(data)
     }
 }
 

@@ -29,12 +29,12 @@ class UserPassWord extends React.Component{
         return (
             <div>
                 <div className={'ygz_phonelogin'}>
-                    <header>
+                    <div className={'header'}>
                         <i className={'icon-gouwuche iconfont'} onClick={()=>{
                             this.props.history.go(-1)
                         }}></i>
                         <span>手机号登录</span>
-                    </header>
+                    </div>
                     <div className={'login'}>
                         <p className={'phone'} style={{top:'0'}}><input name={'passWord'} type={'password'} value={this.state.passWord} onChange={this.handlerChange.bind(this)} autoFocus placeholder={'输入密码'}/></p>
                         <div className={'loginBtn'} style={{top:'2.5rem'}} onClick={this.userLogin.bind(this)}>立即登录</div>

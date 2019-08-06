@@ -11,9 +11,13 @@ class PhoneLogin extends React.Component{
     }
     componentWillReceiveProps(nextProps){
         console.log(2222,nextProps.registerInfo)
+        //判断是否注册过，已经注册跳转到输入密码，否则跳转到注册
         if(nextProps.registerInfo.exist===1){
             localStorage.userPhone = this.state.phone
             this.props.history.push('/user/userPassWord')
+        }else{
+            localStorage.userPhone = this.state.phone
+            this.props.history.push('/user/coderegister')
         }
     }
     handlerChange(e){
@@ -27,12 +31,12 @@ class PhoneLogin extends React.Component{
     render(){
         return (
             <div className={'ygz_phonelogin'}>
-                <header>
+                <div className={'header'}>
                     <i className={'icon-gouwuche iconfont'} onClick={()=>{
                         this.props.history.go(-1)
                     }}></i>
                     <span>手机号登录</span>
-                </header>
+                </div>
                 <div className={'login'}>
                     <p>未注册的手机号登录后将自动创建账号</p>
                     <p className={'phone'}><span>+86</span><input name={'phone'} value={this.state.phone} onChange={this.handlerChange.bind(this)} type={'text'} autoFocus placeholder={'输入手机号'}/></p>
