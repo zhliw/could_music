@@ -3,7 +3,7 @@ import React from 'react'
 class Play extends React.Component{
     render(){
         return(
-            <div>  <this.Return />正在播放</div>
+            <div>  <this.MyNav /><this.Return />正在播放</div>
             
         )
     }

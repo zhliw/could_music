@@ -2,7 +2,7 @@ import React from "react";
 export default class Banner extends React.Component{
     render(){
         return(
-            <div>banner</div>
+            <div><this.MyNav />banner</div>
         )
     }
 }

@@ -58,10 +58,18 @@ class Search extends React.Component{
     }
     render(){
         return(
+            <div>
+                 <this.MyNav></this.MyNav>
             <div className={'search'}>
                     <input name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e)=>{
                         if(e.keyCode===13){
-                            this.props.history.push('/Search_To')
+                            this.props.history.push({
+                                pathname:'/Search_To',
+                                state:{
+                                    searchWord:e.target.value
+                                }
+                            })
+                            
                         }
                     }} className={'search_search_wn'} type='text' placeholder='大家都在搜 陈奕迅' />
                         <span onClick={()=>{
@@ -78,7 +86,14 @@ class Search extends React.Component{
                             {
                                this.state.isTrue?this.state.search.map((v,i)=>{
                                    if(v.keyword){
-                                       return <div key={i}>{v.keyword}</div>
+                                       return <div onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:'/Search_To',
+                                            state:{
+                                                searchWord:v.keyword
+                                            }
+                                        })
+                                    }} key={i}>{v.keyword}</div>
                                    }
                                 }):null
                             }
@@ -97,15 +112,22 @@ class Search extends React.Component{
                                     <p>热搜榜</p>
                                     {
                                         this.state.searchHot.map((v,i)=>{
-                                        return < React.Fragment key={i}>
-                                            <span style={{color:i+1<=3?'red':''}}>{i+1}</span>
+                                        return < div onClick={()=>{
+                                            this.props.history.push({
+                                                pathname:'/Search_To',
+                                                state:{
+                                                    searchWord:v.searchWord
+                                                }
+                                            })
+                                        }}className={'SearchHotList'} key={i}>
+                                            <span style={{color:i+1<=3?'red':'',lineHeight:'0.7rem'}}>{i+1}</span>
                                             <span className={'searchWord'}>{v.searchWord}</span>
-                                            <span>{v.score}</span>
+                                            <span className={'score'}>{v.score}</span>
                                             {
                                                 v.iconUrl?<img src={v.iconUrl} alt=""/>:null
                                             }
-                                            <div>{v.context}</div>
-                                        </ React.Fragment>
+                                            <div className={'content'}>{v.content}</div>
+                                        </ div>
                                         })
                                     }
                                     
@@ -114,6 +136,7 @@ class Search extends React.Component{
                                 </div>
                     </div>
                     
+            </div>
             </div>
         )
     }
