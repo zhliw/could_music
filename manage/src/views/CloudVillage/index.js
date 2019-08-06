@@ -12,7 +12,7 @@ import Square from "./Square"
 export default class CloudVillage extends React.Component{
     render(){
         return(
-            <div>
+            <div className={"cv-scroll"}>
                 {/*头部*/}
                 <div className={"cloudVillage"}>
 
