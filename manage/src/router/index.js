@@ -8,6 +8,9 @@ import CloudVillageVideo from '../views/CloudVillage/Video';
 
 //FindNav
 import Find_Nav from './Find_Nav';
+
+//MyMusic
+import MyMusicNav from './MyMusic_Nav'
 //User
 /*-------------------------------Video---------------------------------------------*/
 /*------------------------------Find------------------------------------------*/
@@ -238,5 +241,6 @@ export default [
         path:'/user/userfans',
         component:UserFans,
     },
-    ...Find_Nav
+    ...Find_Nav,
+    ...MyMusicNav
 ]

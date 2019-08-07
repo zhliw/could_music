@@ -1,0 +1,116 @@
+.songList{
+    font-size: 0.2rem;
+    background: #6a6f6b;
+}
+.SongListTop{
+    color: #fff;
+}
+.song_List_Header{
+    height: 1.5rem;
+    width: 100%;
+    color: #fff;
+    background: rgba(40,40,40,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.songListBot{
+    flex: 1;
+    padding-top: 1.5rem;
+    min-height: 13.34rem;
+}
+.SongListTop_head{
+    text-align: left;
+    padding: 0.2rem 0.3rem;
+    display: flex;
+}
+.SongListTop_head>img{
+    width: 2.4rem;
+    height: 2.4rem;
+}
+.ToMyMessage{
+    display: flex;
+    align-items: center;
+}
+.ToMyMessage img{
+    width: .6rem;
+    height: .6rem;
+}
+.ToMyMessage>div{
+    width: .6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.iconCol{
+    display: flex;
+    justify-content: space-around;
+}
+.iconCol i{
+    font-size: 0.4rem;
+}
+.iconCol p{
+    font-size: 0.14rem;
+}
+.SongListMain{
+    background:#fff;
+    min-height:7.84rem;
+    /*border-radius: 0.3rem 0.3rem 0 0;*/
+    /*position: sticky;*/
+    /*top: 1.5rem;*/
+    /*overflow: auto;*/
+}
+.SongListMainaa{
+    position: sticky;
+    /*top: 1.5rem;*/
+    top:0;
+    background: #6a6f6b;
+}
+.SongListMainSniky{
+    padding: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0.3rem 0.3rem 0 0;
+    background: #fff;
+}
+.MusicTag{
+    display: flex;
+    justify-content: flex-start;
+}
+.MusicTagCount{
+    display: block;width: 1rem;line-height: 1rem;
+}
+.MusicTagShow{
+    flex: 1;
+    text-align: left;
+}
+.MusicTagShowTop{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 5.5rem;
+
+}
+
+.MusicTagShowTop i{
+    color: #8b898a;
+}
+.MusicTagShow span{
+    line-height: 0.6rem;
+}
+.ant-drawer-content{
+    background: #cccccc;
+    text-align: center;
+}
+.OpenImg{
+    padding-top: 1.5rem;
+}
+.OpenImg img{
+    width: 3rem;
+    height: 3rem;
+}
