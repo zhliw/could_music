@@ -1,4 +1,5 @@
 export default {
     userMessage:{},
-    playList:[[],[]]
+    playList:[[],[]],
+    recentPlay:[]
 }

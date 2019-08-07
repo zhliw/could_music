@@ -63,5 +63,8 @@ html,body{
     transition:0.3s
 }
 .collageShow{
-    height:0;overflow:hidden
+    height:0;overflow:hidden;
+}
+.rightMesg {
+    padding: 0.1rem 0.3rem;
 }
