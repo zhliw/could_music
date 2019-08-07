@@ -18,7 +18,6 @@ import store from './store'
 import {
     Provider
 } from 'react-redux'
-import Swiper from 'swiper/dist/js/swiper.js';
 import 'swiper/dist/css/swiper.min.css'
 React.Component.prototype.Return=Return
 React.Component.prototype.Play=Play

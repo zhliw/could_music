@@ -1,0 +1,4 @@
+export default {
+    GET_SONG_LIST: "GET_SONG_LIST",
+    REMOVE_SONG_LIST:"REMOVE_SONG_LIST"
+}

@@ -2,7 +2,6 @@ import React from 'react'
 
 export default class Li extends React.Component{
     render() {
-        console.log(this.props.message)
         let message=this.props.message||{}
         return(
             <li className={" Ul-Li"} >

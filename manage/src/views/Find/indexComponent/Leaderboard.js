@@ -6,7 +6,7 @@ class Leaderboard extends React.Component{
     render(){
         console.log(this)
         return(
-            <div> <this.Return />排行榜</div>
+            <div> <this.MyNav /><this.Return />排行榜</div>
            
         )
     }

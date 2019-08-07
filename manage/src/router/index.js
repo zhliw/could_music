@@ -8,6 +8,9 @@ import CloudVillageVideo from '../views/CloudVillage/Video';
 
 //FindNav
 import Find_Nav from './Find_Nav';
+
+//MyMusic
+import MyMusicNav from './MyMusic_Nav'
 //User
 /*-------------------------------Video---------------------------------------------*/
 import VideoDetail from "../views/Video/videoDetail"
@@ -23,6 +26,11 @@ import PhoneLogin from '../views/User/PhoneLogin'
 import UserPassWord from '../views/User/UserPassWord'
 import UpPassWord from '../views/User/UpPassWord'
 import Code from '../views/User/Code'
+import UserRegister from '../views/User/UserRegister'
+import CodeRegister from '../views/User/CodeRegister'
+import UserRegisterName from '../views/User/UserRegisterName'
+import UserAttention from '../views/User/UserAttention'
+import UserFans from "../views/User/UserFans";
 export default [
     {
         to: "/",
@@ -214,5 +222,31 @@ export default [
         path:'/user/code',
         component:Code,
     },
-    ...Find_Nav
+    {
+        to:'/user/userregister',
+        path:'/user/userregister',
+        component:UserRegister,
+    },
+    {
+        to:'/user/coderegister',
+        path:'/user/coderegister',
+        component:CodeRegister,
+    },
+    {
+        to:'/user/userregistername',
+        path:'/user/userregistername',
+        component:UserRegisterName,
+    },
+    {
+        to:'/user/userattention',
+        path:'/user/userattention',
+        component:UserAttention,
+    },
+    {
+        to:'/user/userfans',
+        path:'/user/userfans',
+        component:UserFans,
+    },
+    ...Find_Nav,
+    ...MyMusicNav
 ]

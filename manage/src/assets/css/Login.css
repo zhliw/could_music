@@ -1,16 +1,16 @@
-.ygz header {
+.ygz .header {
     width: 100%;
     height: 0.95rem;
     background: red;
     font-size: 0.33rem;
     line-height: 0.95rem;
-    display: flex;
+    display: flex !important;
     box-sizing: border-box;
     padding: 0 0.28rem;
     justify-content: space-between;
 }
 
-.ygz header i {
+.ygz .header i {
     font-size: 0.42rem;
 }
 .ygz .loginInfo{
@@ -133,14 +133,14 @@
     border-radius: 20px;
 }
 
-.ygz_phonelogin header{
+.ygz_phonelogin .header{
     width:100%;
     height:1rem;
     line-height: 1rem;
     font-size: 0.33rem;
     position: relative;
 }
-.ygz_phonelogin header i{
+.ygz_phonelogin .header i{
     font-size: 0.45rem;
     color: black;
     font-weight: 900;
@@ -207,4 +207,22 @@
     color: #fff;
     border-radius: 40px;
     margin-top:1rem;
+}
+.ygz_phonelogin .codeInfo{
+    text-align: left;
+    margin-top:1.30rem;
+    margin-left:0.33rem;
+    margin-right:0.33rem;
+    border-bottom: 1px solid #bababa;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+}
+.ygz_phonelogin .codeInfo .codeTop{
+    font-size: 0.3rem;
+    font-weight: 900;
+    margin-bottom: 0.36rem;
+}
+.ygz_phonelogin .codeInfo .codeDown{
+    font-size: 0.23rem;
+    color: #bababa;
 }
