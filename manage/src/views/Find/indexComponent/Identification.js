@@ -5,7 +5,7 @@ class Identification extends React.Component{
         return(
             
             <div>
-                <this.Return /> 听歌识曲</div>
+               <this.MyNav /> <this.Return /> 听歌识曲</div>
             
         )
     }

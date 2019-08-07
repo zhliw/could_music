@@ -3,7 +3,9 @@ import React from 'react'
 class SongList extends React.Component{
     render(){
         return(
-            <div>  <this.Return />歌单</div>
+            <div> 
+                <this.MyNav />
+                 <this.Return />歌单</div>
         )
     }
 }

@@ -27,12 +27,12 @@ class Square extends React.Component {
                         <p className={"c-h-c-l-top"}  dangerouslySetInnerHTML={{__html: "云村热评墙&nbsp;>"}}></p>
                         {/*热评墙的轮播热评*/}
                         <div className="swiper-container cloudVillage-hot-comments-list">
-                            <div className="swiper-wrapper">
+                            <div className="swiper-wrapper cv-swiper-wrapper">
                                 {
                                     hotComments.map((v, i) => {
                                         return (
-                                            <div className="swiper-slide" key={i}>
-                                                <img style={{width: ".28rem", borderRadius: "50%",display:"inlineBlock"}}
+                                            <div className="swiper-slide cv-swiper-slide" key={i}>
+                                                <img style={{width: ".28rem",height:"auto", borderRadius: "50%",display:"inlineBlock"}}
                                                      src={v.user.avatarUrl}></img>
                                                 {v.content}
                                             </div>
@@ -119,7 +119,7 @@ class Square extends React.Component {
     }
 
     componentDidUpdate() {
-        var mySwiper = new Swiper('.swiper-container', {
+        var mySwiper = new Swiper('.cloudVillage-hot-comments-list', {
             direction: 'vertical', // 垂直切换选项
             loop: true, // 循环模式选项
             autoplay: true

@@ -51,10 +51,26 @@ body,html{
     padding:0.2rem 0.32rem;
     margin-bottom:0.05rem
 }
+.videoContentImgWarp{
+    position: relative;
+}
 .videoContentImg{
     width:6.86rem;
     height:3.86rem;
-    border-radius:0.15rem
+    border-radius:0.15rem;
+}
+.videobutton{
+    width:1rem;
+    height: 1rem;
+    border: none;
+    color:rgba(255,255,255,0.7);
+    background:0;
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin: auto;
 }
 .videoContentP{
     padding:0.2rem 0;

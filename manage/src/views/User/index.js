@@ -21,13 +21,19 @@ class My extends React.Component{
         this.state.userAttention = nextProps.userAttention
         this.state.userFans = nextProps.userFans
     }
+    goUserAttention(){
+        this.props.history.push('/user/userattention')
+    }
+    goUserFans(){
+        this.props.history.push('/user/userfans')        
+    }
     render(){
         return(
             <div className={'ygz'}>
                 <this.MyNav></this.MyNav>
-                <header>
+                <header style={{marginBottom:'0.1rem'}}>
                     <i className={'icon-saomiao iconfont'}></i>
-                    <span>账号</span>
+                    <span style={{color:'#000',fontSize:'0.34rem'}}>账号</span>
                     <i className={'icon-yinle1 iconfont'}></i>
                 </header>
                 <div style={{display:localStorage.userInfo?'none':'block'}}>
@@ -46,17 +52,31 @@ class My extends React.Component{
                 <div style={{display:localStorage.userInfo?'block':'none'}}>
                     <div>
                         <img  style={{borderRadius:'50%',height:'70px',width:'70px'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
-                        <span>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
+                        <span style={{fontSize:'0.4rem',marginLeft:'0.2rem'}}>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
                     </div>
-                    <div>
-                        关注：{this.state.userAttention.length}
-                        粉丝：{this.state.userFans.length}
+                    <div style={{display:'flex',justifyContent:'center',margin:'0.15rem 0'}}>
+                        <div style={{marginRight:'2rem'}} onClick={this.goUserAttention.bind(this)}>
+                            <p style={{fontSize:'0.4rem',color:'#000'}}>
+                                {this.state.userAttention.length}
+                            </p>
+                            <p>
+                                关注
+                            </p>
+                        </div>
+                        <div onClick={this.goUserFans.bind(this)}>
+                            <p style={{fontSize:'0.4rem',color:'#000'}}>
+                                {this.state.userFans.length}
+                            </p>
+                            <p>
+                                粉丝
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <div className={'VIP'}>
                     <div className={'left'}>
-                        <h2>开通黑胶VIP</h2>
+                        <h2 style={{color:'#f2e2e2'}}>开通黑胶VIP</h2>
                         <p>新客仅5元</p>
                     </div>
                     <div className={'right'}>

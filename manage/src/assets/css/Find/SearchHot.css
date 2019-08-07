@@ -1,6 +1,6 @@
 .SearchHot img{
     width:0.54rem;
-    height:0.18rem
+    height:0.19rem
 }
 .historyAndHot{
     text-align: left
@@ -12,5 +12,20 @@ height:0.4rem
     margin-left:0.33rem
 }
 .searchWord{
+    margin-left: 0.36rem;
+    font-size: 0.3rem;
+    font-weight: 600
+}
+.SearchHotList{
+    margin-bottom: 0.48rem;
+    height:0.7rem;
+}
+.score{
+    font-size: 0.20rem;
+    color: #d1d1d1;
+}
+.content{
+    font-size: 0.24rem;
+    color:#9a9a9a;
     margin-left: 0.36rem
 }

@@ -27,12 +27,12 @@ class UpPassWord extends React.Component{
     render(){
         return (
             <div className={'ygz_phonelogin'} style={{padding:'0 0.3rem'}}>
-                <header>
+                <div className={'header'}>
                     <i style={{marginLeft:'-0.3rem'}} className={'icon-gouwuche iconfont'} onClick={()=>{
                         this.props.history.go(-1)
                     }}></i>
                     <span>重设密码</span>
-                </header>
+                </div>
                 <p className={'userPhone_upPS'}>
                     <span style={{marginRight:'0.1rem'}}>+86</span><input type={'text'} disabled name={'userPhone'} onChange={this.handlerChange.bind(this)} value={this.state.userPhone}/>
                 </p>

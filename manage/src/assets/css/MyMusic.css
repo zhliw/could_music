@@ -1,5 +1,7 @@
+@import '~antd/dist/antd.css';
 *{
     box-sizing: border-box;
+    margin: 0;padding: 0;
 }
 html,body{
     width: 100%;height: 100%;
@@ -67,4 +69,7 @@ html,body{
 }
 .rightMesg {
     padding: 0.1rem 0.3rem;
+}
+.footer{
+    overflow: hidden;
 }

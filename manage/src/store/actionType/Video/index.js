@@ -1,0 +1,4 @@
+export default {
+    GET_VIDEO_LIST:"GET_VIDEO_LIST",
+    CHANGE_VIDEO_LIST:"CHANGE_VIDEO_LIST"
+}
