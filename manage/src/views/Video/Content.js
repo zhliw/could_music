@@ -127,109 +127,111 @@ class Content extends React.Component{
         let videoList = this.props.videoList || [];
         return(
             <div id={"myDiv"}>
-                <div>
-                    {
-                        this.state.visible?(<Drawer
-                            bodyStyle={{
-                                margin:0,
-                                padding:0,
-                                color:"rgba(0,0,0,0.8)",
-                                height:"100%",
-                                position:"relative"
-                            }}
-                            width="100%"
-                            placement="right"
-                            closable={false}
-                            onClose={this.onClose}
-                            visible={this.state.visible}
-                        >
-                            <p><span onClick={this.onClose} style={{position:"absolute",top:"0.35rem",zIndex:"10",left:"0.35rem",color:"#ccc"}} className={"iconfont"}>&#xe6ac;</span></p>
-                            <p style={{background:"#000"}}>
+                <div style={{background:"#000"}}>
+                {
+                    this.state.visible?(<Drawer
+                        bodyStyle={{
+                            margin:0,
+                            padding:0,
+                            color:"rgba(0,0,0,0.8)",
+                            height:"100%",
+                            textAlign:"left",
+                            position:"relative"
+                        }}
+                        destroyOnClose={true}
+                        width="100%"
+                        placement="right"
+                        closable={false}
+                        onClose={this.onClose}
+                        visible={this.state.visible}
+                    >
+                        <p><span onClick={this.onClose} style={{position:"absolute",top:"0.35rem",zIndex:"10",left:"0.35rem",color:"#ccc"}} className={"iconfont"}>&#xe6ac;</span></p>
+                        <p style={{background:"#000"}}>
+                            {
+                                this.state.videoSrc.length>0?(<video width={"100%"} height={211} autoPlay controls src={this.state.videoSrc[0].url.replace(/\s*/g,"")} ></video>):""
+                            }
+                        </p>
+                        <div style={{padding:"0 0.35rem"}}>
+                            <p style={{fontSize:"0.34rem",padding:"0.2rem 0"}}>
                                 {
-                                    this.state.videoSrc.length>0?(<video width={"100%"} height={211} autoPlay controls src={this.state.videoSrc[0].url.replace(/\s*/g,"")} ></video>):""
+                                    this.state.videoInfo.title
                                 }
                             </p>
-                            <div style={{padding:"0 0.35rem"}}>
-                                <p style={{fontSize:"0.34rem",padding:"0.2rem 0"}}>
-                                    {
-                                        this.state.videoInfo.title
-                                    }
-                                </p>
-                                <div style={{display:"flex",justifyContent:"space-between"}}>
-                                    <p style={{width:"2rem",}}>{this.state.videoInfo.playTime}次观看</p>
-                                    {/*<div style={{display:"flex",justifyContent:"space-between"}}>*/}
-                                    {/*{*/}
-                                    {/*this.state.videoInfo.videoGroup.map((v,i)=>{*/}
-                                    {/*return(*/}
-                                    {/*<p key={i} style={{fontSize:"0.2rem",border:"0.01rem solid #ccc",flexShrink:"1",width:"auto",padding:"0.1rem 0.15rem",margin:"0 0.12rem",borderRadius:"0.2rem"}}>{v.name}</p>*/}
-                                    {/*)*/}
-                                    {/*})*/}
-                                    {/*}*/}
-                                    {/*</div>*/}
-                                </div>
-                                <div style={{display:"flex",justifyContent:"space-between",marginTop:"0.7rem"}}>
-                                    <p>点赞{this.state.videoInfo.praisedCount}</p>
-                                    <p>收藏{this.state.videoInfo.subscribeCount}</p>
-                                    <p>评论{this.state.videoInfo.commentCount}</p>
-                                </div>
+                            <div style={{display:"flex",justifyContent:"space-between"}}>
+                                <p style={{width:"2rem",}}>{this.state.videoInfo.playTime}次观看</p>
+                                {/*<div style={{display:"flex",justifyContent:"space-between"}}>*/}
+                                {/*{*/}
+                                {/*this.state.videoInfo.videoGroup.map((v,i)=>{*/}
+                                {/*return(*/}
+                                {/*<p key={i} style={{fontSize:"0.2rem",border:"0.01rem solid #ccc",flexShrink:"1",width:"auto",padding:"0.1rem 0.15rem",margin:"0 0.12rem",borderRadius:"0.2rem"}}>{v.name}</p>*/}
+                                {/*)*/}
+                                {/*})*/}
+                                {/*}*/}
+                                {/*</div>*/}
+                            </div>
+                            <div style={{display:"flex",justifyContent:"space-between",marginTop:"0.7rem"}}>
+                                <p className={"iconfont"}>&#xe613;{this.state.videoInfo.praisedCount}</p>
+                                <p className={"iconfont"}>&#xe632;{this.state.videoInfo.subscribeCount}</p>
+                                <p className={"iconfont"}>&#xe628;{this.state.videoInfo.commentCount}</p>
+                            </div>
 
-                            </div>
-                            <div style={{display:"flex", justifyContent:"space-between", height:"1rem",borderTop:"0.01rem solid #e4e4e4",borderBottom:"0.01rem solid #e4e4e4",padding:"0.2rem 0.35rem 0"}}>
-                                <p><img style={{width:"0.6rem",height:"0.6rem",borderRadius:"50%",margin:"0 0.2rem 0 0"}} src={this.state.videoInfo.avatarUrl} alt=""/><span style={{fontSize:"0.26rem",color:"#000"}}>{this.state.videoInfo.creator.nickname}</span></p>
-                                <p style={{height:"0.52rem",width:"1.24rem",background:"#ff403b",borderRadius:"0.26rem",color:"#fff",textAlign:"center",lineHeight:"0.52rem"}}>十<span style={{marginLeft:"0.08rem"}}>关注</span></p>
-                            </div>
-                            <div style={{padding:"0 0.35rem"}}>
-                                <div>
-                                    <p style={{marginTop:"0.2rem",fontSize:"0.26rem",color:"#000",fontWeight:"600"}}>相关推荐</p>
-                                    {
-                                        this.state.videuRelevant.map((v,i)=>{
-                                            return(
-                                                <div key={i} style={{marginTop:"0.2rem",display:"flex",justifyContent:"space-between"}}>
-                                                    <img style={{width:"2.48rem",height:"1.4rem",borderRadius:"0.1rem"}} src={v.coverUrl} alt=""/>
-                                                    <div style={{width:"4.3rem",marginLeft:"0.1rem"}}>
-                                                        <p style={{fontSize:"0.28rem",fontWeight:"500",color:"#000"}}>{v.title}</p>
-                                                        <p style={{fontSize:"0.24rem",color:"#9d9d9d"}}>{v.durationms}, {v.creator[0].userName}</p>
-                                                    </div>
+                        </div>
+                        <div style={{display:"flex", justifyContent:"space-between", height:"1rem",borderTop:"0.01rem solid #e4e4e4",borderBottom:"0.01rem solid #e4e4e4",padding:"0.2rem 0.35rem 0"}}>
+                            <p><img style={{width:"0.6rem",height:"0.6rem",borderRadius:"50%",margin:"0 0.2rem 0 0"}} src={this.state.videoInfo.avatarUrl} alt=""/><span style={{fontSize:"0.26rem",color:"#000"}}>{this.state.videoInfo.creator.nickname}</span></p>
+                            <p style={{height:"0.52rem",width:"1.24rem",background:"#ff403b",borderRadius:"0.26rem",color:"#fff",textAlign:"center",lineHeight:"0.52rem"}}>十<span style={{marginLeft:"0.08rem"}}>关注</span></p>
+                        </div>
+                        <div style={{padding:"0 0.35rem"}}>
+                            <div>
+                                <p style={{marginTop:"0.2rem",fontSize:"0.26rem",color:"#000",fontWeight:"600",lineHeight:"0.86rem"}}>相关推荐</p>
+                                {
+                                    this.state.videuRelevant.map((v,i)=>{
+                                        return(
+                                            <div key={i} style={{marginTop:"0.2rem",display:"flex",justifyContent:"space-between"}}>
+                                                <img style={{width:"2.48rem",height:"1.4rem",borderRadius:"0.1rem"}} src={v.coverUrl} alt=""/>
+                                                <div style={{width:"4.3rem",marginLeft:"0.1rem"}}>
+                                                    <p style={{fontSize:"0.28rem",fontWeight:"500",color:"#000"}}>{v.title}</p>
+                                                    <p style={{fontSize:"0.24rem",color:"#9d9d9d"}}>{v.durationms}, {v.creator[0].userName}</p>
                                                 </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                                <div>
-                                    <p style={{marginTop:"0.2rem",fontSize:"0.26rem",color:"#000",fontWeight:"600"}}>精彩评论</p>
-                                    {
-                                        this.state.videoCommit.map((v,i)=>{
-                                            return(
-                                                <div key={i} style={{display:"flex"}}>
-                                                    <div style={{width:"0.6rem",marginRight:"0.2rem",padding:"0.26rem 0"}}>
-                                                        <img style={{width:"0.6rem",height:"0.6rem",borderRadius:"50%"}} src={v.user.avatarUrl} alt=""/>
-                                                    </div>
-                                                    <div style={{borderTop:"0.01rem solid #ccc",width:"6.2rem"}}>
-                                                        <div style={{display:"flex",justifyContent:"space-between",padding:"0.26rem 0 0"}}>
-                                                            <div>
-                                                                <h2 style={{fontSize:"0.24rem",color:"#000"}}>{v.user.nickname}</h2>
-                                                                <h3 style={{fontSize:"0.16rem",color:"#9c9c9c"}}>{v.time}</h3>
-                                                            </div>
-                                                            <div>点赞{v.likedCount}</div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                            <div>
+                                <p style={{marginTop:"0.2rem",fontSize:"0.26rem",color:"#000",fontWeight:"600",lineHeight:"0.86rem"}}>精彩评论</p>
+                                {
+                                    this.state.videoCommit.map((v,i)=>{
+                                        return(
+                                            <div key={i} style={{display:"flex"}}>
+                                                <div style={{width:"0.6rem",marginRight:"0.2rem",padding:"0.26rem 0"}}>
+                                                    <img style={{width:"0.6rem",height:"0.6rem",borderRadius:"50%"}} src={v.user.avatarUrl} alt=""/>
+                                                </div>
+                                                <div style={{borderBottom:"0.01rem solid #ccc",width:"6.2rem"}}>
+                                                    <div style={{display:"flex",justifyContent:"space-between",padding:"0.26rem 0 0"}}>
+                                                        <div>
+                                                            <h2 style={{fontSize:"0.24rem",color:"#000"}}>{v.user.nickname}</h2>
+                                                            <h3 style={{fontSize:"0.16rem",color:"#9c9c9c"}}>{v.time}</h3>
                                                         </div>
-                                                        <p style={{lineHeight:"0.48rem",fontSize:"0.28rem",color:"#000"}}>{v.content}</p>
-                                                        {
-                                                            v.beReplied.length>0?(<span style={{color:"#8598b3",lineHeight:"0.48rem",marginBottom:"0.24rem"}}>{v.beReplied.length}条回复></span>):""
-                                                        }
-
+                                                        <div className={"iconfont"}>&#xe613;{v.likedCount}</div>
                                                     </div>
+                                                    <p style={{lineHeight:"0.48rem",fontSize:"0.28rem",color:"#000"}}>{v.content}</p>
+                                                    {
+                                                        v.beReplied.length>0?(<span style={{color:"#8598b3",lineHeight:"0.48rem",marginBottom:"0.24rem"}}>{v.beReplied.length}条回复></span>):""
+                                                    }
+
                                                 </div>
-                                            )
-                                        })
-                                    }
-                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
+                        </div>
 
-                        </Drawer>):(<div></div>)
-                    }
+                    </Drawer>):(<div></div>)
+                }
 
 
-                </div>
+            </div>
                 {
                     videoList.map((v,i)=>{
                         return(
