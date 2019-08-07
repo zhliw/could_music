@@ -1,0 +1,58 @@
+.cv-event{
+  width: 100%;
+  padding-bottom: 1rem;
+  header{
+    width: 100%;
+    height: .96rem;
+    border-bottom: .15rem solid #f7f7f7;
+    padding: 0;
+  }
+  .cv-event-public{
+    width: 50%;
+    font-size: .28rem;
+    .iconfont{
+      font-size: .46rem;
+    }
+  }
+  .cv-video-item{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: .42rem 0;
+    border-bottom: .01rem solid #e7e7e7;
+    text-align: left;
+    .cv-video-userPic{
+      margin-left: .3rem;
+      margin-right: .2rem;
+    }
+    .cv-video-userName{
+      color: #5b7c85;
+      font-size: .28rem;
+      height: .3rem;
+      line-height: .3rem;
+      margin-bottom: .1rem;
+    }
+    .cv-video-fans{
+      clear: both;
+      height: .2rem;
+      line-height: .2rem;
+      display: block;
+      color: #9f9f9f;
+      font-size: .2rem;
+      margin-bottom: .33rem;
+    }
+    .cv-video-msg{
+      clear: both;
+      height: auto;
+      width: 5.85rem;
+      overflow: hidden;
+      font-size: .28rem;
+      margin-bottom: .22rem;
+    }
+
+  }
+  .cv-event-main{
+    width: 100%;
+    padding-right: .32rem;
+  }
+}

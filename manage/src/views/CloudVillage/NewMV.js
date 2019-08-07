@@ -46,6 +46,7 @@ export default class NewMV extends React.Component {
     componentDidMount() {
         this.props.getNewMV();
         var timer,i=1;
+        console.log(123456)
         document.getElementsByClassName("cv-scroll")[0].onscroll=()=>{
             if(Math.ceil(this.getScrollTop()) + this.getClientHeight() >= this.getScrollHeight()){
                 ++i
@@ -56,11 +57,6 @@ export default class NewMV extends React.Component {
                 })
             }
         }
-
-    }
-
-    componentWillUpdate() {
-        console.log(1111, this.props.newMV);
     }
 
 
