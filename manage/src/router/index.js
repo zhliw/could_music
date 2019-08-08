@@ -172,7 +172,7 @@ export default [
     },
     {
         to:'/user/message',
-        path:'/user/message',
+        path:'/user/message/:type',
         component:Message,
         context:'信息',
         iconName:'icon-xiaoxi',
@@ -253,7 +253,6 @@ export default [
         path:'/user/userplaylist',
         component:UserPlayList,
     },
-    ...Find_Nav,
     ...Find_Nav,
     ...MyMusicNav
 ]

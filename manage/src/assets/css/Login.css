@@ -225,3 +225,28 @@
     font-size: 0.23rem;
     color: #bababa;
 }
+.ygz_message .myNav li{
+    float: left;
+    width:1.71rem;
+    height:0.54rem;
+    line-height: 0.54rem;
+    border-radius: 22px;
+}
+.ygz_message .privateLetter{
+    padding: 0 0.31rem;
+}
+.ygz_message img{
+    border-radius: 50%;
+    margin-right: 0.22rem;
+}
+.ygz_message .myMessage{
+    margin: 0.48rem 0 ;
+}
+.ygz_message .myMessage .name{
+    font-size: 0.33rem;
+    color: #000;
+    font-weight: 400;
+}
+.ygz_message .myMessage .describe{
+    margin-top: 0.26rem;
+}

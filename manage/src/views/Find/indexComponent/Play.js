@@ -7,11 +7,23 @@ class Play extends React.Component{
     constructor(){
         super()
         this.state={
-            url:''
+            url:'',
+            isPlay:false
         }
     }
     componentWillMount(){
-        this.props.theSong(this.props.location.state.massage.id)
+       if(this.props.location.state){
+           console.log(this.props.location.state.id)
+           this.props.theSong(this.props.location.state.id)
+           
+       }
+    }
+    controltheAudio(){
+        let theAudio=document.getElementById('aud')
+        this.setState({
+            isPlay:!this.state.isPlay
+        })
+        this.state.isPlay?theAudio.pause():theAudio.play()
     }
     componentWillReceiveProps(n){
         console.log(888888,n)
@@ -22,7 +34,11 @@ class Play extends React.Component{
     render(){
         return(
             <div>  <this.MyNav /><this.Return />
-            <audio controls='controls' src={this.state.url}>播放</audio>
+               <div>
+                <audio  id="aud"  src={this.state.url} >
+                </audio>
+                    <span onClick={this.controltheAudio.bind(this)} style={{fontSize:'0.95rem'}} className={this.state.isPlay?'icon-bofangzanting iconfont':'icon-ttpodicon iconfont'}></span>
+                </div>
             </div>
             
         )
