@@ -254,6 +254,5 @@ export default [
         component:UserPlayList,
     },
     ...Find_Nav,
-    ...Find_Nav,
     ...MyMusicNav
 ]

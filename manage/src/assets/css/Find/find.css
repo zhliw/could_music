@@ -2,7 +2,7 @@
     margin:0;
     padding:0
 }
-.songlistheader,.myFindNav_wn{
+.myFindNav_wn{
     display:flex;
     justify-content:space-between;
     padding:0 0.32rem;
@@ -85,7 +85,11 @@ header{
 }
 .name{
     width:2.15rem;
+    font-size: 0.25rem;
+    text-align: left;
     word-wrap:break-word;
+    margin-top: 0.18rem;
+    margin-bottom: 0.42rem
 }
 .sonlistSquare{
     font-size: 0.25rem;
@@ -106,8 +110,8 @@ header{
     font-size: 0.34rem;
     font-weight: 800
 }
-.songList{
-    margin-top: 0.43rem
+.songListwn{
+    margin-top: 0.43rem;
 }
 .songlist{
     margin-top: 0.3rem
@@ -131,14 +135,30 @@ header{
     width:2.09rem;
     word-wrap:break-word;
 }
-.theSonglist .discription{
+.discription{
     display:flex;
     
 }
-.theSonglist .theDiscription{
+ .theDiscription{
     width: 3.56rem;
     height: 2.59rem;
     
     
+}
+.songlisthead{
+    display:flex;
+    justify-content:space-between;
+    padding:0 0.32rem;
+
+}
+.discription{
+   text-align: left;
+   display: flex;
+   justify-content: space-between;
+   padding:0 0.32rem;   
+   margin-top:0.66rem
+}
+.allSong{
+
 }
 /* 3.56 2.59 */

@@ -26,7 +26,6 @@ export default class AllSonglist extends React.Component{
         return(
             <div>
                 <this.MyNav></this.MyNav>
-
                  <div>  
                 <span onClick={()=>{
                     this.props.history.push('/')

@@ -23,7 +23,7 @@ class Find extends React.Component {
     }
     getBanner() {
         this.axios.get('/banner').then(data => {
-            // console.log(data)
+            console.log(data)
             this.setState({
                 banner: data.banners
 
@@ -46,12 +46,14 @@ class Find extends React.Component {
 
         })
     }
+    //歌单
     async getSonglist() {
         const data = await this.axios('/personalized')
         // console.log(data)
         this.setState({
             sixsonglist: data.result.slice(0,6)
         })
+        console.log(this.state.sixsonglist)
     }
     render() {
         return (
@@ -128,7 +130,7 @@ class Find extends React.Component {
                 <div className='line_wn'></div>
 
                 {/* 歌单 */}
-                <div className='songList'>
+                <div className='songListwn'>
                     <div className='sonList_wn'>
                         <span className={'recommend'}>推荐歌单</span>
                         <span className={'sonlistSquare'} onClick={()=>{
@@ -139,11 +141,18 @@ class Find extends React.Component {
                         {
                             this.state.sixsonglist.map((v, i) => {
                                 return (
-                                    <div key={i}>
+                                    <div onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:'/Song',
+                                            state:{
+                                                id:v.id
+                                            }
+                                        })
+                                    }} key={i}>
                                         <p>
                                             <img style={{width:'2.15rem',height:'2.15rem'}} src={v.picUrl} alt=""/>
                                         </p>
-                                        <p className={'name'}>{v.name}</p>
+                                        <p className={'name'}>{v.name.substr(0,15)+'...'}</p>
                                         <span>{v.playCount}</span>
                                     </div>
                                 )
