@@ -158,5 +158,16 @@ header{
    padding:0 0.32rem;   
    margin-top:0.66rem
 }
-
+.dis{
+margin-top: 0.36rem;
+}
+.fourIcon{
+   padding:0 0.70rem;   
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem
+}
+.fourIcon p{
+    font-size: 0.43rem
+}
 /* 3.56 2.59 */

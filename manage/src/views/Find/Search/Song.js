@@ -51,12 +51,38 @@ export default class Song extends React.Component {
                         <img style={{ width: '2.81rem', height: '2.81rem', }} src={this.state.songlist.coverImgUrl} alt="" />
                         <div className="theDiscription">
                             <div style={{fontSize:'0.35rem',fontWeight:'700'}}>{this.state.songlist.name}</div>
+                                <div style={{marginTop:'0.25rem'}}>
                                 <img style={{width:'0.6rem',height:'0.6rem',borderRadius:'50%'}}src={this.state.songlist.creator?this.state.songlist.creator.avatarUrl:''} alt="" />
                                 <span style={{fontSize:'0.27rem'}}>{this.state.songlist.creator?this.state.songlist.creator.nickname:''}</span>
+                                </div>
+                                
                             <div className={'dis'}>{this.state.discription}</div>
                         </div>
                     </div>
-                    <div>四个图标</div>
+                    <div>
+                        <div className={'fourIcon'}>
+                            <div>
+                            <span style={{fontSize:'0.43rem'}} className={'icon-pinglun iconfont'}></span>
+                            <p style={{fontSize:'0.25rem'}}>{this.state.songlist.commentCount}</p>
+                            </div>
+                            <div>
+                            <span style={{fontSize:'0.43rem'}} className={'icon-fenxiang2 iconfont'}></span>
+                            <p style={{fontSize:'0.25rem'}}>{this.state.songlist.shareCount}</p>
+                            </div>
+                            <div>
+                            <span style={{fontSize:'0.43rem'}} className={'icon-xiazai1 iconfont'}></span>
+                            <p style={{fontSize:'0.25rem'}}>下载</p>
+                            </div>
+                            <div>
+                            <span style={{fontSize:'0.43rem'}} className={'icon-duoxuan iconfont'}></span>
+                            <p style={{fontSize:'0.25rem'}}>多选</p>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                        
                 </div>
                     <div style={{width: '100%',height:'100%', borderTopLeftRadius:'30px',borderTopRightRadius:'30px'}}>
                         <div>
