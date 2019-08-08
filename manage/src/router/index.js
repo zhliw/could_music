@@ -172,7 +172,7 @@ export default [
     },
     {
         to:'/user/message',
-        path:'/user/message',
+        path:'/user/message/:type',
         component:Message,
         context:'信息',
         iconName:'icon-xiaoxi',

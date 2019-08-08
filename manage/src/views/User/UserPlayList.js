@@ -8,14 +8,33 @@ class UserPlayList extends React.Component{
             userFans:JSON.parse(localStorage.userFans),
             userAttention:JSON.parse(localStorage.userAttention)
         }
+        this.handleScroll = this.handleScroll.bind(this)
     }
     componentWillMount(){
-
+        window.addEventListener('scroll',this.handleScroll)
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll',this.handleScroll)
+    }
+    handleScroll(e){
+        let myDiv = document.getElementById('myDiv')
+        let myHeader = document.getElementById('myHeader')
+        if(document.documentElement.scrollTop>'320'){
+            myDiv.style.position = 'fixed'
+            myDiv.style.top = '0rem'
+            myHeader.style.display = 'none'
+        }else{
+            myDiv.style.position = 'absolute'
+            myDiv.style.bottom = '0'
+            myDiv.style.top = null
+            myHeader.style.display = 'block'
+        }
     }
     render(){
         return (
             <div>
-                <header style={{marginBottom:'0.1rem',opacity:'.6',position:'fixed',zIndex:'2',top:'0'}}>
+                <this.MyNav></this.MyNav>
+                <header id={'myHeader'} style={{marginBottom:'0.1rem',opacity:'.6',position:'fixed',zIndex:'2',top:'0'}}>
                     <i className={'icon-fanhui iconfont'} onClick={()=>{this.props.history.go(-1)}}></i>
                     <span style={{color:'#000',fontSize:'0.34rem',marginLeft:'2rem'}}>{this.state.userName}</span>
                     <i className={'icon-yinle1 iconfont'} style={{marginLeft:'2rem'}}></i>
@@ -25,12 +44,12 @@ class UserPlayList extends React.Component{
                     <img src={this.state.userPlayList[0].creator.avatarUrl} alt="" style={{width:'100%',position:'absolute',top:'1.5rem',left:'0.37rem',height:'1.6rem',width:'1.6rem',borderRadius:'50%'}}/>
                     <p style={{position:'absolute',left:'0.43rem',top:'3.3rem',fontSize:'0.3rem',color:'#fff',fontWeight:'900'}}>{this.state.userName}</p>
                     <p style={{position:'absolute',left:'0.43rem',top:'4rem',fontSize:'0.3rem',color:'#fff',fontWeight:'600'}}>关注<span>{this.state.userAttention.length}</span> | 粉丝<span>{this.state.userFans.length}</span></p>
-                    <div style={{position:'absolute',height:'1rem',width:'100%',background:'#fff',bottom:'0',fontSize:'0.3rem',fontWeight:'900',color:'red',borderTopLeftRadius:'30px',borderTopRightRadius:'30px',borderBottom:'1px solid #eaeaea',lineHeight:'1rem'}}>音乐</div>
+                    <div id={'myDiv'} style={{position:'absolute',height:'1rem',width:'100%',background:'#fff',bottom:'0',fontSize:'0.3rem',fontWeight:'900',color:'red',borderTopLeftRadius:'30px',borderTopRightRadius:'30px',borderBottom:'1px solid #eaeaea',lineHeight:'1rem'}}>音乐</div>
                 </div>
                 {
                     this.state.userPlayList.map((v,i)=>{
                         return (
-                            <div style={{display:'flex',marginTop:'0.2rem',textAlign:'left'}} key={i}>
+                            <div style={{display:'flex',marginTop:'0.2rem',textAlign:'left'}} key={i} onClick={()=>{this.props.history.push('/MySongList',v.id)}}>
                                 <img src={v.coverImgUrl} alt=""style={{height:'1rem',width:'1rem',borderRadius:'0.1rem',marginLeft:'0.3rem'}}/>
                                 <div style={{marginLeft:'0.2rem'}}>
                                     <p style={{fontSize:'0.3rem',marginTop:'0.2rem'}}>{v.name}</p>

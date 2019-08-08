@@ -19,10 +19,12 @@ import {
     Provider
 } from 'react-redux'
 import 'swiper/dist/css/swiper.min.css'
+import filters from './common/filters'
 React.Component.prototype.Return=Return
 React.Component.prototype.Play=Play
 React.Component.prototype.MyNav = MyNav;
 React.Component.prototype.axios = axios;
+React.Component.prototype.filters = filters;
 axios.interceptors.request.use(config=>{
     config.url = "/wyy"+config.url;
     return config
