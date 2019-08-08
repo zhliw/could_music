@@ -1,4 +1,5 @@
 export default {
     hotComments:[],
-    newMV:[]
+    newMV:[],
+    eventsList:[]
 }

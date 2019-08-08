@@ -8,8 +8,12 @@ import CloudVillageVideo from '../views/CloudVillage/Video';
 
 //FindNav
 import Find_Nav from './Find_Nav';
+
+//MyMusic
+import MyMusicNav from './MyMusic_Nav'
 //User
 /*-------------------------------Video---------------------------------------------*/
+import VideoDetail from "../views/Video/videoDetail"
 /*------------------------------Find------------------------------------------*/
 
 /*-----------------------------------User----------------------------------*/
@@ -44,8 +48,8 @@ export default [
         }
     },
     {
-        to: "/video/",
-        path: "/video/",
+        to: "/video",
+        path: "/video",
         context: "视频",
         component: Video,
         iconName: "icon-shipin",
@@ -57,8 +61,8 @@ export default [
         },
         children:[
             {
-                to:'/video/',
-                path:"/video/",
+                to:'/video',
+                path:"/video",
                 exact:true,
                 content:"说唱"
             },
@@ -88,9 +92,9 @@ export default [
                 content:"翻唱"
             },
             {
-                to:'/video/1000',
-                path:"/video/1000",
-                content:"MV"
+                to:'/video/3101',
+                path:"/video/3101",
+                content:"综艺"
             },
             {
                 to:'/video/1101',
@@ -108,6 +112,11 @@ export default [
                 content:"听BGM"
             }
         ]
+    },
+    {
+        path:'/videodetail/:vid',
+        component:VideoDetail,
+        isShow:false,
     },
     {
         to: "/mymusic",
@@ -244,5 +253,7 @@ export default [
         path:'/user/userplaylist',
         component:UserPlayList,
     },
-    ...Find_Nav
+    ...Find_Nav,
+    ...Find_Nav,
+    ...MyMusicNav
 ]

@@ -46,5 +46,12 @@ export default [
         "className": "iconfont icon-paobu",
         "color": "#fff",
         "background": "red"
+    },
+    {
+        "name": "编辑",
+        "className": "iconfont icon-gengduo",
+        "color": "#5c6e78",
+        "background": "#cccccc"
     }
+
 ]
