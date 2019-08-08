@@ -15,6 +15,7 @@ class My extends React.Component{
         if(localStorage.userInfo){
             this.props.getAttention(this.state.userInfo.profile.userId)
             this.props.getFans(this.state.userInfo.profile.userId)
+            this.props.getUserPlayList(this.state.userInfo.profile.userId)
         }
     }
     componentWillReceiveProps(nextProps){
@@ -51,7 +52,7 @@ class My extends React.Component{
 
                 <div style={{display:localStorage.userInfo?'block':'none'}}>
                     <div>
-                        <img  style={{borderRadius:'50%',height:'70px',width:'70px'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
+                        <img onClick={()=>{this.props.history.push('/user/userplaylist')}} style={{borderRadius:'50%',height:'70px',width:'70px'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
                         <span style={{fontSize:'0.4rem',marginLeft:'0.2rem'}}>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
                     </div>
                     <div style={{display:'flex',justifyContent:'center',margin:'0.15rem 0'}}>

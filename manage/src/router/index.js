@@ -27,6 +27,7 @@ import CodeRegister from '../views/User/CodeRegister'
 import UserRegisterName from '../views/User/UserRegisterName'
 import UserAttention from '../views/User/UserAttention'
 import UserFans from "../views/User/UserFans";
+import UserPlayList from "../views/User/UserPlayList";
 export default [
     {
         to: "/",
@@ -237,6 +238,11 @@ export default [
         to:'/user/userfans',
         path:'/user/userfans',
         component:UserFans,
+    },
+    {
+        to:'/user/userplaylist',
+        path:'/user/userplaylist',
+        component:UserPlayList,
     },
     ...Find_Nav
 ]
