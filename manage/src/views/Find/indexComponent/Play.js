@@ -11,7 +11,11 @@ class Play extends React.Component{
         }
     }
     componentWillMount(){
-        this.props.theSong(this.props.location.state.massage.id)
+       if(this.props.location.state){
+           console.log(this.props.location.state.id)
+           this.props.theSong(this.props.location.state.id)
+           
+       }
     }
     componentWillReceiveProps(n){
         console.log(888888,n)

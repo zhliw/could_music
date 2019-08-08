@@ -18,6 +18,18 @@ import AnchorRadio from '../../views/Find/Search/AnchorRadio'
 import Album from '../../views/Find/Search/Album'
 import Vedio from '../../views/Find/Search/Vedio'
 import SingleSong from '../../views/Find/Search/SingleSong'
+//歌单二极路由
+import RecommendSongList from '../../views/Find/Search/RecommendSongList'
+import Official from '../../views/Find/Search/Official'
+import Best from '../../views/Find/Search/Best'
+import America from '../../views/Find/Search/America'
+import Electronic from '../../views/Find/Search/Electronic'
+import Lightmusic from '../../views/Find/Search/Lightmusic'
+import Rock from '../../views/Find/Search/Rock'
+import Ballad from '../../views/Find/Search/Ballad'
+//歌单详细内容
+import Song from '../../views/Find/Search/Song'
+
 export default [{
         to: "/Identification",
         path: "/Identification",
@@ -205,6 +217,108 @@ export default [{
             title: "歌单",
             keyword: "",
             descrieption: ""
+        },
+        children:[
+            {
+                to: "/SongList/RecommendSongList",
+                path: "/SongList/RecommendSongList",
+                context: "推荐",
+                component: RecommendSongList,
+                meta: {
+                    title: "推荐",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/Official",
+                path: "/SongList/Official",
+                context: "官方",
+                component: Official,
+                meta: {
+                    title: "官方",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/Best",
+                path: "/SongList/Best",
+                context: "精品",
+                component: Best,
+                meta: {
+                    title: "精品",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/America",
+                path: "/SongList/America",
+                context: "欧美",
+                component: America,
+                meta: {
+                    title: "欧美",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/Electronic",
+                path: "/SongList/Electronic",
+                context: "电子",
+                component: Electronic,
+                meta: {
+                    title: "电子",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/Lightmusic",
+                path: "/SongList/Lightmusic",
+                context: "轻音乐",
+                component: Lightmusic,
+                meta: {
+                    title: "轻音乐",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/Rock",
+                path: "/SongList/Rock",
+                context: "摇滚",
+                component: Rock,
+                meta: {
+                    title: "摇滚",
+                    keyword: "",
+                    descrieption: ""
+                }
+            },
+            {
+                to: "/SongList/Ballad",
+                path: "/SongList/Ballad",
+                context: "民谣",
+                component: Ballad,
+                meta: {
+                    title: "民谣",
+                    keyword: "",
+                    descrieption: ""
+                }
+            }
+        ]
+    },
+    {
+        to: "/Song",
+        path: "/Song",
+        context: "歌单详细内容",
+        component: Song,
+        exact: true,
+        meta: {
+            title: "歌单详细内容",
+            keyword: "",
+            descrieption: ""
         }
     },
     {
@@ -218,5 +332,5 @@ export default [{
             descrieption: ""
         },
         exact: true
-    },
+    }
 ]

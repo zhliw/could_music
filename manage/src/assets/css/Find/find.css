@@ -2,7 +2,7 @@
     margin:0;
     padding:0
 }
-.myFindNav_wn{
+.songlistheader,.myFindNav_wn{
     display:flex;
     justify-content:space-between;
     padding:0 0.32rem;
@@ -72,3 +72,73 @@ header{
     background:#e4e4e4;
     margin-top:0.44rem;
 }
+/* 歌单 */
+.songlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+    padding:0 0.32rem;
+}
+.songlist img{
+    border-radius: 0.05rem;
+    
+}
+.name{
+    width:2.15rem;
+    word-wrap:break-word;
+}
+.sonlistSquare{
+    font-size: 0.25rem;
+    line-height:0.52rem;
+    text-align: center; 
+    display: inline-block;
+    width:1.53rem;
+    height: 0.52rem;
+    border: 0.01rem solid #e3e3e3;
+    border-radius: 0.2rem;
+}
+.sonList_wn{
+    display: flex;
+    justify-content:space-between ;
+    padding:0 0.32rem;
+}
+.sonList_wn .recommend{
+    font-size: 0.34rem;
+    font-weight: 800
+}
+.songList{
+    margin-top: 0.43rem
+}
+.songlist{
+    margin-top: 0.3rem
+}
+.presonglistName{
+    padding:0 0.32rem;
+    width:2.91rem;
+    word-wrap:break-word;
+}
+.presonglist{
+    display: flex;
+}
+.othersonglist{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 0.32rem;
+
+}
+.songlistName{
+    width:2.09rem;
+    word-wrap:break-word;
+}
+.theSonglist .discription{
+    display:flex;
+    
+}
+.theSonglist .theDiscription{
+    width: 3.56rem;
+    height: 2.59rem;
+    
+    
+}
+/* 3.56 2.59 */

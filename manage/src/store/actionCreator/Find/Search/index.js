@@ -23,6 +23,7 @@ export default{
     },
 
     theSong(id){
+        console.log(99999999,id)
         return async(dispatch)=>{
             const data=await axios(`/song/url?id=${id}`)
             dispatch(theSong(data))
