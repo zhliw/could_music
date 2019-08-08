@@ -50,7 +50,7 @@ class Message extends React.Component{
                                 <div key={i} style={{display:'flex',borderBottom:'1px solid #e5e5e5',paddingBottom:'0.26rem'}} className={'myMessage'}>
                                     <img src={v.fromUser.avatarUrl} alt="" style={{height:'1rem',width:'1rem'}}/>
                                     <div className={'messageInfo'} style={{textAlign:'left'}}>
-                                        <p style={{display:'flex',justifyContent:'space-between'}}><span className={'name'}>{v.fromUser.nickname}</span><span className={'date'}>{this.filters.date(v.lastMsgTime)}</span></p>
+                                        <p><span className={'name'}>{v.fromUser.nickname}</span><span className={'date'}>{this.filters.date(v.lastMsgTime)}</span></p>
                                         <p className={'describe'}>{JSON.parse(v.lastMsg).msg.substr(0,35)+'...'}</p>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@ class Message extends React.Component{
                                     <div key={i} style={{display:'flex',borderBottom:'1px solid #e5e5e5',paddingBottom:'0.26rem'}} className={'myMessage'}>
                                         <img src={info.user.avatarUrl} alt="" style={{height:'1rem',width:'1rem'}}/>
                                         <div className={'messageInfo'} style={{textAlign:'left'}}>
-                                            <p style={{display:'flex',justifyContent:'space-between'}}><span className={'name'} style={{fontSize:'0.2rem'}}><i style={{color:'pink'}}>{info.user.nickname}</i>赞了你的评论</span><span className={'date'}>{this.filters.date(v.time)}</span></p>
+                                            <p><span className={'name'} style={{fontSize:'0.2rem'}}><i style={{color:'pink'}}>{info.user.nickname}</i>赞了你的评论</span><span className={'date'}>{this.filters.date(v.time)}</span></p>
                                             <p className={'describe'}>{info.comment?info.comment.content:null}</p>
                                         </div>
                                     </div>
