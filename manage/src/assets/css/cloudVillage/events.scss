@@ -56,4 +56,33 @@
     width: 100%;
     padding-right: .32rem;
   }
+  .cv-video-handle{
+    margin-top: .4rem;
+    span{
+      display: inline-block;
+      width: 1.8rem;
+      font-size: .3rem;
+      i{
+        margin-left: .1rem;
+        font-size: .24rem;
+      }
+    }
+  }
+}
+.cv-events-drawer{
+  padding: 0 0.33rem;
+  height: 100%;
+  header{
+    height: .46rem;
+    display: flex;
+    line-height: .46rem;
+    justify-content: space-between;
+    i{
+      font-size: .46rem;
+      display: inline-block;
+    }
+    b{
+      font-size: .32rem;
+    }
+  }
 }
