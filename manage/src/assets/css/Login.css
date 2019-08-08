@@ -1,7 +1,6 @@
-.ygz .header {
+.ygz header {
     width: 100%;
     height: 0.95rem;
-    background: red;
     font-size: 0.33rem;
     line-height: 0.95rem;
     display: flex !important;

@@ -15,7 +15,6 @@ class UserPlayList extends React.Component{
     render(){
         return (
             <div>
-                <this.MyNav></this.MyNav>
                 <header style={{marginBottom:'0.1rem',opacity:'.6',position:'fixed',zIndex:'2',top:'0'}}>
                     <i className={'icon-fanhui iconfont'} onClick={()=>{this.props.history.go(-1)}}></i>
                     <span style={{color:'#000',fontSize:'0.34rem',marginLeft:'2rem'}}>{this.state.userName}</span>

@@ -10,7 +10,7 @@ class UserFans extends React.Component{
         return (
             <div>
                 <this.MyNav></this.MyNav>
-                <header style={{marginBottom:'0.1rem'}}>
+                <header style={{marginBottom:'0.1rem',display:'flex'}}>
                     <i style={{color:'#000',fontSize:'0.34rem',fontWeight:'900'}} className={'icon-gouwuche iconfont'} onClick={()=>{
                             this.props.history.go(-1)
                     }}></i>
