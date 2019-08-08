@@ -3,11 +3,10 @@ import "../../assets/css/cloudVillage/square.scss";
 import {
     connect
 } from 'react-redux';
-import {bindActionCreators} from "redux"
-import cloudVillageCreator from '../../store/actionCreator/CloudVillage'
-import cloudVillage from "../../store/reducers/CloudVillage";
+import {bindActionCreators} from "redux";
+import cloudVillageCreator from '../../store/actionCreator/CloudVillage';
 import Swiper from 'swiper/dist/js/swiper.js';
-import NewMV from './NewMV'
+import NewMV from './NewMV';
 
 // import 'swiper/dist/css/swiper.min.css'
 class Square extends React.Component {

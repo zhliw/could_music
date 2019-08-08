@@ -5,13 +5,12 @@ import {
     Route
 } from "react-router-dom";
 import "../../assets/css/cloudVillage/main.scss"
-import Main from "./Main";
 import Event from "./event";
 import Square from "./Square"
 
-export default class CloudVillage extends React.Component{
-    render(){
-        return(
+export default class CloudVillage extends React.Component {
+    render() {
+        return (
             <div className={"cv-scroll"}>
                 {/*头部*/}
                 <div className={"cloudVillage"}>
@@ -33,10 +32,8 @@ export default class CloudVillage extends React.Component{
 
                 </div>
                 {/*主体*/}
-                <div className="cloudVillage-main">
-                    <Route className={"cloudVillage-main"} exact path={"/cloudvillage"} component={Square}></Route>
-                    <Route className={"cloudVillage-main"} path={"/cloudvillage/2"} component={Event}></Route>
-                </div>
+                <Route className={"cloudVillage-main"} exact path={"/cloudvillage"} component={Square}></Route>
+                <Route path={"/cloudvillage/2"} component={Event}></Route>
                 {/*底部*/}
                 {/*footer*/}
                 <this.MyNav></this.MyNav>

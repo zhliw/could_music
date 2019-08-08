@@ -7,9 +7,10 @@ const { Panel } = Collapse;
 
 export default class Fold extends React.Component{
     render() {
+
         return(
             <div>
-                <Collapse defaultActiveKey={['1']}>
+                <Collapse >
                     <Panel header={this.props.children} key="1" extra={<Mydian></Mydian>}>
                         {
                             this.props.message.map((v,i)=>{

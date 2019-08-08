@@ -9,5 +9,8 @@ export default function (state = initState, {type, payload}) {
     if(type === actionType.GET_USER_PLAYLIST){
         state.playList = payload;
     }
+    if(type === actionType.GET_RECENT_PLAY){
+        state.recentPlay = payload;
+    }
     return state;
 }
