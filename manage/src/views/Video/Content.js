@@ -26,6 +26,8 @@ class Content extends React.Component {
             videoSrc: {},
             videoRelevant: [],
             videoComment: [],
+            preVideoId:"",
+            videoId:"",
             offset: 1,
             commentValue: "",
             isLoading: false
@@ -343,7 +345,6 @@ class Content extends React.Component {
 
 
 
-
                             </div>
                             <div>
                                 <p style={{height: "0.97rem", borderTop: "0.01rem solid #d5d5d5"}}>
@@ -376,13 +377,13 @@ class Content extends React.Component {
                             <div key={i} className={"videoContent"}>
                                 {
                                     v.type / 1 === 1 ? (<p className={"videoContentImgWarp"}>
-                                        <video onClick={controlVideo.bind(this,this,v.data.vid)} className={"videoContentImg"}
+                                        <video onClick={this.control.bind(this,v.data.vid)} className={"videoContentImg"}
                                                id={v.data.vid} poster={v.data.coverUrl}
                                                src={v.data.urlInfo.url.replace(/\s*/g, "")} alt=""></video>
                                         <button type="button" ref={v.data.vid}
                                                 className={"iconfont icon-bofang1 videobutton"}
                                                 style={{fontSize: "1rem"}}
-                                                onClick={controlVideo.bind(this,this,v.data.vid)}></button>
+                                                onClick={this.control.bind(this,v.data.vid)}></button>
                                     </p>) : (<p></p>)
                                 }
                                 <div className={"videoContentP"} onClick={this.getVideoInfo.bind(this, v.data.vid)}>
@@ -392,7 +393,9 @@ class Content extends React.Component {
                                 <div className={"videoContentBottom"}>
                                     <div>
                                         {
-                                            v.data.creator ? <p><img src={v.data.creator.avatarUrl}
+                                            v.data.creator ? <p><img src={v.data.creator.avatarUrl} onClick={()=>{
+                                                this.props.history.push("/usermessage",v.data.creator.userId)
+                                            }}
                                                                      alt=""/><span>{v.data.creator.nickname}</span>
                                             </p> : ""
                                         }
@@ -417,6 +420,17 @@ class Content extends React.Component {
             </div>
         )
 
+    }
+    control(vid){
+        this.setState({
+            preVideoId:this.state.videoId,
+        },()=>{
+            this.setState({
+                videoId:vid
+            },()=>{
+                controlVideo(this,vid,this.state.preVideoId)
+            })
+        })
     }
 }
 
