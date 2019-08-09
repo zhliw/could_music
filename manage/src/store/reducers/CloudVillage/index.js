@@ -7,7 +7,6 @@ export default function (state = initState, {type, payload}) {
         state.hotComments = payload;
     } else if (type === actionType.GET_NEW_MV) {
         state.newMV = payload;
-        console.log("newMV", payload)
     } else if (type === actionType.GET_EVENTS_LIST) {
         state.eventsList = payload
     }
