@@ -3,10 +3,14 @@ import Header from '../../components/MyMusic/Header'
 import MyMusicMiddle from '../../components/MyMusic/MyMusicMiddle'
 import '../../assets/css/all.css'
 import '../../assets/css/MyMusic.css'
-
-export default class MyMusic extends React.Component{
+ import {
+    withRouter
+ } from 'react-router-dom'
+class MyMusic extends React.Component{
     componentWillMount() {
         //判断是否登录
+        if(!localStorage.userInfo)
+            this.props.history.push('/user/login')
     }
     render(){
         return(
@@ -14,11 +18,8 @@ export default class MyMusic extends React.Component{
                 <Header></Header>
                 <MyMusicMiddle></MyMusicMiddle>
                 <this.MyNav></this.MyNav>
-                {/*我的音乐*/}
-                {/*<p>我的收藏</p>*/}
-                {/*<p>我的电台</p>*/}
-                {/*<p>......</p>*/}
             </div>
         )
     }
 }
+export default withRouter(MyMusic)

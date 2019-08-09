@@ -31,10 +31,10 @@ export default {
             let subPlaylistCount=[]
             const {playlist}=await axios.get('/user/playlist?uid='+id)
             playlist.map(v=>{
-                if(v.subscribed){
-                    subPlaylistCount.push(v)
-                }else {
+                if(v.userId===id){
                     createdPlaylistCount.push(v)
+                }else {
+                    subPlaylistCount.push(v)
                 }
             })
             dispatch(getUserPlayList([createdPlaylistCount,subPlaylistCount]))

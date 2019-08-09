@@ -13,13 +13,37 @@ import myMusic from "../../store/reducers/MyMusic";
 const { Panel } = Collapse;
 
 class MyMusicMiddle extends React.Component {
-    constructor() {
-        super();
+    constructor(){
+        super()
+        this.myDianObj={
+            top:'创建的歌单',
+            msg:[
+                {
+                    title:"歌单管理",
+                    className:'iconfont icon--duoxuantiankong'
+                },
+                {
+                    title:"创建新歌单",
+                    className:'iconfont icon-jia'
+                },
+                {
+                    title:"恢复歌单",
+                    className:'iconfont icon-history1'
+                }
+            ]
+        }
+        this.myCountDianObj={
+            top:'收藏的歌单',
+            msg:[{
+                    title:"歌单管理",
+                    className:'iconfont icon--duoxuantiankong'
+                }]
+        }
     }
     componentDidMount() {
         this.props.getUserMessage();
-        this.props.getUserPlayList(432441345);
-        this.props.getRecentPlay(432441345);
+        this.props.getUserPlayList(JSON.parse(localStorage.userInfo).account.id);
+        this.props.getRecentPlay(JSON.parse(localStorage.userInfo).account.id);
     }
     render() {
         let userMessage=this.props.userMessage||{};
@@ -46,10 +70,10 @@ class MyMusicMiddle extends React.Component {
                 </div>
                 <div className={'MyMusic-Bottom'}>
                     {
-                        userMessage.createdPlaylistCount>0?<Fold message={playList[0]}>创建的歌单</Fold>:null
+                        userMessage.createdPlaylistCount>0?<Fold myDianObj={this.myDianObj} message={playList[0]}>创建的歌单</Fold>:null
                     }
                     {
-                        userMessage.subPlaylistCount>0?<Fold message={playList[1]}>收藏的歌单</Fold>:null
+                        userMessage.subPlaylistCount>0?<Fold myDianObj={this.myCountDianObj} message={playList[1]}>收藏的歌单</Fold>:null
                     }
                     <div style={{height:'1rem'}}></div>
                 </div>
