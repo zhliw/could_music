@@ -8,15 +8,15 @@ export default class Open extends React.Component{
         console.log(123,this.props)
         return (
             <>
-                <div>
+                <div style={{textAlign:"center"}}>
                     <div className={'OpenImg'}><img src={this.props.coverImgUrl} alt=""/></div>
-                    <p style={{lineHeight:'1.5rem'}}>{this.props.name}</p>
+                    <p style={{lineHeight:'1.5rem',fontSize:'0.4rem'}}>{this.props.name}</p>
                     <div style={{textAlign:'left'}}>标签：{
-                        this.props.tags.map((v,i)=>{
+                        this.props.tags.length>0?this.props.tags.map((v,i)=>{
                             return (
                                 <Button size={"small"} ghost={true}>{v}</Button>
                             )
-                        })
+                        }):<div>暂无描述</div>
                     }</div>
                     <div style={{textAlign:'left'}}>
                         {this.props.description}

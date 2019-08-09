@@ -2,7 +2,10 @@ import React from 'react'
 import {Icon} from 'antd'
 import {Drawer} from 'antd';
 import Open from './Open'
-export default class SongListTop extends React.Component{
+import {
+    withRouter
+} from "react-router-dom"
+class SongListTop extends React.Component{
     constructor(){
         super()
         this.state = { visible: false }
@@ -20,14 +23,16 @@ export default class SongListTop extends React.Component{
         });
     }
     render() {
-        console.log(this.props)
         return(
             <div className={"SongListTop"} style={{height:'4rem'}}>
-                <div className={"SongListTop_head"} onClick={this.props.subscribed?this.showDrawer:null}>
+                <div className={"SongListTop_head"} onClick={this.showDrawer}>
                     <img src={this.props.coverImgUrl} alt=""/>
                     <div style={{paddingLeft:'0.3rem'}}>
                         <p style={{marginBottom:'0.2rem'}}>{this.props.name}</p>
-                        <div className={"ToMyMessage"} onClick={(e)=>e.stopPropagation()}>
+                        <div className={"ToMyMessage"} onClick={(e)=>{
+                            e.stopPropagation();
+                            this.props.history.push('/UserMessage',this.props.userId)
+                        }}>
                             <div><img src={this.props.creator.avatarUrl} alt=""/></div>
                             <p style={{paddingLeft:'0.3rem'}}>{this.props.creator.nickname}<Icon type="right" /></p>
                         </div>
@@ -71,3 +76,4 @@ export default class SongListTop extends React.Component{
         )
     }
 }
+export default withRouter(SongListTop)

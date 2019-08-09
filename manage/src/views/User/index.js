@@ -8,7 +8,8 @@ class My extends React.Component{
         this.state = {
             userInfo:localStorage.userInfo?JSON.parse(localStorage.userInfo):{},
             userAttention:[],
-            userFans:[]
+            userFans:[],
+            userActive:[]
         }
     }
     componentDidMount(){
@@ -16,17 +17,22 @@ class My extends React.Component{
             this.props.getAttention(this.state.userInfo.profile.userId)
             this.props.getFans(this.state.userInfo.profile.userId)
             this.props.getUserPlayList(this.state.userInfo.profile.userId)
+            this.props.getUserActive(this.state.userInfo.profile.userId)
         }
     }
     componentWillReceiveProps(nextProps){
         this.state.userAttention = nextProps.userAttention
         this.state.userFans = nextProps.userFans
+        this.state.userActive = nextProps.userActive
     }
     goUserAttention(){
         this.props.history.push('/user/userattention')
     }
     goUserFans(){
         this.props.history.push('/user/userfans')        
+    }
+    goUserActive(){
+        this.props.history.push('/user/useractive')        
     }
     outLogin(){
         localStorage.clear()
@@ -60,6 +66,14 @@ class My extends React.Component{
                         <span style={{fontSize:'0.4rem',marginLeft:'0.2rem'}}>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
                     </div>
                     <div style={{display:'flex',justifyContent:'center',margin:'0.15rem 0'}}>
+                        <div style={{marginRight:'2rem'}} onClick={this.goUserActive.bind(this)}>
+                            <p style={{fontSize:'0.4rem',color:'#000'}}>
+                                {this.state.userActive.length}
+                            </p>
+                            <p>
+                                动态
+                            </p>
+                        </div>
                         <div style={{marginRight:'2rem'}} onClick={this.goUserAttention.bind(this)}>
                             <p style={{fontSize:'0.4rem',color:'#000'}}>
                                 {this.state.userAttention.length}
@@ -188,4 +202,4 @@ class My extends React.Component{
         )
     }
 }
-export default connect((state)=>({userAttention:state.login.userAttention,userFans:state.login.userFans}),(dispatch)=>bindActionCreators(actionCreator,dispatch))(My)
+export default connect((state)=>({userAttention:state.login.userAttention,userFans:state.login.userFans,userActive:state.login.userActive}),(dispatch)=>bindActionCreators(actionCreator,dispatch))(My)

@@ -20,7 +20,6 @@
     left: 0;
 }
 .songListBot{
-    flex: 1;
     padding-top: 1.5rem;
     min-height: 13.34rem;
 }
@@ -77,6 +76,11 @@
     justify-content: space-between;
     border-radius: 0.3rem 0.3rem 0 0;
     background: #fff;
+    text-align: left;
+    line-height: 0.4rem;
+}
+.SongListMainSniky i{
+    font-size: 0.4rem;
 }
 .MusicTag{
     display: flex;
@@ -89,12 +93,21 @@
     flex: 1;
     text-align: left;
 }
-.MusicTagShowTop{
+.MusicTagShowTop,.MusicTagShowBot{
+    width: 5.5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 5.5rem;
+}
 
+.MusicTagMore{
+    display: flex;
+    line-height: 1rem;
+}
+.MusicTagMore span{
+    display: block;
+    width: 0.6rem;
+    padding-right:0.3rem ;
 }
 
 .MusicTagShowTop i{
@@ -105,6 +118,7 @@
 }
 .ant-drawer-content{
     text-align: center;
+    background: #cccccc;
 }
 .OpenImg{
     padding-top: 1.5rem;

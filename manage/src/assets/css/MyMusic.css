@@ -41,12 +41,12 @@ html,body{
 }
 .MyMusic-Middle-left{
     width: 1rem;
-    line-height: .7rem;
+    line-height: .9rem;
 }
 .MyMusic-Middle-right{
     line-height: .5rem;
     background:#fff;
-    padding: 0.1rem;
+    padding: 0.2rem;
     border-bottom: 0.01rem solid #8b898a;
     flex-grow: 1;
     text-align: left;
@@ -72,4 +72,22 @@ html,body{
 }
 .footer{
     overflow: hidden;
+}
+.zslOnlyp{
+    text-align: left;
+    display: flex;
+    margin: 0;
+}
+.zslOnlyp span{
+    display: block;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+}
+.zslOnlyp i{
+    display: block;
+    flex: 1;
+    line-height: .8rem;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
 }

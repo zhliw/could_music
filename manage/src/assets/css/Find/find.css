@@ -14,13 +14,14 @@
     font-size:0.22rem;
     color:#6a6f6b
 }
-header{
+.wnHeader{
     display: flex;
     justify-content: space-between;
-    padding:0 0.5rem;
-    margin-top:0.3rem
-
-
+    padding:0 0.32rem;
+    margin-top:0.5rem;
+}
+.wnHeader input{
+    margin-top:-0.08rem 
 }
 .swiper-slide img{
     width:6.86rem;
@@ -158,7 +159,23 @@ header{
    padding:0 0.32rem;   
    margin-top:0.66rem
 }
-.allSong{
+.dis{
+margin-top: 0.36rem;
+}
+.fourIcon{
+   padding:0 0.70rem;   
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem
+}
+.fourIcon p{
+    font-size: 0.43rem
+}
+.historyAndHot .his{
+    margin-top:0.34rem;
+    display:flex;
+    justify-content:space-between;
+   padding:0 0.36rem;   
 
 }
 /* 3.56 2.59 */

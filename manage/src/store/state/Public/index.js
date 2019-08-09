@@ -1,3 +1,8 @@
 export default {
-    songList:{}
+    songList:{},
+    userDetail:{},
+    userEvent:{},
+    myLyric:{},
+    songPlayList:[],
+    songPlayUrl:[]
 }

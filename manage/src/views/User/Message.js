@@ -33,7 +33,7 @@ class Message extends React.Component{
         return (
             <div className={'ygz_message'}>
                 <header style={{marginBottom:'0.1rem',display:'flex'}}>
-                    <i className={'icon-fanhui iconfont'} onClick={()=>{this.props.history.go(-1)}}></i>
+                    <i className={'icon-fanhui iconfont'} onClick={()=>{this.props.history.push('/user')}}></i>
                     <span style={{color:'#000',fontSize:'0.34rem'}}>我的消息</span>
                     <i className={'icon-yinle1 iconfont'} ></i>
                 </header>

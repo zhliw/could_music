@@ -5,10 +5,11 @@ import SongListTop from './SongListTop'
 import {
     connect
 } from 'react-redux'
+import {bindActionCreators} from "redux";
 import {
     withRouter
 } from "react-router-dom"
-import {bindActionCreators} from "redux";
+
 import myPublicCreator from "../../../store/actionCreator/Public";
 class SongList extends React.Component{
     constructor(){
@@ -20,6 +21,7 @@ class SongList extends React.Component{
         }
     }
     render() {
+        console.log(this.props.songList.playlist)
         return(
             <>
                 {
