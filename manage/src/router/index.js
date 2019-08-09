@@ -13,6 +13,7 @@ import Find_Nav from './Find_Nav';
 import MyMusicNav from './MyMusic_Nav'
 //User
 /*-------------------------------Video---------------------------------------------*/
+import VideoDetail from "../views/Video/videoDetail"
 /*------------------------------Find------------------------------------------*/
 
 /*-----------------------------------User----------------------------------*/
@@ -30,6 +31,7 @@ import CodeRegister from '../views/User/CodeRegister'
 import UserRegisterName from '../views/User/UserRegisterName'
 import UserAttention from '../views/User/UserAttention'
 import UserFans from "../views/User/UserFans";
+import UserPlayList from "../views/User/UserPlayList";
 export default [
     {
         to: "/",
@@ -46,8 +48,8 @@ export default [
         }
     },
     {
-        to: "/video/",
-        path: "/video/",
+        to: "/video",
+        path: "/video",
         context: "视频",
         component: Video,
         iconName: "icon-shipin",
@@ -59,8 +61,8 @@ export default [
         },
         children:[
             {
-                to:'/video/',
-                path:"/video/",
+                to:'/video',
+                path:"/video",
                 exact:true,
                 content:"说唱"
             },
@@ -90,9 +92,9 @@ export default [
                 content:"翻唱"
             },
             {
-                to:'/video/1000',
-                path:"/video/1000",
-                content:"MV"
+                to:'/video/3101',
+                path:"/video/3101",
+                content:"综艺"
             },
             {
                 to:'/video/1101',
@@ -110,6 +112,11 @@ export default [
                 content:"听BGM"
             }
         ]
+    },
+    {
+        path:'/videodetail/:vid',
+        component:VideoDetail,
+        isShow:false,
     },
     {
         to: "/mymusic",
@@ -165,7 +172,7 @@ export default [
     },
     {
         to:'/user/message',
-        path:'/user/message',
+        path:'/user/message/:type',
         component:Message,
         context:'信息',
         iconName:'icon-xiaoxi',
@@ -240,6 +247,11 @@ export default [
         to:'/user/userfans',
         path:'/user/userfans',
         component:UserFans,
+    },
+    {
+        to:'/user/userplaylist',
+        path:'/user/userplaylist',
+        component:UserPlayList,
     },
     ...Find_Nav,
     ...MyMusicNav

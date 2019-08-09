@@ -21,7 +21,6 @@ class All extends React.Component {
         }
     }
     render() {
-        console.log(12332, this.props.state.find.search)
         return (
             <div>
                 <this.MyNav></this.MyNav>
@@ -37,7 +36,7 @@ class All extends React.Component {
                                     this.props.history.push({
                                         pathname:'/Play',
                                         state:{
-                                            massage:v
+                                            id:v.id
                                         }
                                     })
                                 }}>{v.name}</span>

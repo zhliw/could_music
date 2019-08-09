@@ -16,5 +16,9 @@ export default function(state=initState,{type,payload}){
         localStorage.userFans = JSON.stringify(payload)
         state.userFans =  payload
     }
+    if(type === actionType.USERPLAYLIST){
+        localStorage.userPlayList = JSON.stringify(payload)
+        state.userPlayList =  payload
+    }
     return state
 }

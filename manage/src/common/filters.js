@@ -1,4 +1,5 @@
 
+
 export const numDis=(num)=>{
         if (num<10000){
             return num
@@ -26,11 +27,28 @@ export const timeToData=(num)=>{
         }
 }
 
-export const myLyric=(str)=>{
-    let arr=str.split('\n')
-    let arrNew=[]
-    arr.map((v,i)=>{
-        arrNew.push([arr[i].substring(0,arr[i].indexOf(']')+1),arr[i].substring(arr[i].indexOf(']')+1)])
+export const myLyric=(str)=> {
+    let arr = str.split('\n')
+    let arrNew = []
+    arr.map((v, i) => {
+        arrNew.push([arr[i].substring(0, arr[i].indexOf(']') + 1), arr[i].substring(arr[i].indexOf(']') + 1)])
     })
     return arrNew
+}
+export default {
+    currency(v, n = 2) {
+        return "￥" + v.toFixed(n);
+    },
+    date(v) {
+        let time = new Date(v);
+        return time.getFullYear() + "年"
+            + (time.getMonth() + 1).toString().padStart(2, "0") + "月"
+            + (time.getDate()).toString().padStart(2, "0") + "日"
+            + (time.getHours()).toString().padStart(2, "0") + ":"
+            + (time.getMinutes()).toString().padStart(2, "0") + ":"
+            + (time.getSeconds()).toString().padStart(2, "0");
+    },
+    imgUrl(v) {
+        return '/ele/' + v;
+    }
 }

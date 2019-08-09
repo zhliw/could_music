@@ -4,11 +4,11 @@
 }
 a{
     text-decoration: none;
-    color: #8b898a !important;
+    color: #8b898a;
 }
 .footer{
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height:1rem;
