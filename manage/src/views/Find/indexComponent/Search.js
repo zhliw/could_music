@@ -1,6 +1,8 @@
 //搜索
 import React from 'react'
 import '../../../assets/css/Find/SearchHot.css'
+import Swiper from 'swiper/dist/js/swiper.js'
+import 'swiper/dist/css/swiper.min.css'
 class Search extends React.Component {
     constructor() {
         super()
@@ -8,18 +10,34 @@ class Search extends React.Component {
             num: 1,
             search: [],
             searchHot: [],
+            searchArr: [],
             isShow: true,
             keyword: '',
             isTrue: true
         }
     }
     componentDidMount() {
+        new Swiper('.swiper-container', {
+            freeMode:true,
+            observer: true,
+            slidesPerView: 4,
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: true,
+                disableOnInteraction: false
+            },
+            pagination: {
+                el: '.swiper-pagination',//这里是分页器设置
+            },
+
+        })
         //热搜榜
         this.axios('/search/hot/detail').then(data => {
             this.setState({
                 searchHot: data.data
             })
         })
+        this.searchHot()
     }
     search(e) {
         if (e.target.value !== '') {
@@ -39,7 +57,8 @@ class Search extends React.Component {
                 if (data.result.allMatch) {
                     this.setState({
                         search: data.result.allMatch,
-                        isTrue: true
+                        isTrue: true,
+                        searchArr:[]
                     })
                 } else {
                     this.setState({
@@ -51,14 +70,28 @@ class Search extends React.Component {
     }
     //热搜
     searchHot() {
-        this.axios('/search/hot/detail').then(data => {
+        this.axios('/search/hot').then(data => {
+            console.log(data)
         })
+    }
+    getHistory(theKey) {
+        let searchArr = []
+        let searchText = localStorage.searchWord
+        if (searchText) {
+            searchArr = JSON.parse(searchText)
+            this.setState({
+                searchArr
+            })
+        }
+        searchArr.unshift(theKey)
+        localStorage.searchWord = JSON.stringify(searchArr)
     }
     render() {
         return (
             <div>
                 <this.MyNav></this.MyNav>
                 <div className={'search'}>
+                    <span className={'icon-magnifier iconfont'}></span>
                     <input name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e) => {
                         if (e.keyCode === 13) {
                             this.props.history.push({
@@ -69,7 +102,7 @@ class Search extends React.Component {
                             })
 
                         }
-                    }} className={'search_search_wn'} type='text' placeholder='大家都在搜 陈奕迅' />
+                    }} className={'search_search_wn iconfont'} type='text' placeholder='e64d' />
                     <span onClick={() => {
                         this.props.history.go(-1)
                     }}>
@@ -91,7 +124,9 @@ class Search extends React.Component {
                                                     searchWord: v.keyword
                                                 }
                                             })
+                                            this.getHistory(v.keyword)
                                         }} key={i}>{v.keyword}</div>
+                                    
                                     }
                                 }) : null
                             }
@@ -99,24 +134,43 @@ class Search extends React.Component {
                         </div>
                     }
                     <div className='historyAndHot' style={{ display: this.state.isShow ? 'block' : 'none' }}>
-                        <div>
-                            <span>搜索历史</span>
-                            <span className={'icon-icon-- iconfont'}></span>
+                    {localStorage.searchWord? <div>
+                        <div className={'his'}>
+                            <span style={{fontSize:'0.2rem',fontWeight:'600'}}>搜索历史</span>
+                            <span onClick={()=>{
+                                localStorage.removeItem('searchWord')
+                                this.props.history.push('/Search')
+                                }} style={{color:'#adadad'}} className={'icon-icon-- iconfont'}></span>
+                         </div>
+                         <div>
+                             <div className="myFindBanner">
+                                <div className="swiper-container" style={{height:'0.5rem',marginBottom:'0.86rem'}}>
+                                    <div className="swiper-wrapper">
+                                         {localStorage.searchWord?JSON.parse(localStorage.searchWord).map((v,i)=>{
+                                            return <div key={i} style={{background:'#f7f7f7',height:'0.5rem',textAlign:'center',lineHeight:'0.5rem',borderRadius:'0.2rem',padding:'0,0.24rem',marginLeft:'0.14rem'}} className="swiper-slide">{v}</div> 
+                                         }):null
+                                          }
+                                    </div>
+                             {/* <!-- 如果需要滚动条 --> */}
+                                </div>
+                            </div>
+                                            
                         </div>
-                        <div>
-                            <span>送别</span>
-                        </div>
+                    </div>:null}
+                  
                         <div className={'SearchHot'}>
-                            <p>热搜榜</p>
+                            <p style={{fontSize:'0.2rem',fontWeight:'600',marginTop:localStorage.searchWord?'':'0.5rem'}}>热搜榜</p>
                             {
                                 this.state.searchHot.map((v, i) => {
-                                    return < div onClick={() => {
+                            return < div style={{marginTop:' 0.05rem'}} onClick={() => {
                                         this.props.history.push({
                                             pathname: '/Search_To',
                                             state: {
                                                 searchWord: v.searchWord
                                             }
                                         })
+                                        this.getHistory(v.searchWord)
+
                                     }} className={'SearchHotList'} key={i}>
                                         <span style={{ color: i + 1 <= 3 ? 'red' : '', lineHeight: '0.7rem' }}>{i + 1}</span>
                                         <span className={'searchWord'}>{v.searchWord}</span>
