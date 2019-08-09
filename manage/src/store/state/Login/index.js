@@ -3,5 +3,6 @@ export default {
     userInfo:{},
     userAttention:[],
     userFans:[],
-    userPlayList:[]
+    userPlayList:[],
+    userActive:[]
 }
