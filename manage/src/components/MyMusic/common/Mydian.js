@@ -23,15 +23,17 @@ export default class Mydian extends React.Component{
             <>
                 <span className={"iconfont icon-gengduo2"} onClick={this.showDrawer}></span>
                 <Drawer
-                    title="Basic Drawer"
+                    title={this.props.top}
                     placement="bottom"
                     closable={false}
                     onClose={this.onClose}
                     visible={this.state.visible}
                 >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    {
+                        this.props.msg.map((v,i)=>{
+                            return <p key={i} className={'zslOnlyp'}><span className={v.className}></span><i>{v.title}</i></p>
+                        })
+                    }
                 </Drawer>
             </>
         )
