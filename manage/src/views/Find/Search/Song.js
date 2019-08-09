@@ -10,6 +10,7 @@ export default class Song extends React.Component {
         }
     }
     componentDidMount() {
+
         this.getSonglist()
         
     }
@@ -84,39 +85,39 @@ export default class Song extends React.Component {
                     </div>
                         
                 </div>
-                    <div style={{width: '100%',height:'100%', borderTopLeftRadius:'30px',borderTopRightRadius:'30px'}}>
-                        <div>
-                </div>
-                
+                    <div>
                             <div className={'allSong'}>
-                                <div style={{height:'0.99rem'}}>
+                            <div style={{height:'0.76rem',width:"100%" ,lineHeight:'0.76rem',background:'red',marginTop:'0.2rem',borderLeftTopRadius:'10px',borderRightTopRadius:'10px'}}>
                                      <span>播放全部</span>
                                     <span>共{this.state.songlist.trackCount}首</span>
                                     <span className={'collect'}>+收藏({this.state.songlist.subscribedCount})</span>
                                 </div>
-                               
-                                {
+                               <div style={{textAlign:'left',marginLeft:'0.25rem'}}> 
+                               {
                                     this.state.tracks.map((v,i)=>{
-                                        return <div  style={{height:'1.22rem',color:'red'}} onClick={()=>{
+                                    return <div  style={{height:'0.81rem',marginBottom:'0.4rem',width:'100%',marginTop:'0.2rem'}} 
+                                    onClick={()=>{
                                             this.props.history.push({
                                                 pathname:'/Play',
                                                 state:{
                                                     id:v.id
                                                 }
                                             })
-                                        }}key={i}style={{}}>
+                                     }} key={i}>
                                                     <span>{i+1}</span>
-                                                    <span>{v.name}</span>
+                                                <span style={{marginLeft:'0.28rem',fontSize:'0.25rem'}}>{v.name}</span>
                                                     <div>
                                                     {
                                                         v.ar.map((v,i)=>{
-                                                           return <span key={i}>{v.name}</span>
+                                                    return <span style={{fontSize:'0.18rem'}} key={i}>{v.name}</span>
                                                         })
                                                     }
                                                     </div>
                                                 </div>
                                     })
                                 }
+                               </div>
+                               
                             </div>
                         </div>
                     </div>

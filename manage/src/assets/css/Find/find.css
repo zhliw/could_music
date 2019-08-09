@@ -14,13 +14,14 @@
     font-size:0.22rem;
     color:#6a6f6b
 }
-header{
+.wnHeader{
     display: flex;
     justify-content: space-between;
-    padding:0 0.5rem;
-    margin-top:0.3rem
-
-
+    padding:0 0.32rem;
+    margin-top:0.5rem;
+}
+.wnHeader input{
+    margin-top:-0.08rem 
 }
 .swiper-slide img{
     width:6.86rem;
@@ -169,5 +170,12 @@ margin-top: 0.36rem;
 }
 .fourIcon p{
     font-size: 0.43rem
+}
+.historyAndHot .his{
+    margin-top:0.34rem;
+    display:flex;
+    justify-content:space-between;
+   padding:0 0.36rem;   
+
 }
 /* 3.56 2.59 */

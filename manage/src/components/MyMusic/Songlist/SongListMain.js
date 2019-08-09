@@ -1,23 +1,27 @@
 import React from 'react'
 import MusicTag from './MusicTag'
+import {numDis} from '../../../common/filters'
 export default class SongListMain extends React.Component{
     constructor(){
         super()
     }
     render() {
+        console.log(this.props.playlist)
         return(
                 <div  className={"SongListMain"}>
                     <div className={'SongListMainaa'}>
-                        <div style={{height:'1.5rem'}}>
-
-                        </div>
+                        <div style={{height:'1.5rem'}}></div>
                         <div className={"SongListMainSniky"}>
                             <i className={'iconfont icon-bofang'}></i>
-                            <div>
+                            <div style={{flex:'1',paddingLeft:'0.2rem'}}>
                                 播放全部
-                                <i>(共{this.props.playlist.trackCount}首)</i>
+                                <span>(共{this.props.playlist.trackCount}首)</span>
                             </div>
-                            <div>33万</div>
+                            <div>
+                                {
+                                    this.props.playlist.userId!==JSON.parse(localStorage.userInfo).account.id?<div><span className={"iconfont icon--duoxuantiankong"}></span><span>{numDis(this.props.playlist.subscribedCount)}</span></div>:""
+                                }
+                            </div>
                         </div>
                     </div>
                     {
