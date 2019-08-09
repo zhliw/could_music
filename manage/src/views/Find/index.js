@@ -60,7 +60,7 @@ class Find extends React.Component {
             //导航栏
             <div>
                 <this.MyNav></this.MyNav>
-                <header>
+                <header className={'wnHeader'}>
                     <span style={{ fontSize: '0.48rem' }} onClick={() => {
                         this.props.history.push('/Identification')
                     }} className={'icon-huatong iconfont'}></span>

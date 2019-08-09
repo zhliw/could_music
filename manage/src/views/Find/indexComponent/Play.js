@@ -33,11 +33,15 @@ class Play extends React.Component{
     }
     render(){
         return(
-            <div>  <this.MyNav /><this.Return />
-               <div>
+            <div>  <this.MyNav />
+               <div style={{width:'100%',height:'100%'}}>
                 <audio  id="aud"  src={this.state.url} >
                 </audio>
-                    <span onClick={this.controltheAudio.bind(this)} style={{fontSize:'0.95rem'}} className={this.state.isPlay?'icon-bofangzanting iconfont':'icon-ttpodicon iconfont'}></span>
+                <this.Return />
+                {/* 点击播放 */}
+                <span onClick={this.controltheAudio.bind(this)} 
+                className={this.state.isPlay?'icon-pause iconfont':'icon-rectangle1 iconfont'}>
+                </span>
                 </div>
             </div>
             
