@@ -16,7 +16,7 @@ export const changeVideoList = (payload)=>{
 export default {
     getVideoList(){
         return async(dispatch)=>{
-            const num = Math.floor(Math.random()*10000);
+            // const num = Math.floor(Math.random()*10000);
             let path;
             if(window.location.pathname === "/video"){
                 path = '';
@@ -24,10 +24,10 @@ export default {
                 path = window.location.pathname.replace("/video/","")
             }
             if(path){
-                const data = await axios.get("/video/group?id="+path+"&"+num);
+                const data = await axios.get("/video/group?id="+path+"&"+0);
                 dispatch(getVideoList(data.datas));
             }else {
-                const data = await axios.get("/video/group?id=59110&"+num);
+                const data = await axios.get("/video/group?id=59110&"+0);
                 dispatch(getVideoList(data.datas));
             }
         }

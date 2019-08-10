@@ -45,7 +45,9 @@ class Content extends React.Component {
             visible: false,
         });
     };
-
+    componentWillMount(){
+        document.title = "网易云视频"
+    }
     componentDidMount() {
         this.props.getVideoList();
         document.getElementById("videoCenter").onscroll = () => {
@@ -97,8 +99,9 @@ class Content extends React.Component {
             this.setState({
                 videoInfo: data.data
             }, () => {
-                this.showDrawer()
+                this.showDrawer();
                 this.getVideoSrc();
+
                 this.getVideoRelevant();
                 this.getComment();
             });
@@ -107,13 +110,15 @@ class Content extends React.Component {
     }
 
     getVideoSrc() {
+        document.title = this.state.videoInfo.title
         this.axios.get("/video/url?id=" + this.state.videoInfo.vid).then(data => {
             this.setState({
                 videoSrc: data.urls
+            },()=>{
+                this.isConcerned();
             })
         })
     }
-
     getVideoRelevant() {
         this.axios.get("/related/allvideo?id=" + this.state.videoInfo.vid).then(data => {
             console.log(data.data)
@@ -122,22 +127,38 @@ class Content extends React.Component {
             })
         })
     }
-
     getComment() {
         let num = 0;
         this.axios.get("/comment/video?id=" + this.state.videoInfo.vid + "&limit=20&offset=" + 20 * num).then(data => {
             this.setState({
                 videoComment: data.comments
             })
-            console.log(1111111111111111, data);
         })
     }
 
+    isConcerned(){
+        const myId = JSON.parse(localStorage.userInfo).account.id;
+        const concern = document.getElementById("concern");
+        this.axios.get("/user/follows?uid="+myId+"&limit=100").then(data=>{
+            const index = data.follow.findIndex(v=>v.userId === this.state.videoInfo.creator.userId);
+            if(index>-1){
+                concern.style.display ="none";
+            }
+        })
+    }
+    addConcern(){
+        const concern = document.getElementById("concern");
+        this.axios.get("/follow?id="+this.state.videoInfo.creator.userId+"&t=1").then(data=>{
+            if(data.code/1 === 200){
+                concern.style.display ="none";
+                this.isConcerned();
+            }
+        })
+    }
     render() {
         let videoList = this.props.videoList || [];
         return (
             <div id={"myDiv"}>
-
                 <div style={{background: "#000"}}>
                     {
                         this.state.visible ? (<Drawer
@@ -211,7 +232,9 @@ class Content extends React.Component {
                                     position: "sticky",
                                     top: "0"
                                 }}>
-                                    <p><img style={{
+                                    <p onClick={()=>{
+                                        this.props.history.push("/usermessage",this.state.videoInfo.creator.userId)
+                                    }}><img style={{
                                         width: "0.6rem",
                                         height: "0.6rem",
                                         borderRadius: "50%",
@@ -228,7 +251,7 @@ class Content extends React.Component {
                                         color: "#fff",
                                         textAlign: "center",
                                         lineHeight: "0.52rem"
-                                    }}>十<span style={{marginLeft: "0.08rem"}}>关注</span></p>
+                                    }} onClick={this.addConcern.bind(this)} id={"concern"}>十<span style={{marginLeft: "0.08rem"}}>关注</span></p>
                                 </div>
 
 
