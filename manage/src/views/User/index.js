@@ -58,32 +58,36 @@ class My extends React.Component{
                         </div>
                     </div>
                 </div>
-
-
                 <div style={{display:localStorage.userInfo?'block':'none'}}>
-                    <div>
-                        <img onClick={()=>{this.props.history.push('/user/userplaylist')}} style={{borderRadius:'50%',height:'70px',width:'70px'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
-                        <span style={{fontSize:'0.4rem',marginLeft:'0.2rem'}}>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
+                    <div style={{textAlign:'left',display:'flex',paddingLeft:'0.3rem',marginBottom:'0.5rem'}}>
+                        <img onClick={()=>{this.props.history.push('/user/userplaylist')}} style={{borderRadius:'50%',height:'1.2rem',width:'1.2rem'}} src={localStorage.userInfo?this.state.userInfo.profile.avatarUrl:''}/>
+                        <div style={{paddingTop:'0.23rem'}}>
+                            <span style={{fontSize:'0.4rem',marginLeft:'0.2rem',color:'#000'}}>{localStorage.userInfo?this.state.userInfo.profile.nickname:''}</span>
+                            <p style={{width:'0.9rem',marginTop:'0.1rem',marginLeft:'0.2rem',height:'0.4rem',background:'#e8e4e3',borderRadius:'0.1rem',textAlign:'center',lineHeight:'0.4rem'}}>LV.0</p>
+                        </div>
+                        <div style={{marginLeft:'2rem',marginTop:'0.3rem',width:'1.27rem',height:'0.52rem',borderRadius:'0.2rem',background:'#fc4a46',color:'#fff',textAlign:'center',lineHeight:'0.52rem'}}><i className={'icon-icon-test3 iconfont'}></i>签到</div>
                     </div>
                     <div style={{display:'flex',justifyContent:'center',margin:'0.15rem 0'}}>
-                        <div style={{marginRight:'2rem'}} onClick={this.goUserActive.bind(this)}>
-                            <p style={{fontSize:'0.4rem',color:'#000'}}>
+                        <div style={{marginRight:'2rem',position:'relative'}} onClick={this.goUserActive.bind(this)}>
+                            <p style={{fontSize:'0.4rem',color:'#000',marginBottom:'0.2rem'}}>
                                 {this.state.userActive.length}
                             </p>
                             <p>
                                 动态
                             </p>
+                            <span className={'icon-Separator iconfont'} style={{position:'absolute',right:'-80px',top:'-5px',fontSize:'1rem',color:'#dbd7d6'}}></span>
                         </div>
-                        <div style={{marginRight:'2rem'}} onClick={this.goUserAttention.bind(this)}>
-                            <p style={{fontSize:'0.4rem',color:'#000'}}>
+                        <div style={{marginRight:'2rem',position:'relative'}} onClick={this.goUserAttention.bind(this)}>
+                            <p style={{fontSize:'0.4rem',color:'#000',marginBottom:'0.2rem'}}>
                                 {this.state.userAttention.length}
                             </p>
                             <p>
                                 关注
                             </p>
+                            <span className={'icon-Separator iconfont'} style={{position:'absolute',right:'-80px',top:'-5px',fontSize:'1rem',color:'#dbd7d6'}}></span>
                         </div>
                         <div onClick={this.goUserFans.bind(this)}>
-                            <p style={{fontSize:'0.4rem',color:'#000'}}>
+                            <p style={{fontSize:'0.4rem',color:'#000',marginBottom:'0.2rem'}}>
                                 {this.state.userFans.length}
                             </p>
                             <p>

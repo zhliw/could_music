@@ -8,7 +8,7 @@ class UserFans extends React.Component{
     }
     render(){
         return (
-            <div>
+            <div className={'ygz'}>
                 <this.MyNav></this.MyNav>
                 <header style={{marginBottom:'0.1rem',display:'flex'}}>
                     <i style={{color:'#000',fontSize:'0.34rem',fontWeight:'900'}} className={'icon-gouwuche iconfont'} onClick={()=>{
@@ -21,7 +21,12 @@ class UserFans extends React.Component{
                     {
                         this.state.fans.map((v,i)=>{
                             return (
-                                <div key={i} style={{margin:'0.3rem 0'}}>
+                                <div key={i} style={{margin:'0.3rem 0'}} onClick={()=>{this.props.history.push({
+                                    pathname:'/user/userattentionfansinfo',
+                                    state:{
+                                        userId:v.userId
+                                    }
+                                })}}>
                                     <img src={v.avatarUrl} style={{height:'0.8rem',width:'0.8rem',borderRadius:'50%',margin:'0 0.3rem 0 0.5rem'}}/>
                                     <span style={{fontSize:'0.3rem'}}>{v.nickname}</span>
                                     {
