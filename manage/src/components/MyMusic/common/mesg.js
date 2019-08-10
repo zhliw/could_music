@@ -12,13 +12,8 @@ class Mesg extends React.Component{
                     <img src={this.props.coverImgUrl} alt="" style={{width:'1rem',height:'1rem'}}/>
                 </div>
                 <div className={'rightMesg'}>
-<<<<<<< HEAD
-                    <span>{this.props.name}</span>
-                    <span style={{display:'block',textAlign:'left'}}>{this.props.trackCount}首</span>
-=======
                     <span >{this.props.name}</span>
                     <span style={{display:'block',textAlign:'left'}}>{this.props.trackCount}首{this.props.children}</span>
->>>>>>> f562d8f59090a6d094c462ac7982c2b85455f38e
                 </div>
             </div>
         )

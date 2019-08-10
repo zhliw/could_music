@@ -50,17 +50,7 @@ export default {
             dispatch(getUserMessage(data));
         }
     },
-<<<<<<< HEAD
-    getUserPlayList(id) {
-        return async (dispatch) => {
-            let createdPlaylistCount = [];
-            let subPlaylistCount = []
-            const {playlist} = await axios.get('/user/playlist?uid=' + id)
-            playlist.map(v => {
-                if (v.subscribed) {
-                    subPlaylistCount.push(v)
-                } else {
-=======
+
     getUserPlayList(id){
         return async (dispatch) =>{
             let createdPlaylistCount=[];
@@ -68,7 +58,6 @@ export default {
             const {playlist}=await axios.get('/user/playlist?uid='+id)
             playlist.map(v=>{
                 if(v.userId===id){
->>>>>>> f562d8f59090a6d094c462ac7982c2b85455f38e
                     createdPlaylistCount.push(v)
                 }else {
                     subPlaylistCount.push(v)
