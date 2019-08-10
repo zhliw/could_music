@@ -14,10 +14,9 @@ export default class Video extends React.Component{
             routerChildren:[]
         }
     }
-
     componentWillMount(){
         this.setState({
-            routerChildren:router.find(v=>v.to==="/video/").children
+            routerChildren:router.find(v=>v.to==="/video").children
         })
     }
     render(){
@@ -34,7 +33,7 @@ export default class Video extends React.Component{
                         }
                     </ul>
                 </div>
-                <div className={"videoCenter"}>
+                <div id={"videoCenter"} className={"videoCenter"}>
                     {
                         this.state.routerChildren.map((v,i)=>{
                             return(

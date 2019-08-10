@@ -14,13 +14,14 @@
     font-size:0.22rem;
     color:#6a6f6b
 }
-header{
+.wnHeader{
     display: flex;
     justify-content: space-between;
-    padding:0 0.5rem;
-    margin-top:0.3rem
-
-
+    padding:0 0.32rem;
+    margin-top:0.5rem;
+}
+.wnHeader input{
+    margin-top:-0.08rem 
 }
 .swiper-slide img{
     width:6.86rem;
@@ -72,3 +73,109 @@ header{
     background:#e4e4e4;
     margin-top:0.44rem;
 }
+/* 歌单 */
+.songlist{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+    padding:0 0.32rem;
+}
+.songlist img{
+    border-radius: 0.05rem;
+    
+}
+.name{
+    width:2.15rem;
+    font-size: 0.25rem;
+    text-align: left;
+    word-wrap:break-word;
+    margin-top: 0.18rem;
+    margin-bottom: 0.42rem
+}
+.sonlistSquare{
+    font-size: 0.25rem;
+    line-height:0.52rem;
+    text-align: center; 
+    display: inline-block;
+    width:1.53rem;
+    height: 0.52rem;
+    border: 0.01rem solid #e3e3e3;
+    border-radius: 0.2rem;
+}
+.sonList_wn{
+    display: flex;
+    justify-content:space-between ;
+    padding:0 0.32rem;
+}
+.sonList_wn .recommend{
+    font-size: 0.34rem;
+    font-weight: 800
+}
+.songListwn{
+    margin-top: 0.43rem;
+}
+.songlist{
+    margin-top: 0.3rem
+}
+.presonglistName{
+    padding:0 0.32rem;
+    width:2.91rem;
+    word-wrap:break-word;
+}
+.presonglist{
+    display: flex;
+}
+.othersonglist{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 0.32rem;
+margin-top: 1rem
+}
+.songlistName{
+    width:2.09rem;
+    word-wrap:break-word;
+}
+.discription{
+    display:flex;
+    
+}
+ .theDiscription{
+    width: 3.56rem;
+    height: 2.59rem;
+    
+    
+}
+.songlisthead{
+    display:flex;
+    justify-content:space-between;
+    padding:0 0.32rem;
+
+}
+.discription{
+   text-align: left;
+   display: flex;
+   justify-content: space-between;
+   padding:0 0.32rem;   
+   margin-top:0.66rem
+}
+.dis{
+margin-top: 0.36rem;
+}
+.fourIcon{
+   padding:0 0.70rem;   
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem
+}
+.fourIcon p{
+    font-size: 0.43rem
+}
+.historyAndHot .his{
+    margin-top:0.34rem;
+    display:flex;
+    justify-content:space-between;
+   padding:0 0.36rem;   
+
+}
+/* 3.56 2.59 */

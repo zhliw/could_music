@@ -2,5 +2,7 @@ export default {
     registerInfo:{},
     userInfo:{},
     userAttention:[],
-    userFans:[]
+    userFans:[],
+    userPlayList:[],
+    userActive:[]
 }
