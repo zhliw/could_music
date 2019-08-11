@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5cef7f-512f-4e1e-9b90-40659675e716" name="Default Changelist" comment="" />
+    <list default="true" id="4e5cef7f-512f-4e1e-9b90-40659675e716" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/common/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/common/filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Video/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Video/Content.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,17 +30,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="461">
+              <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js">
+        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state relative-caret-position="-1998">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+              <folding>
+                <element signature="e#572#1090#0" />
+                <element signature="e#1575#2067#0" />
+                <element signature="e#2240#2788#0" />
+                <element signature="e#4200#5345#0" />
+                <element signature="e#5447#6414#0" />
+                <element signature="e#7487#14877#0" />
+                <element signature="e#14883#22433#0" />
+                <element signature="e#22698#26794#0" />
+                <element signature="e#26833#27869#0" />
+                <element signature="e#27971#28961#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/23.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="61" column="22" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -38,10 +82,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/common/Fold.js">
+        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+            <state relative-caret-position="486">
+              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -50,57 +94,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/common/mesg.js">
+        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="93" selection-start-line="9" selection-start-column="93" selection-end-line="9" selection-end-column="93" />
+            <state relative-caret-position="412">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js">
+        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1566">
-              <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
+            <state relative-caret-position="172">
+              <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#503#952#0" />
-                <element signature="e#981#1152#0" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/router/MyMusic_Nav/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1296">
-              <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/views/MyMusic/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1593">
-              <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+            <state relative-caret-position="297">
+              <caret line="102" column="30" lean-forward="true" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
                 <element signature="e#121#202#0" />
@@ -111,34 +132,19 @@
                 <element signature="e#717#792#0" />
                 <element signature="e#828#904#0" />
                 <element signature="e#943#1101#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/common/Mydian.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#1127#1624#0" />
+                <element signature="e#1648#1834#0" />
+                <element signature="e#1853#2593#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/1.json">
+        <entry file="file://$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="224" column="35" selection-start-line="224" selection-start-column="35" selection-end-line="224" selection-end-column="35" />
-              <folding>
-                <element signature="e#72#4053#0" />
-                <element signature="e#4088#5064#0" />
-                <element signature="e#5161#5939#0" />
-                <element signature="e#6451#6475#0" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="352" column="1" lean-forward="true" selection-start-line="352" selection-start-column="1" selection-end-line="352" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -158,6 +164,11 @@
       <find>336355127</find>
       <find>蕊希</find>
       <find>精彩</find>
+      <find>date</find>
+      <find>detailBottom</find>
+      <find>djdetail</find>
+      <find>subscribe</find>
+      <find>boxRight</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,37 +177,41 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Moreradio/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/CreateDj/index.js" />
         <option value="$PROJECT_DIR$/manage/data.json" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json" />
         <option value="$PROJECT_DIR$/manage/src/store/state/MyMusic/index.js" />
         <option value="$PROJECT_DIR$/manage/src/store/actionType/MyMusic/index.js" />
         <option value="$PROJECT_DIR$/manage/src/store/reducers/MyMusic/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/detailPage/index.js" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js" />
-        <option value="$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/index.js" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/1.json" />
-        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/common/mesg.js" />
         <option value="$PROJECT_DIR$/manage/src/router/MyMusic_Nav/index.js" />
         <option value="$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/common/Fold.js" />
         <option value="$PROJECT_DIR$/manage/src/components/MyMusic/common/Mydian.js" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js" />
+        <option value="$PROJECT_DIR$/manage/src/views/Video/Content.js" />
+        <option value="$PROJECT_DIR$/manage/src/common/filters.js" />
+        <option value="$PROJECT_DIR$/manage/node_modules/_antd@3.21.2@antd/lib/modal/Modal.d.ts" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/23.json" />
+        <option value="$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js" />
+        <option value="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="384" />
-    <option name="y" value="56" />
-    <option name="width" value="1362" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="310" />
+    <option name="y" value="70" />
+    <option name="width" value="1552" />
     <option name="height" value="940" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -247,22 +262,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="MyMusic" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="could_music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="could_music" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="could_music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="could_music" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-              <item name="MyMusic_Nav" type="462c0819:PsiDirectoryNode" />
+              <item name="MyFM" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="could_music" type="b2602c69:ProjectViewProjectNode" />
@@ -286,21 +286,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
               <item name="actionCreator" type="462c0819:PsiDirectoryNode" />
-              <item name="MyMusic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="could_music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="could_music" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="could_music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="could_music" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="MyMusic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -311,6 +296,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -348,18 +334,18 @@
       <workItem from="1565355655451" duration="872000" />
       <workItem from="1565356760958" duration="7114000" />
       <workItem from="1565395845979" duration="28222000" />
-      <workItem from="1565503659740" duration="987000" />
+      <workItem from="1565503659740" duration="22709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110450000" />
+    <option name="totallyTimeSpent" value="132172000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="310" y="70" width="1552" height="940" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15384616" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19286658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -371,7 +357,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -408,6 +394,18 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/manage/src/store/reducers/index.js</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js</url>
+          <line>68</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -553,16 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!block;n#dj#0;n#!!block;n#djRadio#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/store/reducers/MyMusic/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
@@ -590,64 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="209" column="24" selection-start-line="209" selection-start-column="24" selection-end-line="209" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/store/state/MyMusic/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="67" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="62" lean-forward="true" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="33" column="54" lean-forward="true" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,23 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/common/Fold.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -712,25 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="80" column="59" selection-start-line="80" selection-start-column="59" selection-end-line="80" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#503#952#0" />
-            <element signature="e#981#1152#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/router/MyMusic_Nav/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/views/MyMusic/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -741,10 +639,180 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/common/Mydian.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#503#952#0" />
+            <element signature="e#981#1152#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/router/MyMusic_Nav/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/views/Video/Content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="341" column="93" selection-start-line="341" selection-start-column="71" selection-end-line="341" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/common/filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/node_modules/_antd@3.21.2@antd/lib/modal/Modal.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="80" column="32" lean-forward="true" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="22" column="65" lean-forward="true" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#287#748#0" />
+            <element signature="e#1319#1758#0" />
+            <element signature="e#1919#2408#0" />
+            <element signature="e#4088#5064#0" />
+            <element signature="e#5161#5939#0" />
+            <element signature="e#7048#14004#0" />
+            <element signature="e#14010#20259#0" />
+            <element signature="e#20265#27169#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="352" column="1" lean-forward="true" selection-start-line="352" selection-start-column="1" selection-end-line="352" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/dd.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1998">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#572#1090#0" />
+            <element signature="e#1575#2067#0" />
+            <element signature="e#2240#2788#0" />
+            <element signature="e#4200#5345#0" />
+            <element signature="e#5447#6414#0" />
+            <element signature="e#7487#14877#0" />
+            <element signature="e#14883#22433#0" />
+            <element signature="e#22698#26794#0" />
+            <element signature="e#26833#27869#0" />
+            <element signature="e#27971#28961#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/23.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="61" column="22" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="99" column="6" lean-forward="true" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+        <state relative-caret-position="297">
+          <caret line="102" column="30" lean-forward="true" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
             <element signature="e#121#202#0" />
@@ -755,29 +823,9 @@
             <element signature="e#717#792#0" />
             <element signature="e#828#904#0" />
             <element signature="e#943#1101#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="224" column="35" selection-start-line="224" selection-start-column="35" selection-end-line="224" selection-end-column="35" />
-          <folding>
-            <element signature="e#72#4053#0" />
-            <element signature="e#4088#5064#0" />
-            <element signature="e#5161#5939#0" />
-            <element signature="e#6451#6475#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/common/Mydian.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#1127#1624#0" />
+            <element signature="e#1648#1834#0" />
+            <element signature="e#1853#2593#0" />
           </folding>
         </state>
       </provider>

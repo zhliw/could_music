@@ -15,7 +15,7 @@ import { Tabs } from 'antd';
 
 class DetailHeader extends React.Component {
     componentDidMount() {
-        this.props.getProgram(this.props.location.state);
+        this.props.getProgram(this.props.location.state,1111111111);
     }
     render() {
         let djProgram = this.props.djProgram || {};

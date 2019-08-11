@@ -21,18 +21,18 @@ class OrderDj extends React.Component {
     render() {
 
         let sublist = this.props.sublist || [];
-        // console.log(564526, sublist.djRadios)
+        console.log(564526, sublist.djRadios)
         return (
             <div className={"orderDj"}>
-                <h3>我订阅的电台({sublist.count})</h3>
                 {
-                    sublist.djRadios ? <div className={"sublist"} >
+                    sublist.length>0 ? (<div className={"sublist"} >
+                        <h3>我订阅的电台({sublist.count})</h3>
                         {
                             sublist.djRadios.map((v, i) => {
                                 return (
                                     <div key={i} className={"sublistWrap"} onClick={()=>{
                                         this.props.history.push("/DjDetail",sublist.djRadios[i].id)
-                                    }}>
+                                        }}>
                                         <div className={"sublistImage"}>
                                             <img src={v.picUrl}/>
                                             {
@@ -53,7 +53,7 @@ class OrderDj extends React.Component {
 
                             })
                         }
-                    </div> : ""
+                    </div> ):<div className={"noOrder"}>暂无订阅</div>
                 }
             </div>
         )

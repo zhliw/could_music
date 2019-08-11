@@ -47,6 +47,7 @@ class MyMusicMiddle extends React.Component {
         this.props.getRecentPlay(JSON.parse(localStorage.userInfo).account.id);
     }
     render() {
+        console.log(this.props.userMessage)
         let userMessage=this.props.userMessage||{};
         let playList=this.props.playList||[];
         let recentPlay=this.props.recentPlay||[];

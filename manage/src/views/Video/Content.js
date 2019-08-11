@@ -26,8 +26,8 @@ class Content extends React.Component {
             videoSrc: {},
             videoRelevant: [],
             videoComment: [],
-            preVideoId:"",
-            videoId:"",
+            preVideoId: "",
+            videoId: "",
             offset: 1,
             commentValue: "",
             isLoading: false
@@ -45,19 +45,20 @@ class Content extends React.Component {
             visible: false,
         });
     };
-    componentWillMount(){
+
+    componentWillMount() {
         document.title = "网易云视频"
     }
+
     componentDidMount() {
         this.props.getVideoList();
         document.getElementById("videoCenter").onscroll = () => {
-            if (scroll.getScrollTop("videoCenter")+ scroll.getClientHeight("videoCenter") == scroll.getScrollHeight("videoCenter")) {
+            if (scroll.getScrollTop("videoCenter") + scroll.getClientHeight("videoCenter") == scroll.getScrollHeight("videoCenter")) {
                 this.props.changeVideoList();
             }
         }
         document.getElementById("videoCenter").scrollTop = 0
     }
-
 
 
     submit(vid) {
@@ -91,7 +92,7 @@ class Content extends React.Component {
 
     getVideoInfo(vid) {
         console.log(vid);
-        if(document.getElementById(vid)){
+        if (document.getElementById(vid)) {
             var videL = document.getElementById(vid);
             videL.pause();
         }
@@ -114,11 +115,12 @@ class Content extends React.Component {
         this.axios.get("/video/url?id=" + this.state.videoInfo.vid).then(data => {
             this.setState({
                 videoSrc: data.urls
-            },()=>{
+            }, () => {
                 this.isConcerned();
             })
         })
     }
+
     getVideoRelevant() {
         this.axios.get("/related/allvideo?id=" + this.state.videoInfo.vid).then(data => {
             console.log(data.data)
@@ -127,6 +129,7 @@ class Content extends React.Component {
             })
         })
     }
+
     getComment() {
         let num = 0;
         this.axios.get("/comment/video?id=" + this.state.videoInfo.vid + "&limit=20&offset=" + 20 * num).then(data => {
@@ -136,25 +139,27 @@ class Content extends React.Component {
         })
     }
 
-    isConcerned(){
+    isConcerned() {
         const myId = JSON.parse(localStorage.userInfo).account.id;
         const concern = document.getElementById("concern");
-        this.axios.get("/user/follows?uid="+myId+"&limit=100").then(data=>{
-            const index = data.follow.findIndex(v=>v.userId === this.state.videoInfo.creator.userId);
-            if(index>-1){
-                concern.style.display ="none";
+        this.axios.get("/user/follows?uid=" + myId + "&limit=100").then(data => {
+            const index = data.follow.findIndex(v => v.userId === this.state.videoInfo.creator.userId);
+            if (index > -1) {
+                concern.style.display = "none";
             }
         })
     }
-    addConcern(){
+
+    addConcern() {
         const concern = document.getElementById("concern");
-        this.axios.get("/follow?id="+this.state.videoInfo.creator.userId+"&t=1").then(data=>{
-            if(data.code/1 === 200){
-                concern.style.display ="none";
+        this.axios.get("/follow?id=" + this.state.videoInfo.creator.userId + "&t=1").then(data => {
+            if (data.code / 1 === 200) {
+                concern.style.display = "none";
                 this.isConcerned();
             }
         })
     }
+
     render() {
         let videoList = this.props.videoList || [];
         return (
@@ -232,8 +237,8 @@ class Content extends React.Component {
                                     position: "sticky",
                                     top: "0"
                                 }}>
-                                    <p onClick={()=>{
-                                        this.props.history.push("/usermessage",this.state.videoInfo.creator.userId)
+                                    <p onClick={() => {
+                                        this.props.history.push("/usermessage", this.state.videoInfo.creator.userId)
                                     }}><img style={{
                                         width: "0.6rem",
                                         height: "0.6rem",
@@ -251,12 +256,9 @@ class Content extends React.Component {
                                         color: "#fff",
                                         textAlign: "center",
                                         lineHeight: "0.52rem"
-                                    }} onClick={this.addConcern.bind(this)} id={"concern"}>十<span style={{marginLeft: "0.08rem"}}>关注</span></p>
+                                    }} onClick={this.addConcern.bind(this)} id={"concern"}>十<span
+                                        style={{marginLeft: "0.08rem"}}>关注</span></p>
                                 </div>
-
-
-
-
 
 
                                 <div style={{padding: "0 0.35rem"}}>
@@ -275,7 +277,7 @@ class Content extends React.Component {
                                                         marginTop: "0.2rem",
                                                         display: "flex",
                                                         justifyContent: "space-between"
-                                                    }} onClick={this.getVideoInfo.bind(this,v.vid)}>
+                                                    }} onClick={this.getVideoInfo.bind(this, v.vid)}>
                                                         <img style={{
                                                             width: "2.48rem",
                                                             height: "1.4rem",
@@ -363,11 +365,6 @@ class Content extends React.Component {
                                 </div>
 
 
-
-
-
-
-
                             </div>
                             <div>
                                 <p style={{height: "0.97rem", borderTop: "0.01rem solid #d5d5d5"}}>
@@ -400,13 +397,14 @@ class Content extends React.Component {
                             <div key={i} className={"videoContent"}>
                                 {
                                     v.type / 1 === 1 ? (<p className={"videoContentImgWarp"}>
-                                        <video onClick={this.control.bind(this,v.data.vid)} className={"videoContentImg"}
+                                        <video onClick={this.control.bind(this, v.data.vid)}
+                                               className={"videoContentImg"}
                                                id={v.data.vid} poster={v.data.coverUrl}
                                                src={v.data.urlInfo.url.replace(/\s*/g, "")} alt=""></video>
                                         <button type="button" ref={v.data.vid}
                                                 className={"iconfont icon-bofang1 videobutton"}
                                                 style={{fontSize: "1rem"}}
-                                                onClick={this.control.bind(this,v.data.vid)}></button>
+                                                onClick={this.control.bind(this, v.data.vid)}></button>
                                     </p>) : (<p></p>)
                                 }
                                 <div className={"videoContentP"} onClick={this.getVideoInfo.bind(this, v.data.vid)}>
@@ -416,8 +414,8 @@ class Content extends React.Component {
                                 <div className={"videoContentBottom"}>
                                     <div>
                                         {
-                                            v.data.creator ? <p><img src={v.data.creator.avatarUrl} onClick={()=>{
-                                                this.props.history.push("/usermessage",v.data.creator.userId)
+                                            v.data.creator ? <p><img src={v.data.creator.avatarUrl} onClick={() => {
+                                                this.props.history.push("/usermessage", v.data.creator.userId)
                                             }}
                                                                      alt=""/><span>{v.data.creator.nickname}</span>
                                             </p> : ""
@@ -429,7 +427,8 @@ class Content extends React.Component {
                                         justifyContent: "space-between",
                                         marginTop: "0.1rem"
                                     }}>
-                                        <p onClick={this.thumbsUp.bind(this, v.data.vid)} className={"iconfont icon-dianzan"}>{v.data.praisedCount}</p>
+                                        <p onClick={this.thumbsUp.bind(this, v.data.vid)}
+                                           className={"iconfont icon-dianzan"}>{v.data.praisedCount}</p>
                                         <p className={"iconfont icon-youcexinxi"}>{v.data.commentCount}</p>
                                     </div>
                                 </div>
@@ -444,14 +443,15 @@ class Content extends React.Component {
         )
 
     }
-    control(vid){
+
+    control(vid) {
         this.setState({
-            preVideoId:this.state.videoId,
-        },()=>{
+            preVideoId: this.state.videoId,
+        }, () => {
             this.setState({
-                videoId:vid
-            },()=>{
-                controlVideo(this,vid,this.state.preVideoId)
+                videoId: vid
+            }, () => {
+                controlVideo(this, vid, this.state.preVideoId)
             })
         })
     }

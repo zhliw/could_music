@@ -3,13 +3,17 @@ import React from "react"
 export default class DetailPage extends React.Component {
     render() {
         // console.log(this.props,82333333333333)
+        console.log(this.props.djdetail.djRadio,23333333333)
         return(
-            <div className={"detailContent"}>
+
+            <div className={"detailContent"} style={{padding:"0 0.2rem"}}>
                 {
                     this.props.djdetail&&this.props.djdetail.djRadio?<div className={"details"}>
                         <div className={"module"}>
                             <h3>主播</h3>
-                            <div className={"nickHead"}>
+                            <div className={"nickHead"}onClick={()=>{
+                                this.props.history.push("/UserMessage",this.props.djdetail.djRadio.dj.userId)
+                            }}>
                                 <div className={"nickPic"}><img src={this.props.djdetail.djRadio.dj.avatarUrl}/>
                                 </div>
                                 <div className={"hostIntroduce"}>
