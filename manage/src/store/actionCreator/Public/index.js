@@ -34,13 +34,19 @@ export const getMyLyric=(payload)=>{
 }
 export const getSongPlayList=(payload)=>{
     return {
-        type:actionType.GET_MY_LYRIC,
+        type:actionType.GET_SONG_PLAY_LIST,
         payload
     }
 }
 export const getSongPlayUrl=(payload)=>{
     return {
         type:actionType.GET_SONG_PLAY_URL,
+        payload
+    }
+}
+export const removeSongPlayUrl=(payload)=>{
+    return {
+        type: actionType.GET_SONG_PLAY_URL,
         payload
     }
 }
@@ -70,11 +76,21 @@ export default {
     },
     getMyLyric(id){
         return async (dispatch)=>{
-            const data=await axios.get('/lyric?id='+id)
-            dispatch(getMyLyric(data))
+            const {lrc}=await axios.get('/lyric?id='+id)
+            dispatch(getMyLyric(lrc))
         }
     },
-
+    removeSongPlayUrl(){
+        return (dispatch)=>{
+            dispatch(removeSongPlayUrl([]))
+        }
+    },
+    getSongPlayUrl(id){
+        return async (dispatch)=>{
+            const {data}=await axios.get('/song/url?id='+id)
+            dispatch(getSongPlayUrl(data))
+        }
+    },
     getSongPlayList(list){
         return (dispatch)=>{
             dispatch(getSongPlayList(list))

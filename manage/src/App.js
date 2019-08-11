@@ -6,6 +6,11 @@ import {
     Route
 } from "react-router-dom"
 import router from "./router"
+import {
+    connect
+} from 'react-redux'
+import {bindActionCreators} from "redux";
+import myPublicCreator from "./store/actionCreator/Public";
 /***********************/
 class App extends React.Component{
     constructor(){
@@ -23,10 +28,10 @@ class App extends React.Component{
                         })
                     }
                 </Router>
-                <audio id={'allPlay'} src={'http://m7.music.126.net/20190809182443/b57f3b967c8c0b32ea9900ada3229c06/ymusic/0653/0452/525f/19d29f005838d661fef8e557608089ec.mp3'}></audio>
+                <audio id={'allPlay'} src={this.props.songPlayUrl[0]?this.props.songPlayUrl[0].url:null}></audio>
             </div>
         );      
     }
 }
 
-export default App;
+export default connect((state)=>({myLyric:state.allPublic.myLyric,songPlayUrl:state.allPublic.songPlayUrl,songPlayList:state.allPublic.songPlayList}),(dispatch) => bindActionCreators(myPublicCreator,dispatch))(App);

@@ -61,17 +61,18 @@ class SongListTop extends React.Component{
                         <p>多选</p>
                     </div>
                </div>
-                <>
+                <div>
                     <Drawer
                         height={'13.34rem'}
                         placement="bottom"
                         closable={true}
                         onClose={this.onClose}
                         visible={this.state.visible}
+                        bodyStyle={{background:"#cccccc"}}
                     >
                         <Open {...this.props}></Open>
                     </Drawer>
-                </>
+                </div>
             </div>
         )
     }
