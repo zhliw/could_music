@@ -1,4 +1,7 @@
-import MySongList from '../../components/MyMusic/Songlist/index';
+
+import MySongList from '../../components/MyMusic/Songlist/index'
+import MyFM from "../../components/MyMusic/MyFM/index"
+import DjDetail from "../../components/MyMusic/MyFM/DjDetail"
 import UserMessage from '../../components/MyMusic/UserMessage/index';
 import SongPlay from '../../components/MyMusic/SongPlay/index'
 export default [
@@ -14,14 +17,30 @@ export default [
         }
     },
     {
+        to: "/MyFM",
+        path: "/MyFM",
+        context: "电台",
+        component: MyFM,
+        meta: {
+            title: "电台",
+        }
+    },
+    {
         to: "/UserMessage",
         path: "/UserMessage",
         context: "用户信息",
         component: UserMessage,
         meta: {
             title: "用户信息",
-            keyword: "",
-            descrieption: ""
+        }
+    },
+    {
+        to:"/DjDetail",
+        path:"/DjDetail",
+        context:"电台详情",
+        component:DjDetail,
+        meta: {
+            title: "电台详情"
         }
     },
     {
@@ -31,8 +50,7 @@ export default [
         component: SongPlay,
         meta: {
             title: "歌曲播放",
-            keyword: "",
-            descrieption: ""
         }
     }
+
 ]

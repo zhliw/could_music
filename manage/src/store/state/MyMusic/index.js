@@ -1,5 +1,9 @@
 export default {
     userMessage:{},
     playList:[[],[]],
-    recentPlay:[]
+    recentPlay:[],
+    recommend:[],
+    sublist:[],
+    djdetail:{},
+    djProgram:{}
 }

@@ -2,11 +2,12 @@ import React from 'react';
 import {
     withRouter
 } from 'react-router-dom'
-class mesg extends React.Component{
+class Mesg extends React.Component{
     render() {
         // console.log(123141,this.props.history)
         return (
-            <div onClick={()=>this.props.history.push('/MySongList',this.props.id)} style={{display:'flex',justifyContent:'flex-start',paddingBottom:'0.1rem'}}>
+            //路由跳转
+            <div onClick={()=>this.props.history.push('/MySongList',this.props.id)} style={{display:'flex',justifyContent:'flex-start',paddingBottom:'0.1rem'}} >
                 <div style={{background:'#ccc'}}>
                     <img src={this.props.coverImgUrl} alt="" style={{width:'1rem',height:'1rem'}}/>
                 </div>
@@ -18,4 +19,4 @@ class mesg extends React.Component{
         )
     }
 }
-export default withRouter(mesg)
+export default withRouter(Mesg)
