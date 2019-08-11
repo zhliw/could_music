@@ -116,7 +116,14 @@
 .MusicTagShow span{
     line-height: 0.6rem;
 }
+<<<<<<< HEAD
 
+=======
+.ant-drawer-content{
+    text-align: center;
+    /*background: #cccccc;*/
+}
+>>>>>>> bea340cd0c43bca7049e2e678097386d06c9a05a
 .OpenImg{
     padding-top: 1.5rem;
 }
