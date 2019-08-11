@@ -6,7 +6,6 @@ export default class SongListMain extends React.Component{
         super()
     }
     render() {
-        console.log(this.props.playlist)
         return(
                 <div  className={"SongListMain"}>
                     <div className={'SongListMainaa'}>
@@ -26,10 +25,10 @@ export default class SongListMain extends React.Component{
                     </div>
                     {
                         this.props.playlist.tracks.map((v,i)=>{
-                            return (
-                                this.props.privileges[i].st===-200? <MusicTag {...v} {...{background:'red',count:i+1}} key={v.id}></MusicTag>: <MusicTag {...v} {...{count:i+1}} key={v.id}></MusicTag>
-                            )
-                        })
+                                return (
+                                    this.props.privileges[i].st===-200? <MusicTag songs={this.props} {...v} {...{background:'red',count:i+1}} key={v.id}></MusicTag>: <MusicTag songs={this.props} {...v} {...{count:i+1}} key={v.id}></MusicTag>
+                                )
+                            })
                     }
 
                 </div>
