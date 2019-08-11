@@ -16,7 +16,6 @@ export const changeVideoList = (payload)=>{
 export default {
     getVideoList(){
         return async(dispatch)=>{
-            // const num = Math.floor(Math.random()*10000);
             let path;
             if(window.location.pathname === "/video"){
                 path = '';
@@ -49,6 +48,7 @@ export default {
                 dispatch(changeVideoList(data.datas));
             }
         }
-    }
+    },
+
 
 }
