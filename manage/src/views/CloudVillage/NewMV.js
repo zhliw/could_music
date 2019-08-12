@@ -13,7 +13,6 @@ export default class NewMV extends React.Component {
         }
     }
     render() {
-        console.log(this.props)
         return (
             <div className={"c-m-list"}>
                 <div className={"c-m-list-left"}></div>
@@ -23,7 +22,8 @@ export default class NewMV extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getNewMV();
+        this.props.getNewMV(1,this);
+        console.log(this.props.newMV)
         //  下拉加载  ***********************************************************************
         var timer;
         document.getElementsByClassName("cv-scroll")[0].onscroll = () => {
@@ -31,8 +31,8 @@ export default class NewMV extends React.Component {
                 this.setState({
                     i:this.state.i+1
                 },()=>{
-                    this.props.getNewMV(this.state.i);
-                    console.log(this.state.i)
+                    console.log(9,this.props.newMV)
+                    this.props.getNewMV(this.state.i,this);
                 })
             } else {
                 this.setState({
@@ -42,20 +42,13 @@ export default class NewMV extends React.Component {
         }
         //    ***********************************************************************
     }
-    // componentWillUpdate(nextProps, nextState, nextContext) {
-    //     console.log(989898,nextProps,nextState,nextContext)
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     // console.log(1244,JSON.stringify(this.props.newMV) == JSON.stringify(nextProps.newMV))
+    //     // console.log(3333333,JSON.stringify(this.props.newMV),JSON.stringify(nextProps.newMV))
+    //     if (JSON.stringify(this.props.newMV) == JSON.stringify(nextProps.newMV)){
+    //         return false;
+    //     } else return true;
     // }
-
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.hotComments.length>0) {
-            console.log(this.props.newMV,nextProps.newMV,this.props.newMV.length)
-            if (this.props.newMV.length==10) {
-                this.waterfall(nextProps.newMV)
-            }else if (this.props.newMV.length>10&&this.props.newMV.toString()!=nextProps.newMV.toString()) {
-                this.waterfall(nextProps.newMV)
-            }
-        }
-    }
 
     //  瀑布流  ***********************************************************************
     initMin() {
@@ -66,9 +59,7 @@ export default class NewMV extends React.Component {
     }
 
     waterfall(data) {
-        console.log(989898,data)
         let arr = data.slice(-10);
-        console.log(90,arr)
         arr.map((v, i) => {
                     this.initMin();
                     let minHeight;
@@ -94,6 +85,10 @@ export default class NewMV extends React.Component {
                             </div>`;
                     minHeight.innerHTML+=_div;
                 })
+    }
+
+    componentWillMount() {
+      this.props.del()
     }
 
     //  下拉加载  ***********************************************************************
@@ -126,3 +121,5 @@ export default class NewMV extends React.Component {
     //    ***********************************************************************
 
 }
+
+

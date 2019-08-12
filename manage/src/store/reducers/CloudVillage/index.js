@@ -9,6 +9,8 @@ export default function (state = initState, {type, payload}) {
         state.newMV = payload;
     } else if (type === actionType.GET_EVENTS_LIST) {
         state.eventsList = payload
+    }else if (type==="DEL"){
+        state.newMV=[]
     }
     return state;
 }

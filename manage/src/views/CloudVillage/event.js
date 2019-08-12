@@ -5,18 +5,20 @@ import {connect} from "react-redux"
 import cloudVillageCreator from '../../store/actionCreator/CloudVillage'
 import EventsVideo from "../../components/CloudVillage/EventsVideo"
 import EventsPic from "../../components/CloudVillage/EventsPic";
-import { Drawer, Button } from 'antd';
+import {Drawer, Button} from 'antd';
 import EventsInfo from "../../components/CloudVillage/EventsInfo";
 
 class Event extends React.Component {
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            info:{},
-            i:0
+        this.state = {
+            info: {},
+            i: 0
         }
     }
-    state = { visible: false };
+
+    state = {visible: false};
+
     render() {
         console.log(this.props.eventsList)
         let eventsList = this.props.eventsList || [];
@@ -32,17 +34,25 @@ class Event extends React.Component {
                             return (
                                 <div className={"cv-video-item"} key={i}>
                                     <div className={"left cv-video-userPic"}>
-                                        <img style={{width:".8rem" ,height:"auto",borderRadius:"50%"}} src={v.user.avatarUrl} alt=""/>
+                                        <img onClick={() => {
+                                            this.props.history.push("/usermessage", v.user.userId)
+                                        }} style={{width: ".8rem", height: "auto", borderRadius: "50%"}}
+                                             src={v.user.avatarUrl} alt=""/>
                                     </div>
-                                    <div onClick={this.getInfo.bind(this,v,i)} className={"left cv-video-item-r"}>
-                                        <p className={"left cv-video-userName"}>{v.user.nickname}</p>
-                                        <p className={"cv-video-fans"}>{v.user.followeds}粉丝</p>
-                                        <div className={"cv-video-msg"}>{JSON.parse(v.json).msg}</div>
+                                    <div onClick={this.getInfo.bind(this, v, i)} className={"left cv-video-item-r"}>
+                                        <div onClick={() => {
+                                            this.props.history.push("/usermessage", v.user.userId)
+                                        }}>
+                                            <p className={"left cv-video-userName"}>{v.user.nickname}</p>
+                                            <p className={"cv-video-fans"}>{v.user.followeds}粉丝</p>
+                                            <div className={"cv-video-msg"}>{JSON.parse(v.json).msg}</div>
+                                        </div>
+
                                         {
-                                            v.pics.length>0?<EventsPic {...this.props} i={i}></EventsPic>:""
+                                            v.pics.length > 0 ? <EventsPic {...this.props} i={i}></EventsPic> : ""
                                         }
                                         {
-                                            v.json.length>0?<EventsVideo id={JSON.parse(v.json)}></EventsVideo>:""
+                                            v.json.length > 0 ? <EventsVideo id={JSON.parse(v.json)}></EventsVideo> : ""
                                         }
                                         <div className={"cv-video-handle"}>
                                             <span className={"iconfont "}>&#xe616;<i>{v.insiteForwardCount}</i></span>
@@ -60,7 +70,7 @@ class Event extends React.Component {
                         })
                     }
                     {
-                        this.state.info.user?(<Drawer
+                        this.state.info.user ? (<Drawer
                             className={"cv-events-drawer"}
                             closable={false}
                             placement="right"
@@ -74,43 +84,47 @@ class Event extends React.Component {
                                 <i className={"iconfont"} onClick={this.onClose}>&#xe630;</i>
                             </header>
                             <div className={"left cv-video-userPic"}>
-                                <img style={{width:".8rem" ,height:"auto",borderRadius:"50%"}} src={this.state.info.user.avatarUrl} alt=""/>
+                                <img style={{width: ".8rem", height: "auto", borderRadius: "50%"}}
+                                     src={this.state.info.user.avatarUrl} alt=""/>
                             </div>
                             <div className={"left cv-video-item-r"}>
                                 <p className={"left cv-video-userName"}>{this.state.info.user.nickname}</p>
                                 <p className={"cv-video-fans"}>{this.state.info.eventTime}</p>
                                 <div className={"cv-video-msg"}>{JSON.parse(this.state.info.json).msg}</div>
                                 {
-                                    this.state.info.pics.length>0?<EventsPic {...this.props} i={this.state.i}></EventsPic>:""
+                                    this.state.info.pics.length > 0 ?
+                                        <EventsPic {...this.props} i={this.state.i}></EventsPic> : ""
                                 }
                                 {
-                                    this.state.info.json.length>0?<EventsVideo id={JSON.parse(this.state.info.json)}></EventsVideo>:""
+                                    this.state.info.json.length > 0 ?
+                                        <EventsVideo id={JSON.parse(this.state.info.json)}></EventsVideo> : ""
                                 }
                                 <div className={"cv-video-handle"}>
-                                    <span className={"iconfont "}>&#xe616;<i>{this.state.info.insiteForwardCount}</i></span>
-                                    <span className={"iconfont "}>&#xe641;<i>{this.state.info.info.commentCount}</i></span>
-                                    <span className={"iconfont "}>&#xe613;<i>{this.state.info.info.likedCount}</i></span>
+                                    <span className={"iconfont "}>&#xe616;
+                                        <i>{this.state.info.insiteForwardCount}</i></span>
+                                    <span className={"iconfont "}>&#xe641;
+                                        <i>{this.state.info.info.commentCount}</i></span>
+                                    <span className={"iconfont "}>&#xe613;
+                                        <i>{this.state.info.info.likedCount}</i></span>
                                 </div>
                             </div>
 
-                        </Drawer>):""
+                        </Drawer>) : ""
                     }
                     {/*<EventsInfo info={this.state.info}></EventsInfo>*/}
                 </div>
             </div>
         )
     }
-    getInfo(v,i){
+
+    getInfo(v, i) {
         console.log(v)
         this.setState({
             visible: true,
-            info:v,
+            info: v,
             i
-        },()=>{
-            console.log(this.state.info,1234)
         });
     }
-
 
 
     onClose = () => {

@@ -126,3 +126,29 @@
   height: .7rem;
   border-radius: .7rem;
 }
+
+// 评论弹窗
+.cv-video-comment .ant-drawer-content-wrapper .ant-drawer-content{
+  width: 100%;
+  border-top-left-radius: .5rem ;
+  border-top-right-radius: .5rem ;
+  overflow: auto;
+.cv-video-comments-header{
+  color: #2b2b2b;
+  margin:0 0 0 -.5rem;
+  width: 7.5rem;
+  height: .9rem;
+  border-bottom: 1px solid #ccc;
+  font-size: .3rem;
+}
+}
+.cv-video-hotComments{
+  text-align: left;
+}
+.cv-video-commentlist{
+  img{
+    width: .62rem;
+    height: auto;
+    border-radius: 50%;
+  }
+}
