@@ -21,11 +21,11 @@ class OrderDj extends React.Component {
     render() {
 
         let sublist = this.props.sublist || [];
-        console.log(564526, sublist.djRadios)
+        // console.log(564526, sublist)
         return (
             <div className={"orderDj"}>
                 {
-                    sublist.length>0 ? (<div className={"sublist"} >
+                    sublist.count>0 ? (<div className={"sublist"} >
                         <h3>我订阅的电台({sublist.count})</h3>
                         {
                             sublist.djRadios.map((v, i) => {
