@@ -12,7 +12,10 @@ import DetailPage from "./DetailPage"
 import Program from "./Program"
 import { Tabs } from 'antd';
 
-
+const { TabPane } = Tabs;
+function callback(key) {
+    // console.log(key)
+}
 class DetailHeader extends React.Component {
     componentDidMount() {
         this.props.getProgram(this.props.location.state,1111111111);
@@ -21,10 +24,7 @@ class DetailHeader extends React.Component {
         let djProgram = this.props.djProgram || {};
         // console.log(this.props.location.state,55555555555)
         // console.log(djProgram,23333333333333)
-        const { TabPane } = Tabs;
-        function callback(key) {
-            // console.log(key)
-        }
+
         // console.log(this.props.djdetail.djRadio,2626565)  tabBarStyle={"detailRoute"}  className={"leftRoute"}  className={"rightRoute"}
         return (
             <div>

@@ -3,7 +3,7 @@ import React from "react"
 export default class DetailPage extends React.Component {
     render() {
         // console.log(this.props,82333333333333)
-        console.log(this.props.djdetail.djRadio,23333333333)
+        // console.log(this.props.djdetail.djRadio,23333333333)
         return(
 
             <div className={"detailContent"} style={{padding:"0 0.2rem"}}>
@@ -39,7 +39,9 @@ export default class DetailPage extends React.Component {
                                             return (
                                                 <div key={i}>
                                                     <div className={"comments"}>
-                                                        <div className={"userProfile"}>
+                                                        <div className={"userProfile"} onClick={()=>{
+                                                            this.props.history.push("/UserMessage",v.userProfile.userId)
+                                                        }}>
                                                             <img src={v.userProfile.avatarUrl}/>
                                                         </div>
                                                         <div className={"commentsContent"}>

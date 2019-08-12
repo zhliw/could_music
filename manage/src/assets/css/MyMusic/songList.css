@@ -85,6 +85,8 @@
 .MusicTag{
     display: flex;
     justify-content: flex-start;
+    padding:0.2rem 0;
+    border-bottom:1px solid #ccc;
 }
 .MusicTagCount{
     display: block;width: 1rem;line-height: 1rem;

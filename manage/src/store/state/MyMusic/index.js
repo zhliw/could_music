@@ -5,5 +5,5 @@ export default {
     recommend:[],
     sublist:[],
     djdetail:{},
-    djProgram:{}
+    djProgram:{},
 }

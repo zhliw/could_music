@@ -18,7 +18,10 @@ class SongPlay extends React.Component{
     componentDidMount() {
         this.props.getMyLyric(this.props.location.state.songid)
         this.props.getSongPlayUrl(this.props.location.state.songid)
-        this.props.getSongList(this.props.location.state.songlistid)
+        if (this.props.location.state.songlistid){
+            this.props.getSongList(this.props.location.state.songlistid)
+        }
+
     }
 
     render() {
@@ -34,12 +37,12 @@ class SongPlay extends React.Component{
         return (
             <>
                 {
-                    this.props.songPlayList.length>0?<div className={'SongPlay'}>
+                    <div className={'SongPlay'}>
                         <SongPlayHeader></SongPlayHeader>
                         {
                             this.props.songPlayUrl.length>0?<SongPlayMain {...this.props.songPlayUrl} songPlayList={this.props.songPlayList} lyric={myLyric(this.props.myLyric.lyric?this.props.myLyric.lyric:"")}></SongPlayMain>:null
                         }
-                    </div>:null
+                    </div>
                 }
             </>
         )
