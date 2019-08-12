@@ -2,28 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5cef7f-512f-4e1e-9b90-40659675e716" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/Find/SearchHot.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/Find/SearchHot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/Find/find.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/Find/find.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/songList.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/songList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/js/rem.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/js/rem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/CreateDj/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/CreateDj/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/DetailPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/Program/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailContent/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/DetailHeader/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/DjDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Moreradio/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Moreradio/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/cloudVillage/square.scss" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/cloudVillage/square.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/cloudVillage/video.scss" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/cloudVillage/video.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/assets/js/WaterFall.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/OrderDj/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/Recommend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyFM/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/MyMusicMiddle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/MusicTag.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/MusicTag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/SongListMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/SongListMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/common/Fold.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/common/Fold.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/router/MyMusic_Nav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/router/MyMusic_Nav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/store/state/MyMusic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/state/MyMusic/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/store/actionCreator/CloudVillage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/actionCreator/CloudVillage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/store/reducers/CloudVillage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/reducers/CloudVillage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/CloudVillage/NewMV.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/CloudVillage/NewMV.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/CloudVillage/Square.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/CloudVillage/Square.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/CloudVillage/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/CloudVillage/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/CloudVillage/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/CloudVillage/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/Search/RecommendSongList.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/Search/RecommendSongList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/Search/Search_To.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/Search/Search_To.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/Search/Singer.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/Search/Singer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/indexComponent/RecommendedDaily.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/indexComponent/RecommendedDaily.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/indexComponent/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/indexComponent/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage/src/views/Find/indexComponent/SongList.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Find/indexComponent/SongList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/RecentPlay/Song/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -54,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/RecentPlay/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+            <state relative-caret-position="171">
+              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -135,8 +133,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="16" />
-    <option name="y" value="165" />
+    <option name="x" value="273" />
+    <option name="y" value="261" />
     <option name="width" value="1703" />
     <option name="height" value="991" />
   </component>
@@ -249,15 +247,15 @@
       <workItem from="1565395845979" duration="28222000" />
       <workItem from="1565503659740" duration="22969000" />
       <workItem from="1565530440222" duration="409000" />
-      <workItem from="1565568539146" duration="19110000" />
+      <workItem from="1565568539146" duration="19408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151951000" />
+    <option name="totallyTimeSpent" value="152249000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="688" y="114" width="1703" height="991" extended-state="0" />
+    <frame x="273" y="261" width="1703" height="991" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17357357" />
@@ -770,7 +768,7 @@
     <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/RecentPlay/Song/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -779,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/components/MyMusic/RecentPlay/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        <state relative-caret-position="171">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
