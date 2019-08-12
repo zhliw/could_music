@@ -14,7 +14,7 @@
     font-size:0.22rem;
     color:#6a6f6b
 }
-.wnHeader{
+.wnHeader,.songlist_header{
     display: flex;
     justify-content: space-between;
     padding:0 0.32rem;
@@ -107,7 +107,7 @@
     justify-content:space-between ;
     padding:0 0.32rem;
 }
-.sonList_wn .recommend{
+.sonList_wn .recommend_wn{
     font-size: 0.34rem;
     font-weight: 800
 }
@@ -118,11 +118,12 @@
     margin-top: 0.3rem
 }
 .presonglistName{
-    padding:0 0.32rem;
     width:2.91rem;
     word-wrap:break-word;
 }
 .presonglist{
+    margin-top:0.37rem; 
+    height:4.39rem;
     display: flex;
 }
 .othersonglist{
@@ -130,7 +131,7 @@
     display: flex;
     flex-wrap: wrap;
     padding:0 0.32rem;
-
+    margin-top: 0.32rem
 }
 .songlistName{
     width:2.09rem;

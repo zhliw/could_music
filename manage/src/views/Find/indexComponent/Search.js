@@ -92,7 +92,7 @@ class Search extends React.Component {
                 <this.MyNav></this.MyNav>
                 <div className={'search'}>
                     <span className={'icon-magnifier iconfont'}></span>
-                    <input name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e) => {
+                    <input autoComplete="off"  style={{outline:'none'}} autoFocus="autoFocus" name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e) => {
                         if (e.keyCode === 13) {
                             this.props.history.push({
                                 pathname: '/Search_To/All',
@@ -102,22 +102,24 @@ class Search extends React.Component {
                             })
 
                         }
-                    }} className={'search_search_wn iconfont'} type='text' placeholder='e64d' />
-                    <span onClick={() => {
-                        this.props.history.go(-1)
+                    }} className={'search_search_wn iconfont'} type='text' placeholder='' />
+                    <span style={{marginLeft:"0.24rem",marginRight:'0.30rem',fontSize:'0.26rem',fontWeight:'600'}} onClick={() => {
+                        this.props.history.push('/')
                     }}>
                         取消
                         </span>
-                    <span className={'icon-geshou iconfont Singers'} onClick={() => {
+                    <span style={{fontSize:'0.34rem'}} className={'icon-geshou iconfont Singers'} onClick={() => {
                         this.props.history.push('/Singer')
                     }}></span>
                     {
                         <div style={{ display: !this.state.isShow ? 'block' : 'none' }} className={'searchList'}>
-                            搜索 "{this.state.keyword}"
+                            <div style={{height:'0.7rem',fontSize:'0.21rem',marginLeft:'0.27rem',color:"#5e88a6",lineHeight:'0.7rem'}}>搜索 "{this.state.keyword}"</div>
+                            <div className={'searchSong'}></div>
                             {
                                 this.state.isTrue ? this.state.search.map((v, i) => {
                                     if (v.keyword) {
-                                        return <div onClick={() => {
+                                        return <div>
+                                            <div style={{height:'0.7rem',marginLeft:'0.25rem',lineHeight:'0.7rem',color:'#5c6978'}} onClick={() => {
                                             this.props.history.push({
                                                 pathname: '/Search_To',
                                                 state: {
@@ -125,7 +127,9 @@ class Search extends React.Component {
                                                 }
                                             })
                                             this.getHistory(v.keyword)
-                                        }} key={i}>{v.keyword}</div>
+                                        }} key={i}><span style={{fontSize:'0.23rem',marginRight:'0.13rem'}} className={'icon-magnifier iconfont'}></span>{v.keyword}</div>
+                                        <div className={'searchSong'}></div>
+                                        </div>
                                     
                                     }
                                 }) : null

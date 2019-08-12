@@ -21,7 +21,6 @@ class SongList extends React.Component{
         }
     }
     render() {
-        console.log(this.props.songList.playlist)
         return(
             <>
                 {
@@ -37,4 +36,4 @@ class SongList extends React.Component{
         )
     }
 }
-export default withRouter(connect((state) => ({songList: state.allPublic.songList}), (dispatch) => bindActionCreators(myPublicCreator,dispatch))(SongList))
+export default withRouter(connect((state) => ({songList: state.allPublic.songList,songPlayList:state.allPublic.songPlayList}),(dispatch) => bindActionCreators(myPublicCreator,dispatch))(SongList))

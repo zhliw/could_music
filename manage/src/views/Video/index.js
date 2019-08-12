@@ -37,7 +37,7 @@ export default class Video extends React.Component{
                     {
                         this.state.routerChildren.map((v,i)=>{
                             return(
-                                <li key={i}><Route exact={v.exact} path={v.path} component={Content}></Route></li>
+                                <Route key={i} exact={v.exact} path={v.path} component={Content}></Route>
                             )
                         })
                     }

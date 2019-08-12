@@ -33,6 +33,7 @@ import UserAttention from '../views/User/UserAttention'
 import UserFans from "../views/User/UserFans";
 import UserPlayList from "../views/User/UserPlayList";
 import UserActive from "../views/User/UserActive";
+import UserAttentionFansInfo from "../views/User/UserAttentionFansInfo";
 export default [
     {
         to: "/",
@@ -258,6 +259,11 @@ export default [
         to:'/user/useractive',
         path:'/user/useractive',
         component:UserActive,
+    },
+    {
+        to:'/user/userattentionfansinfo',
+        path:'/user/userattentionfansinfo',
+        component:UserAttentionFansInfo,
     },
     ...Find_Nav,
     ...MyMusicNav

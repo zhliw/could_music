@@ -3,10 +3,21 @@ import React from 'react'
 import {
     withRouter
 } from "react-router-dom"
+import {
+    connect
+} from 'react-redux'
+import {bindActionCreators} from "redux";
+import {message} from 'antd'
+import myPublicCreator from "../../../store/actionCreator/Public";
  class MusicTag extends React.Component{
+
     render() {
         return (
-            <div className={'MusicTag'} onClick={()=>this.props.history.push('/SongPlay',this.props.id)}>
+            <div style={{background:this.props.background?'#cccccc':""}} className={'MusicTag'} onClick={!this.props.background?()=>{
+                this.props.history.push('/SongPlay',{songid:this.props.id,songlistid:this.props.songs.playlist.id})
+            }:()=>{
+                message.info('暂无版权')
+            }}>
                 <span className={'MusicTagCount'}>{this.props.count}</span>
                 <div className={'MusicTagShow'}>
                     <div className={"MusicTagShowTop"}>
@@ -28,4 +39,5 @@ import {
         )
     }
 }
-export default withRouter(MusicTag)
+
+export default withRouter(connect((state) => ({songPlayList:state.allPublic.songPlayList}),(dispatch) => bindActionCreators(myPublicCreator,dispatch))(MusicTag))

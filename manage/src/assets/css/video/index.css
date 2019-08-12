@@ -44,10 +44,12 @@ body p{
     min-width:1.6rem;
     display:inline-block;
     line-height:0.88rem;
+    color: #000;
 }
 .activeNav{
     color:#f64057 !important;
     border-bottom:0.04rem solid #f64057;
+    font-weight: bold;
     height:0.88rem;
 }
 .videoContent{
@@ -108,4 +110,23 @@ body p{
     display:inline-block;
     margin-left:0.1rem;
 }
+.sendComment{
+    border: 0;
+    height: 100%;
+    color: #fff;
+    font-size: 0.3rem;
+    border-radius: 0.2rem;
+    background: #ff483f;
+    width: 20%;
+}
+.videoContentBottomRight{
+    display: flex;
+    width: 3.2rem;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+}
+
+
+
+
 

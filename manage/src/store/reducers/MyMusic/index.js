@@ -12,5 +12,17 @@ export default function (state = initState, {type, payload}) {
     if(type === actionType.GET_RECENT_PLAY){
         state.recentPlay = payload;
     }
+    if(type===actionType.GET_RECOMMEND){
+        state.recommend=payload
+    }
+    if(type===actionType.GET_SUBLIST){
+        state.sublist=payload
+    }
+    if (type===actionType.GET_DJDETAIL){
+        state.djdetail=payload
+    }
+    if(type===actionType.GET_DJPROGRAM){
+        state.djProgram=payload
+    }
     return state;
 }

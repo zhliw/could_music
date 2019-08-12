@@ -19,24 +19,30 @@ class UserPlayList extends React.Component{
     handleScroll(e){
         let myDiv = document.getElementById('myDiv')
         let myHeader = document.getElementById('myHeader')
+        let mySpan = document.getElementById('mySpan')
         if(document.documentElement.scrollTop>'320'){
             myDiv.style.position = 'fixed'
-            myDiv.style.top = '0rem'
-            myHeader.style.display = 'none'
+            myDiv.style.top = '0.88rem'
+            myHeader.style.background = 'black'
+            myHeader.style.color = '#fff'
+            myHeader.style.opacity = '.8'
+            mySpan.innerHTML = this.state.userName
         }else{
             myDiv.style.position = 'absolute'
             myDiv.style.bottom = '0'
             myDiv.style.top = null
-            myHeader.style.display = 'block'
+            myHeader.style.background = ''
+            myHeader.style.opacity = '.6'
+            mySpan.innerHTML = ''
         }
     }
     render(){
         return (
-            <div>
+            <div className={'ygz'}>
                 <this.MyNav></this.MyNav>
                 <header id={'myHeader'} style={{marginBottom:'0.1rem',opacity:'.6',position:'fixed',zIndex:'2',top:'0'}}>
                     <i className={'icon-fanhui iconfont'} onClick={()=>{this.props.history.go(-1)}}></i>
-                    <span style={{color:'#000',fontSize:'0.34rem',marginLeft:'2rem'}}>{this.state.userName}</span>
+                    <span id={'mySpan'} style={{color:'#fff',fontSize:'0.34rem',marginLeft:'2rem'}}></span>
                     <i className={'icon-yinle1 iconfont'} style={{marginLeft:'2rem'}}></i>
                 </header>
                 <div style={{position:'relative',height:'7.5rem'}}>

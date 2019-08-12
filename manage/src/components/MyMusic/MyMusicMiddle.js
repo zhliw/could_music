@@ -9,6 +9,7 @@ import {bindActionCreators} from "redux";
 import myMusicCreator from "../../store/actionCreator/MyMusic";
 import Fold from './common/Fold'
 import { Collapse } from 'antd';
+import MyFM from "./MyFM"
 import myMusic from "../../store/reducers/MyMusic";
 const { Panel } = Collapse;
 
@@ -46,9 +47,12 @@ class MyMusicMiddle extends React.Component {
         this.props.getRecentPlay(JSON.parse(localStorage.userInfo).account.id);
     }
     render() {
+        console.log(this.props.userMessage)
         let userMessage=this.props.userMessage||{};
         let playList=this.props.playList||[];
-        let recentPlay=this.props.recentPlay||[]
+        let recentPlay=this.props.recentPlay||[];
+        // console.log(userMessage,32456)
+
         return (
             < div style={{flex: '1', overflow: 'auto'}}>
                 <div className={'MyMusic-Middle'}>
@@ -59,7 +63,9 @@ class MyMusicMiddle extends React.Component {
                     </div>
                     < div style={{display: 'flex'}}>
                         <div style={{fontSize:'0.8rem',background:'#fff'}} className={'iconfont MyMusic-Middle-left icon-diantai'}></div>
-                        < div className={'MyMusic-Middle-right'}> 我的电台（{userMessage.djRadioCount}）
+                        < div className={'MyMusic-Middle-right'} onClick={()=>{
+                            this.props.history.push('/MyFM')
+                        }}> 我的电台（{userMessage.djRadioCount}）
                         </div>
                     </div>
                     <div style={{display: 'flex'}}>

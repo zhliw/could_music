@@ -9,13 +9,22 @@ export default function (state = initState, {type, payload}) {
     if (type === actionType.REMOVE_SONG_LIST) {
         state.songList = payload;
     }
-    if(type === actionType.GET_USER_DETAIL) {
-        state.userDetail=payload
+    if (type === actionType.GET_USER_DETAIL) {
+        state.userDetail = payload
     }
-    if(type === actionType.GET_USER_EVENT) {
-        state.userEvent=payload
+    if (type === actionType.GET_USER_EVENT) {
+        state.userEvent = payload
     }
-    if (type===actionType.GET_SONG_PLAY_URL){
+    if (type === actionType.GET_SONG_PLAY_URL) {
+        state.songPlayUrl = payload
+    }
+    if (type === actionType.GET_MY_LYRIC) {
+        state.myLyric = payload
+    }
+    if (type === actionType.GET_SONG_PLAY_LIST) {
+        state.songPlayList = payload
+    }
+    if (type === actionType.REMOVE_SONG_PLAY_URL){
         state.songPlayUrl=payload
     }
     return state;

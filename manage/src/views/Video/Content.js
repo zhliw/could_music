@@ -26,11 +26,18 @@ class Content extends React.Component {
             videoSrc: {},
             videoRelevant: [],
             videoComment: [],
+            preVideoId: "",
+            videoId: "",
             offset: 1,
             commentValue: "",
-            isLoading: false
+            isLoading: false,
         }
-        this.timer = ""
+        this.timer = "";
+        this.num = 1;
+    }
+
+    componentWillMount() {
+        document.title = "网易云视频"
     }
 
     showDrawer = () => {
@@ -39,15 +46,20 @@ class Content extends React.Component {
         });
     };
     onClose = () => {
+        document.title = "网易云视频"
         this.setState({
             visible: false,
         });
     };
 
+    componentWillMount() {
+        document.title = "网易云视频"
+    }
+
     componentDidMount() {
         this.props.getVideoList();
         document.getElementById("videoCenter").onscroll = () => {
-            if (scroll.getScrollTop("videoCenter")+ scroll.getClientHeight("videoCenter") == scroll.getScrollHeight("videoCenter")) {
+            if (scroll.getScrollTop("videoCenter") + scroll.getClientHeight("videoCenter") == scroll.getScrollHeight("videoCenter")) {
                 this.props.changeVideoList();
             }
         }
@@ -55,39 +67,41 @@ class Content extends React.Component {
     }
 
 
-
     submit(vid) {
-        console.log(this.state.commentValue, this.state.videoInfo.vid)
-        this.axios.get("/comment?t=1&type=5&id=" + this.state.videoInfo.vid + "&content=" + this.state.commentValue).then(data => {
-            // console.log(data.comment,this.state.videoComment[0]);
-            console.log(1111, data.comment, this.state.videoComment.length);
+        if (localStorage.userInfo) {
             this.setState({
-                commentValue: "",
                 isLoading: true
-            })
-            this.timer = setTimeout(() => {
-                this.state.videoComment.unshift(data.comment);
-                document.getElementById("videoCommont").innerText = document.getElementById("videoCommont").innerText / 1 + 1
-                clearTimeout(this.timer);
-                this.setState({
-                    isLoading: false
+            }, () => {
+                this.axios.get("/comment?t=1&type=5&id=" + this.state.videoInfo.vid + "&content=" + this.state.commentValue).then(data => {
+                    this.setState({
+                        commentValue: "",
+                    })
+                    this.timer = setTimeout(() => {
+                        this.state.videoComment.unshift(data.comment);
+                        document.getElementById("videoCommont").innerText = document.getElementById("videoCommont").innerText / 1 + 1
+                        clearTimeout(this.timer);
+                        this.setState({
+                            isLoading: false
+                        })
+                    }, 1500)
                 })
-            }, 1500)
-
-        })
+            })
+        } else {
+            this.props.history.push('/user/login')
+        }
     }
 
     thumbsUp(vid) {
         if (localStorage.userPhone) {
-            console.log(vid)
+            console.log(vid);
+
         } else {
             this.props.history.push("/user/login")
         }
     }
 
     getVideoInfo(vid) {
-        console.log(vid);
-        if(document.getElementById(vid)){
+        if (document.getElementById(vid)) {
             var videL = document.getElementById(vid);
             videL.pause();
         }
@@ -95,26 +109,30 @@ class Content extends React.Component {
             this.setState({
                 videoInfo: data.data
             }, () => {
-                this.showDrawer()
+                this.showDrawer();
                 this.getVideoSrc();
                 this.getVideoRelevant();
                 this.getComment();
             });
         })
-
     }
 
     getVideoSrc() {
+        this.num = 1;
+        document.title = this.state.videoInfo.title
         this.axios.get("/video/url?id=" + this.state.videoInfo.vid).then(data => {
             this.setState({
                 videoSrc: data.urls
+            }, () => {
+                if (localStorage.userInfo) {
+                    this.isConcerned();
+                }
             })
         })
     }
 
     getVideoRelevant() {
         this.axios.get("/related/allvideo?id=" + this.state.videoInfo.vid).then(data => {
-            console.log(data.data)
             this.setState({
                 videoRelevant: data.data
             })
@@ -122,12 +140,53 @@ class Content extends React.Component {
     }
 
     getComment() {
-        let num = 0;
-        this.axios.get("/comment/video?id=" + this.state.videoInfo.vid + "&limit=20&offset=" + 20 * num).then(data => {
+        this.axios.get("/comment/video?id=" + this.state.videoInfo.vid + "&limit=" + 20 * this.num).then(data => {
+            this.num = this.num + 1;
             this.setState({
                 videoComment: data.comments
             })
-            console.log(1111111111111111, data);
+        });
+    }
+    goComment(vid) {
+        this.getVideoInfo(vid);
+        this.timer = setTimeout(() => {
+            document.getElementById("videoDetailContent").scrollTop = 600
+            clearTimeout(this.timer);
+        }, 800)
+    }
+
+    addCollect() {
+        this.axios.get("/video/sub?id=" + this.state.videoId + "&t=1").then(data => {
+            console.log(data)
+        })
+    }
+
+    isCollected() {
+        this.axios.get("")
+    }
+
+    isConcerned() {
+        if (localStorage.userInfo) {
+            const myId = JSON.parse(localStorage.userInfo).account.id;
+            const concern = document.getElementById("concern");
+            this.axios.get("/user/follows?uid=" + myId + "&limit=100").then(data => {
+                const index = data.follow.findIndex(v => v.userId === this.state.videoInfo.creator.userId);
+                if (index > -1) {
+                    concern.style.display = "none";
+                }
+            })
+        } else {
+            this.props.history.push("/user/login")
+        }
+
+    }
+    addConcern() {
+        const concern = document.getElementById("concern");
+        this.axios.get("/follow?id=" + this.state.videoInfo.creator.userId + "&t=1").then(data => {
+            if (data.code / 1 === 200) {
+                concern.style.display = "none";
+                this.isConcerned();
+            }
         })
     }
 
@@ -135,7 +194,6 @@ class Content extends React.Component {
         let videoList = this.props.videoList || [];
         return (
             <div id={"myDiv"}>
-
                 <div style={{background: "#000"}}>
                     {
                         this.state.visible ? (<Drawer
@@ -157,12 +215,28 @@ class Content extends React.Component {
                             onClose={this.onClose}
                             visible={this.state.visible}
                         >
+                            {
+                                this.state.isLoading ? (
+                                    <div style={{
+                                        height: "13.34rem",
+                                        background: "rgba(0,0,0,0.2)",
+                                        width: "7.5rem",
+                                        zIndex: "10000",
+                                        position: "fixed",
+                                        top: "0",
+                                        left: "0"
+                                    }}>
+                                        <div
+                                            style={{position: "fixed", top: "6.6rem", left: "3.4rem", zIndex: "10000"}}>
+                                            <Spin size={"large"}/>
+                                            <p style={{marginLeft: "-0.5rem", color: "#000", fontWeight: "bold"}}>
+                                                发布评论中······</p>
+                                        </div>
+                                    </div>) : ""
+
+                            }
+
                             <div>
-                                {
-                                    this.state.isLoading ? <div
-                                        style={{position: "fixed", top: "6.6rem", left: "3.4rem", zIndex: "10000"}}>
-                                        <Spin size={"large"}/><p>发布评论中......</p></div> : ""
-                                }
                                 <p><span onClick={this.onClose} style={{
                                     position: "absolute",
                                     top: "0.35rem",
@@ -180,7 +254,7 @@ class Content extends React.Component {
                                     }
                                 </p>
                             </div>
-                            <div style={{flex: "1", overflow: "auto"}}>
+                            <div style={{flex: "1", overflow: "auto"}} id={"videoDetailContent"}>
                                 <div style={{padding: "0 0.35rem"}}>
                                     <p style={{fontSize: "0.34rem", padding: "0.2rem 0"}}>
                                         {
@@ -194,8 +268,9 @@ class Content extends React.Component {
                                         style={{display: "flex", justifyContent: "space-between", marginTop: "0.7rem"}}>
                                         <p className={"iconfont"}>&#xe613;{this.state.videoInfo.praisedCount}</p>
                                         <p className={"iconfont"}>&#xe632;{this.state.videoInfo.subscribeCount}</p>
-                                        <p className={"icon-youcexinxi iconfont"}
-                                           id={"videoCommont"}>{this.state.videoInfo.commentCount}</p>
+                                        <a className={"icon-youcexinxi iconfont"}
+                                           id={"videoCommont"} href={"#hotComment"}
+                                           style={{display: "block"}}>{this.state.videoInfo.commentCount}</a>
                                     </div>
                                 </div>
                                 <div style={{
@@ -209,7 +284,9 @@ class Content extends React.Component {
                                     position: "sticky",
                                     top: "0"
                                 }}>
-                                    <p><img style={{
+                                    <p onClick={() => {
+                                        this.props.history.push("/usermessage", this.state.videoInfo.creator.userId)
+                                    }}><img style={{
                                         width: "0.6rem",
                                         height: "0.6rem",
                                         borderRadius: "50%",
@@ -226,12 +303,9 @@ class Content extends React.Component {
                                         color: "#fff",
                                         textAlign: "center",
                                         lineHeight: "0.52rem"
-                                    }}>十<span style={{marginLeft: "0.08rem"}}>关注</span></p>
+                                    }} onClick={this.addConcern.bind(this)} id={"concern"}>十<span
+                                        style={{marginLeft: "0.08rem"}}>关注</span></p>
                                 </div>
-
-
-
-
 
 
                                 <div style={{padding: "0 0.35rem"}}>
@@ -250,7 +324,7 @@ class Content extends React.Component {
                                                         marginTop: "0.2rem",
                                                         display: "flex",
                                                         justifyContent: "space-between"
-                                                    }} onClick={this.getVideoInfo.bind(this,v.vid)}>
+                                                    }} onClick={this.getVideoInfo.bind(this, v.vid)}>
                                                         <img style={{
                                                             width: "2.48rem",
                                                             height: "1.4rem",
@@ -279,7 +353,7 @@ class Content extends React.Component {
                                             color: "#000",
                                             fontWeight: "600",
                                             lineHeight: "0.86rem"
-                                        }}>精彩评论</p>
+                                        }} id={"hotComment"}>精彩评论</p>
                                         {
                                             this.state.videoComment.map((v, i) => {
                                                 return (
@@ -334,14 +408,12 @@ class Content extends React.Component {
                                                 )
                                             })
                                         }
+                                        <div style={{textAlign: "center", width: "100%"}}>
+                                            <p onClick={this.getComment.bind(this)} style={{lineHeight: "1rem"}}>
+                                                加载更多评论</p>
+                                        </div>
                                     </div>
                                 </div>
-
-
-
-
-
-
 
 
                             </div>
@@ -356,15 +428,8 @@ class Content extends React.Component {
                                     }} type="text" onChange={() => {
                                         this.setState({commentValue: this.refs.commentValue.value})
                                     }} placeholder={"发表评论"} ref={"commentValue"} value={this.state.commentValue}/>
-                                    <input type="button" value={"发送"} onClick={this.submit.bind(this)} style={{
-                                        border: "0",
-                                        height: "100%",
-                                        color: "#fff",
-                                        fontSize: "0.3rem",
-                                        borderRadius: "0.2rem",
-                                        background: "#ff483f",
-                                        width: "20%"
-                                    }}/>
+                                    <input className={"sendComment"} type="button" value={"发送"}
+                                           onClick={this.submit.bind(this)}/>
                                 </p>
                             </div>
                         </Drawer>) : (<div></div>)
@@ -376,13 +441,14 @@ class Content extends React.Component {
                             <div key={i} className={"videoContent"}>
                                 {
                                     v.type / 1 === 1 ? (<p className={"videoContentImgWarp"}>
-                                        <video onClick={controlVideo.bind(this,this,v.data.vid)} className={"videoContentImg"}
+                                        <video onClick={this.control.bind(this, v.data.vid)}
+                                               className={"videoContentImg"}
                                                id={v.data.vid} poster={v.data.coverUrl}
                                                src={v.data.urlInfo.url.replace(/\s*/g, "")} alt=""></video>
                                         <button type="button" ref={v.data.vid}
                                                 className={"iconfont icon-bofang1 videobutton"}
                                                 style={{fontSize: "1rem"}}
-                                                onClick={controlVideo.bind(this,this,v.data.vid)}></button>
+                                                onClick={this.control.bind(this, v.data.vid)}></button>
                                     </p>) : (<p></p>)
                                 }
                                 <div className={"videoContentP"} onClick={this.getVideoInfo.bind(this, v.data.vid)}>
@@ -392,31 +458,44 @@ class Content extends React.Component {
                                 <div className={"videoContentBottom"}>
                                     <div>
                                         {
-                                            v.data.creator ? <p><img src={v.data.creator.avatarUrl}
+                                            v.data.creator ? <p><img src={v.data.creator.avatarUrl} onClick={() => {
+                                                this.props.history.push("/usermessage", v.data.creator.userId)
+                                            }}
                                                                      alt=""/><span>{v.data.creator.nickname}</span>
                                             </p> : ""
                                         }
                                     </div>
-                                    <div style={{
-                                        display: "flex",
-                                        width: "3.2rem",
-                                        justifyContent: "space-between",
-                                        marginTop: "0.1rem"
-                                    }}>
-                                        <p onClick={this.thumbsUp.bind(this, v.data.vid)} className={"iconfont icon-dianzan"}>{v.data.praisedCount}</p>
-                                        <p className={"iconfont icon-youcexinxi"}>{v.data.commentCount}</p>
+                                    <div className={"videoContentBottomRight"}>
+                                        <p onClick={this.thumbsUp.bind(this, v.data.vid)}
+                                           className={"iconfont icon-dianzan"}>{v.data.praisedCount}</p>
+                                        <p onClick={this.goComment.bind(this, v.data.vid)}
+                                           className={"iconfont icon-youcexinxi"}>{v.data.commentCount}</p>
                                     </div>
                                 </div>
+
                             </div>
                         )
                     })
                 }
                 <div>
                     <Spin size="small"/>
+
                 </div>
             </div>
         )
 
+    }
+
+    control(vid) {
+        this.setState({
+            preVideoId: this.state.videoId,
+        }, () => {
+            this.setState({
+                videoId: vid
+            }, () => {
+                controlVideo(this, vid, this.state.preVideoId)
+            })
+        })
     }
 }
 
