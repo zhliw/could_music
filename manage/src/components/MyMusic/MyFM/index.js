@@ -25,7 +25,7 @@ class MyFM extends React.Component {
             <div className={"MyDj"}>
                 <CreateDj></CreateDj>
                 <Recommend recommend={recommend}></Recommend>
-                <Moreradio></Moreradio>
+                <Moreradio {...this.props}></Moreradio>
             </div>
         )
     }

@@ -19,23 +19,14 @@ import "../../../../../assets/css/MyMusic/dj.css"
 export default class DetailHeader extends React.Component{
     constructor(){
         super();
-        this.state={
-            isDingYue:true
-        }
-    }
-    showConfirm(){
-        this.setState({
-            isDingYue:!this.state.isDingYue
-        })
     }
     render(){
-
-        console.log(this.props.djdetail, 333333555)
+        // console.log(this.props.djdetail, 333333555)
         return (
             <div className={"detailHeader"} >
                 {
                     this.props.djdetail.djRadio?  <div className={"detailImg"}>
-                        <div className={"detailTop"} onClick={()=>window.history.go(-1)} >返回<span>电台</span></div>
+                        <div className={"detailTop iconfont icon-fanhui"} onClick={()=>window.history.go(-1)} ><span>电台</span></div>
                         <div  className={"detailPic"}>
                             <img src={this.props.djdetail.djRadio.picUrl}/>
                         </div>
@@ -43,7 +34,7 @@ export default class DetailHeader extends React.Component{
                             <div className={"djDetailName"}>{this.props.djdetail.djRadio.name}</div>
                             <div className={"djDetailOrder"}>{this.props.djdetail.djRadio.subCount}人已订阅</div>
                             {/*<div className={"subscribe"} >已订阅</div>*/}
-                            <div className={"subscribe"} onClick={this.showConfirm.bind(this)}>{this.props.djdetail.newProgramCount?"已订阅":"订阅"}</div>
+                            <div className={"subscribe"}>{this.props.djdetail.djRadio.subed?"已订阅":"订阅"}</div>
                         </div>
 
                     </div>:null
