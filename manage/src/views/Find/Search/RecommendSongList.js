@@ -30,21 +30,20 @@ export default class RecommenSongList extends React.Component{
                 otherSonglist,
                  preThree
              },()=>{
-                let mySwiper=new Swiper('.swiper-container', {
-                    effect:'flipe',
-                    observer: true,
-                    slidesPerView: 1,
-                    loop: true,
-                    autoplay: {
-                        delay: 5000,
-                        stopOnLastSlide: false,
-                        disableOnInteraction: false
+                let mySwiper = new Swiper('.swiper-container',{
+                    spaceBetween : 50,
+                    loop:true,
+                    effect : 'coverflow',
+                    slidesPerView: 2,
+                    centeredSlides: true,
+                    coverflowEffect: {
+                      rotate: 0,
+                      stretch: 6,
+                      depth: 100,
+                      modifier: 2,
+                      slideShadows : false
                     },
-                    pagination: {
-                        el: '.swiper-pagination',//这里是分页器设置
-                    },
-
-                })
+                  })
                
              })
              console.log(data)
@@ -56,13 +55,13 @@ export default class RecommenSongList extends React.Component{
             <div>
                 {/* 推荐（所有）歌单 */}
                     <div  className={'presonglist'}>
-                                 <div style={{height:'3.38rem'}} className="swiper-container">
+                                 <div style={{height:'4.39rem'}} className="swiper-container">
                                  <div className="swiper-wrapper">
                             {
                                  this.state.preThree.map((v,i)=>{
                                 return (
                                 
-                                         <div style={{borderRadius:'0.2rem'}}className="swiper-slide" onClick={()=>{
+                                         <div style={{borderRadius:'0.2rem'}} className="swiper-slide" onClick={()=>{
                                     this.props.history.push({
                                         pathname:'/Song',
                                         state:{
@@ -71,11 +70,9 @@ export default class RecommenSongList extends React.Component{
                                     })
                                 }
                                 } key={i}>
-                                    <img style={{height:'2.64rem',width:'2.64rem'}} src={v.coverImgUrl} alt=""/>
-                                    <div style={{fontSize:'0.17rem',textAlign:'center',height:'0.74rem',width:'100%',lineHeight:'0.74rem'}} className={'presonglistName'}>{v.name}</div>    
+                                    <img style={{height:'3.45rem',width:'3.45rem'}} src={v.coverImgUrl} alt=""/>
+                                    <div style={{padding:'0.22rem 0.1rem',border:'1px solid #ededed',fontSize:'0.17rem',textAlign:'left',height:'0.9rem',width:'3.42rem',wordWrap:'breakWord'}} className={'presonglistName'}>{v.name}</div>    
                                 </div>
-                                    
-                               
                                     )
                                 })
                             }

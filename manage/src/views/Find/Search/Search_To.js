@@ -45,7 +45,7 @@ class Search_To extends React.Component {
                     <span onClick={() => {
                         this.props.history.push('/Search')
                     }}>返回</span>
-                    <input defaultValue='' className={'search_search_wn'} type='text' />
+                    <input autoComplete="off" defaultValue='' autofocus="autofocus" className={'search_search_wn'} type='text' />
                 </div>
 
                 {this.state.findnav.map((v, i) => {

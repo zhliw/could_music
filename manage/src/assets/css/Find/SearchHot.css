@@ -22,11 +22,21 @@ height:0.4rem
     height:0.7rem;
 }
 .score{
+    margin-left:0.17rem;
+    margin-right: 0.27rem;
     font-size: 0.20rem;
     color: #d1d1d1;
 }
 .content{
     font-size: 0.24rem;
     color:#9a9a9a;
-    margin-left: 0.36rem
+    margin-left: 0.48rem
+}
+.searchList{
+    text-align: left
+}
+.searchSong{
+    margin-left: 0.35rem;
+    height: 0.02rem;
+    background: #f7f7f7;
 }

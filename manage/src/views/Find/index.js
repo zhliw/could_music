@@ -131,7 +131,7 @@ class Find extends React.Component {
                 {/* 歌单 */}
                 <div className='songListwn'>
                     <div className='sonList_wn'>
-                        <span className={'recommend'}>推荐歌单</span>
+                        <span className={'recommend_wn'}>推荐歌单</span>
                         <span className={'sonlistSquare'} onClick={()=>{
                             this.props.history.push('/SongList/RecommendSongList')
                         }}>歌单广场</span>
