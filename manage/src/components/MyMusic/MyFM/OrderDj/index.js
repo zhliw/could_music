@@ -21,7 +21,6 @@ class OrderDj extends React.Component {
     render() {
 
         let sublist = this.props.sublist || [];
-        // console.log(564526, sublist)
         return (
             <div className={"orderDj"}>
                 {

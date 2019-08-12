@@ -477,10 +477,22 @@ class Content extends React.Component {
                         )
                     })
                 }
-                <div>
-                    <Spin size="small"/>
+                {
+                    localStorage.userInfo?"":(
+                        <div style={{position:"absolute",top:"40%",left:"0",right:"0",margin:"0"}}>
+                            <div style={{color:"#000",height:"1rem",lineHeight:"1rem",fontSize:"0.3rem",width:"100%"}}>您还没有登录,否则无法加载更多视频</div>
+                            <input onClick={()=>{this.props.history.push("/user/login")}} type="button" style={{border:"0.01rem solid #e00",lineHeight:"0.7rem",padding:"0 0.2rem",borderRadius:"0.35rem",background:"#ff473e",fontSize:"0.3rem",color:"#fff"}} value={"我要去登录"}/>
+                        </div>
+                    )
+                }
+                {
+                    localStorage.userInfo?(
+                        <div>
+                            <Spin size="small"/>
+                        </div>
+                    ):""
+                }
 
-                </div>
             </div>
         )
 

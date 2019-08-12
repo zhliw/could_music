@@ -35,7 +35,8 @@ class My extends React.Component{
         this.props.history.push('/user/useractive')        
     }
     outLogin(){
-        localStorage.clear()
+        localStorage.clear();
+        this.axios.get("/logout");
         this.props.history.push('/user')
     }
     render(){
