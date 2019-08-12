@@ -56,15 +56,27 @@
 .c-m-list{
   margin-top:.2rem;
   overflow: hidden;
-  column-count: 2;
+  .c-m-list-left{
+    width: 50%;
+    height: auto;
+    float: left;
+  }
+  .c-m-list-right{
+    width: 50%;
+    height: auto;
+    float: left;
+  }
   .mv-list{
     width: 3.34rem;
     height: auto;
-    break-inside: avoid;
     margin-bottom: .15rem;
     border: .01rem solid white;
     overflow: hidden;
     border-radius: .2rem;
+    img{
+      width: 3.34rem;
+      height: auto;
+    }
     .mv-list-b{
       padding: .11rem .2rem .3rem .17rem;
       text-align: left;
@@ -78,6 +90,18 @@
       -webkit-box-orient:vertical;
       -webkit-line-clamp:2;
       margin-bottom: .25rem;
+    }
+    .mv-list-user{
+      height: auto;
+      width: 100%;
+      img{
+        float: left;
+        width:0.28rem;
+        height:0.28rem;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: .1rem;
+      }
     }
     .mv-artistName{
       float: left;
