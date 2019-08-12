@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5cef7f-512f-4e1e-9b90-40659675e716" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/SongPlayList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/MyMusic.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/MyMusic.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/songList.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/songList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/songPlay.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/MyMusic/songPlay.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/css/video/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/css/video/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/demo_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/demo_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/assets/font/iconfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/assets/font/iconfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/common/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/common/filters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/SongPlayFoot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/SongPlayHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/SongPlayHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/SongPlayMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/SongPlayMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/SongPlay/lala.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/MusicTag.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/MusicTag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/Open.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/Open.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/SongListMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/SongListMain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/SongListTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/SongListTop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/components/MyMusic/Songlist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/components/MyMusic/ll.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/store/actionCreator/Public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/actionCreator/Public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/store/actionCreator/Video/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/actionCreator/Video/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/store/actionType/Public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/actionType/Public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/store/reducers/Public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/store/reducers/Public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/views/Video/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Video/Content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage/src/views/Video/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/manage/src/views/Video/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -119,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="648">
               <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -142,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage/src/views/User/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="135">
               <caret line="8" column="58" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="58" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -155,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/manage/src/views/Video/Content.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
-              <caret line="472" selection-start-line="472" selection-end-line="472" />
+              <caret line="444" column="17" selection-start-line="444" selection-start-column="17" selection-end-line="444" selection-end-column="17" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -231,10 +199,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="318" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="442" />
     <option name="width" value="1552" />
-    <option name="height" value="940" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -380,12 +348,13 @@
       <workItem from="1565356760958" duration="7114000" />
       <workItem from="1565395845979" duration="28222000" />
       <workItem from="1565503659740" duration="22969000" />
-      <workItem from="1565530440222" duration="257000" />
+      <workItem from="1565530440222" duration="409000" />
+      <workItem from="1565568539146" duration="611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132689000" />
+    <option name="totallyTimeSpent" value="133452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -824,16 +793,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9504">
-          <caret line="352" column="1" selection-start-line="352" selection-start-column="1" selection-end-line="352" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/store/actionCreator/MyMusic/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="648">
           <caret line="101" column="34" selection-start-line="101" selection-start-column="34" selection-end-line="101" selection-end-column="34" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -854,7 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/views/User/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="135">
           <caret line="8" column="58" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="58" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -862,10 +824,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/manage/src/assets/css/MyMusic/dj.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9504">
+          <caret line="352" column="1" selection-start-line="352" selection-start-column="1" selection-end-line="352" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manage/src/views/Video/Content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="472" selection-start-line="472" selection-end-line="472" />
+          <caret line="444" column="17" selection-start-line="444" selection-start-column="17" selection-end-line="444" selection-end-column="17" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
