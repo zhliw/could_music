@@ -6,6 +6,7 @@ export default class SongListMain extends React.Component{
         super()
     }
     render() {
+        // console.log(this.props.playlist.tracks)
         return(
                 <div  className={"SongListMain"}>
                     <div className={'SongListMainaa'}>

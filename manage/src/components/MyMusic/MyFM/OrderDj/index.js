@@ -45,9 +45,9 @@ class OrderDj extends React.Component {
                                             <span>by{v.dj.nickname}</span>
                                             <div className={"sublistContentText"}>{v.lastProgramName}</div>
                                         </div>
-                                        <div className={"sublistEdit"}>
-                                            删除
-                                        </div>
+                                        {/*<div className={"sublistEdit"}>*/}
+                                        {/*    删除*/}
+                                        {/*</div>*/}
                                     </div>
                                 )
 
