@@ -18,7 +18,9 @@ class SongPlay extends React.Component{
     componentDidMount() {
         this.props.getMyLyric(this.props.location.state.songid)
         this.props.getSongPlayUrl(this.props.location.state.songid)
-        this.props.getSongList(this.props.location.state.songlistid)
+        if(this.props.location.state.songlistid){
+            this.props.getSongList(this.props.location.state.songlistid)
+        }
     }
 
     render() {

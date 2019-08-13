@@ -67,7 +67,7 @@ class Find extends React.Component {
                         this.props.history.push('/Search')
                     }} />
                     <span style={{ fontSize: '0.48rem' }} onClick={() => {
-                        this.props.history.push('/Play')
+                        this.props.history.push('/SongPlay')
                     }} className={'icon-yinle1 iconfont'}></span>
                 </header>
                 <div className="myFindBanner">

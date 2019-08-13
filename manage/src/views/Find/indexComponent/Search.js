@@ -118,7 +118,7 @@ class Search extends React.Component {
                             {
                                 this.state.isTrue ? this.state.search.map((v, i) => {
                                     if (v.keyword) {
-                                        return <div>
+                                        return <div key={i}>
                                             <div style={{height:'0.7rem',marginLeft:'0.25rem',lineHeight:'0.7rem',color:'#5c6978'}} onClick={() => {
                                             this.props.history.push({
                                                 pathname: '/Search_To',
@@ -166,7 +166,7 @@ class Search extends React.Component {
                             <p style={{fontSize:'0.2rem',fontWeight:'600',marginTop:localStorage.searchWord?'':'0.5rem'}}>热搜榜</p>
                             {
                                 this.state.searchHot.map((v, i) => {
-                            return < div style={{marginTop:' 0.05rem'}} onClick={() => {
+                            return < div key={i} style={{marginTop:' 0.05rem'}} onClick={() => {
                                         this.props.history.push({
                                             pathname: '/Search_To',
                                             state: {

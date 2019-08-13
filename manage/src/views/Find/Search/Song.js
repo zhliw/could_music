@@ -16,9 +16,10 @@ export default class Song extends React.Component {
     }
     async getSonglist() {
         const data = await this.axios(`/playlist/detail?id=${this.props.location.state.id}`)
-        console.log(data.playlist)
+        console.log(data.playlist.id)
         this.setState({
-            songlist: data.playlist
+            songlist: data.playlist,
+            songlistId:data.playlist.id
         })
         let discription=this.state.songlist.description
         if(discription.length>26){
@@ -97,12 +98,13 @@ export default class Song extends React.Component {
                                     this.state.tracks.map((v,i)=>{
                                     return <div  style={{height:'0.81rem',marginBottom:'0.4rem',width:'100%',marginTop:'0.2rem'}} 
                                     onClick={()=>{
-                                            this.props.history.push({
-                                                pathname:'/Play',
-                                                state:{
-                                                    id:v.id
+                                            this.props.history.push(
+                                                '/songplay',
+                                                {
+                                                    songid:v.id,
+                                                    songlistid:this.state.songlistId
                                                 }
-                                            })
+                                            )
                                      }} key={i}>
                                                     <span>{i+1}</span>
                                                 <span style={{marginLeft:'0.28rem',fontSize:'0.25rem'}}>{v.name}</span>

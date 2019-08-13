@@ -11,9 +11,10 @@ class All extends React.Component {
         }
     }
     componentWillReceiveProps(nextProps) {
+        let search=nextProps.state.find.search[nextProps.state.find.search.length-1]||[]
         if (nextProps) {
             this.setState({
-                search: nextProps.state.find.search[nextProps.state.find.search.length-1]
+                search
             })
             this.setState({
                 num:nextProps.state.find.search.length-1
@@ -33,12 +34,12 @@ class All extends React.Component {
                         return <div key={i} className={'searchMassage'}>
                             <div>
                                 <span onClick={() => {
-                                    this.props.history.push({
-                                        pathname:'/Play',
-                                        state:{
-                                            id:v.id
+                                    this.props.history.push(
+                                        '/SongPlay',
+                                        {
+                                            songid:v.id
                                         }
-                                    })
+                                    )
                                 }}>{v.name}</span>
                                 <span></span>
                             </div>

@@ -37,21 +37,20 @@ class Search_To extends React.Component {
         return (
             <div>
                 <this.MyNav></this.MyNav>
-                <span className={'icon-gouwuche iconfont'} onClick={() => {
-                    this.props.history.push('/Search')
-                }}>
-                </span>
                 <div>
-                    <span onClick={() => {
+                    <span className={'icon-gouwuche iconfont'} onClick={() => {
                         this.props.history.push('/Search')
-                    }}>返回</span>
-                    <input autoComplete="off" defaultValue='' autofocus="autofocus" className={'search_search_wn'} type='text' />
+                    }}></span>
+                    <input autoComplete="off" style={{outline:'none'}}   className={'search_search_wn'} type='text'
+                    onClick={()=>{
+                    }} 
+                    />
                 </div>
 
                 {this.state.findnav.map((v, i) => {
                     return (
                         <React.Fragment key={i}>
-                            <NavLink to={v.to}>{v.context} </NavLink>
+                            <NavLink activeStyle={{color:'red'}} to={v.to}>{v.context} </NavLink>
                         </React.Fragment>
                     )
                 })}
