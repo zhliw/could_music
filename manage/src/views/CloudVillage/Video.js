@@ -16,7 +16,6 @@ export default class CloudVillageVideo extends React.Component {
     }
 
     render() {
-        console.log(this.state.comments)
         return (
             <div className={"cv"}>
                 <div className={"cv-video"}>
@@ -92,7 +91,6 @@ export default class CloudVillageVideo extends React.Component {
             visible:true
         })
         this.axios.get("/comment/mv?id="+this.props.match.params.id).then((data)=>{
-            console.log(data)
             this.setState({
                 comments:data
             })
@@ -109,9 +107,7 @@ export default class CloudVillageVideo extends React.Component {
 
     submit(){
         let comm = this.refs.comm.value;
-        this.axios.get("/comment?t=1&type=1&id="+this.props.match.params.id+"&content="+comm).then((data)=>{
-            console.log(data)
-        })
+        this.axios.get("/comment?t=1&type=1&id="+this.props.match.params.id+"&content="+comm)
     }
 
     foucs() {
@@ -121,7 +117,6 @@ export default class CloudVillageVideo extends React.Component {
         } else {
             // 关注接口 1为关注 其它为取消关注  /artist/sub?id=6452&t=1
             this.axios.get("/artist/sub?id=" + this.state.detail.artistId / 1 + "&t=" + this.state.foucsState / 1).then((data) => {
-                console.log(111, data)
                 if (this.state.foucsState === 1) {
                     document.getElementsByClassName("cv-isHave")[0].remove();
                     document.getElementsByClassName("cv-video-fouce")[0].style.background = "none";
@@ -157,7 +152,6 @@ export default class CloudVillageVideo extends React.Component {
             data,
             detail: detail.data
         })
-        console.log(detail.data)
         if (localStorage.userInfo) {
             const sublist = await this.axios.get("/artist/sublist")
             const isHave = sublist.data.findIndex((v, i) => v.id === this.state.detail.artistId);

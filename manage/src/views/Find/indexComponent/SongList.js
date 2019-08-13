@@ -30,7 +30,6 @@ export default class AllSonglist extends React.Component{
     componentWillMount(){
         this.props.history.push('/SongList/RecommendSongList')
         let findnav=findNav.find(v=>v.to==='/SongList').children
-        // console.log(1,findnav)
         this.setState({
             findnav
         })

@@ -10,7 +10,6 @@ class PhoneLogin extends React.Component{
         }
     }
     componentWillReceiveProps(nextProps){
-        console.log(2222,nextProps.registerInfo)
         //判断是否注册过，已经注册跳转到输入密码，否则跳转到注册
         if(nextProps.registerInfo.exist===1){
             localStorage.userPhone = this.state.phone
@@ -39,8 +38,8 @@ class PhoneLogin extends React.Component{
                 </div>
                 <div className={'login'}>
                     <p>未注册的手机号登录后将自动创建账号</p>
-                    <p className={'phone'}><span>+86</span><input name={'phone'} value={this.state.phone} onChange={this.handlerChange.bind(this)} type={'text'} autoFocus placeholder={'输入手机号'}/></p>
-                    <div className={'loginBtn'} onClick={this.isRegister.bind(this)}>下一步</div>
+                    <p className={'phone'}><span>+86</span><input style={{height:"0.84rem",border:"0",width:"4.7rem"}} name={'phone'} value={this.state.phone} onChange={this.handlerChange.bind(this)} type={'text'} autoComplete={"off"} autoFocus placeholder={'输入手机号'}/></p>
+                    <div className={'loginBtn'} style={{fontSize:"0.3rem"}} onClick={this.isRegister.bind(this)}>下一步</div>
                 </div>
             </div>
         )

@@ -18,14 +18,12 @@ class Leaderboard extends React.Component{
     }
     async getLeaderboard(){
         const data=await this.axios('/toplist/detail')
-        console.log(data)
         this.setState({
             boardlist:data.list
         })
         
     }
     render(){
-        console.log(this)
         return(
             <div> <this.MyNav /><this.Return />排行榜
             <div>

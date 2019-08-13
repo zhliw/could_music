@@ -16,7 +16,6 @@ export default class Song extends React.Component {
     }
     async getSonglist() {
         const data = await this.axios(`/playlist/detail?id=${this.props.location.state.id}`)
-        console.log(data.playlist)
         this.setState({
             songlist: data.playlist
         })

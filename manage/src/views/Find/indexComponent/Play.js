@@ -13,7 +13,6 @@ class Play extends React.Component{
     }
     componentWillMount(){
        if(this.props.location.state){
-           console.log(this.props.location.state.id)
            this.props.theSong(this.props.location.state.id)
            
        }
@@ -26,7 +25,6 @@ class Play extends React.Component{
         this.state.isPlay?theAudio.pause():theAudio.play()
     }
     componentWillReceiveProps(n){
-        console.log(888888,n)
         this.setState({
             url:n.state.find.theSong.data[0].url
         })

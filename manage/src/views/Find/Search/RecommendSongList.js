@@ -46,7 +46,6 @@ export default class RecommenSongList extends React.Component{
                   })
                
              })
-             console.log(data)
          })
        
         }

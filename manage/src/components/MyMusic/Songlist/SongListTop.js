@@ -36,7 +36,7 @@ class SongListTop extends React.Component{
                             <div><img src={this.props.creator.avatarUrl} alt=""/></div>
                             <p style={{paddingLeft:'0.3rem'}}>{this.props.creator.nickname}<Icon type="right" /></p>
                         </div>
-                        <div className={'Mydescription'} style={{paddingTop:'0.3rem'}}>
+                        <div className={'Mydescription'} style={{height:"1.25rem",overflow:"hidden",paddingTop:'0.3rem'}}>
                             {
                                 this.props.description
                             }

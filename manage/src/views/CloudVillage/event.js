@@ -20,7 +20,6 @@ class Event extends React.Component {
     state = {visible: false};
 
     render() {
-        console.log(this.props.eventsList)
         let eventsList = this.props.eventsList || [];
         return (
             <div className={"cv-event"}>
@@ -118,7 +117,6 @@ class Event extends React.Component {
     }
 
     getInfo(v, i) {
-        console.log(v)
         this.setState({
             visible: true,
             info: v,

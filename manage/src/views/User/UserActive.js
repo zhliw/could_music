@@ -20,7 +20,6 @@ class UserActive extends React.Component{
                 {
                     this.state.userActive.map((v,i)=>{
                         let json = JSON.parse(v.json)
-                        console.log(v)
                         return (
                             <div key={i} style={{padding:'0.6rem 0.3rem 0.4rem 0.3rem',borderBottom:'1px solid #e3e3e3'}}>
                                 <div  style={{display:'flex'}}>

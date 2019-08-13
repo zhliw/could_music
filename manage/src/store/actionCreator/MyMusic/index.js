@@ -70,32 +70,26 @@ export default {
         return async (dispatch) => {
             const data = await axios.get('/user/record?uid=' + id + '&type=1');
             dispatch(getRecentPlay(data.weekData));
-            console.log(data,23333333);
         }
     },
     getCommend() {
         return async (dispatch) => {
             const {data} = await axios.get("/dj/category/recommend");
-            // console.log(data)
             let results = [];
             let len = data.length
             for (let i = 0; i < 6; i++) {
                 results.push(data[parseInt(Math.random() * len)])
             }
-            // let radios=Math.floor((Math.random()*results.radios[0].length))
-            //  console.log(results)
             let radios = []
             for (let i = 0; i < results.length; i++) {
                 radios.push(results[i].radios[parseInt(results[i].radios.length * Math.random())])
             }
-            // console.log(radios, 987654)
             dispatch(getCommend(radios));
         }
     },
     getSublist(){
         return async(dispatch)=>{
             const data=await axios.get("/dj/sublist");
-            // console.log(1111111111111,data);
             dispatch(getSublist(data))
         }
     },
@@ -103,7 +97,6 @@ export default {
         return async (dispatch)=>{
             this.getSublist();
             const data=await axios.get("/dj/detail?rid="+id)
-            // console.log(802333333333,data);
             dispatch(getDjDetail(data));
         }
     },

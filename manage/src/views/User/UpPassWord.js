@@ -34,10 +34,10 @@ class UpPassWord extends React.Component{
                     <span>重设密码</span>
                 </div>
                 <p className={'userPhone_upPS'}>
-                    <span style={{marginRight:'0.1rem'}}>+86</span><input type={'text'} disabled name={'userPhone'} onChange={this.handlerChange.bind(this)} value={this.state.userPhone}/>
+                    <span style={{marginRight:'0.2rem',lineHeight:"0.5rem"}}>+86</span><input type={'text'} style={{border:"0",background:"#fff"}} disabled name={'userPhone'} onChange={this.handlerChange.bind(this)} value={this.state.userPhone}/>
                 </p>
                 <p className={'userPhone_upPS'}>
-                    <input style={{width:'5rem',fontSize:'0.3rem'}} type={'password'} name={'userPassWord'} onChange={this.handlerChange.bind(this)} value={this.state.userPassWord} placeholder='设置登录密码,不少于六位'/>
+                    <input autoComplete={"off"} style={{width:'5rem',fontSize:'0.3rem',lineHeight:"0.7rem",border:"0",paddingLeft:"0.2rem"}} type={'password'} name={'userPassWord'} onChange={this.handlerChange.bind(this)} value={this.state.userPassWord} placeholder='设置登录密码,不少于六位'/>
                 </p>
                 <div className={'upPSBtn'} onClick={this.sendCode.bind(this)}>下一步</div>
             </div>

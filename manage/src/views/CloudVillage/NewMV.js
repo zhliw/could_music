@@ -23,7 +23,6 @@ export default class NewMV extends React.Component {
 
     componentDidMount() {
         this.props.getNewMV(1,this);
-        console.log(this.props.newMV)
         //  下拉加载  ***********************************************************************
         var timer;
         document.getElementsByClassName("cv-scroll")[0].onscroll = () => {
@@ -31,7 +30,6 @@ export default class NewMV extends React.Component {
                 this.setState({
                     i:this.state.i+1
                 },()=>{
-                    console.log(9,this.props.newMV)
                     this.props.getNewMV(this.state.i,this);
                 })
             } else {
@@ -42,13 +40,6 @@ export default class NewMV extends React.Component {
         }
         //    ***********************************************************************
     }
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     // console.log(1244,JSON.stringify(this.props.newMV) == JSON.stringify(nextProps.newMV))
-    //     // console.log(3333333,JSON.stringify(this.props.newMV),JSON.stringify(nextProps.newMV))
-    //     if (JSON.stringify(this.props.newMV) == JSON.stringify(nextProps.newMV)){
-    //         return false;
-    //     } else return true;
-    // }
 
     //  瀑布流  ***********************************************************************
     initMin() {

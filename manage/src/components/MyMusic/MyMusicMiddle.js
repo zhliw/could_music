@@ -8,7 +8,7 @@ import {
 import {bindActionCreators} from "redux";
 import myMusicCreator from "../../store/actionCreator/MyMusic";
 import Fold from './common/Fold'
-import { Collapse } from 'antd';
+import { Collapse,Button } from 'antd';
 import MyFM from "./MyFM"
 import RecentPlay from "./RecentPlay"
 import myMusic from "../../store/reducers/MyMusic";
@@ -43,9 +43,12 @@ class MyMusicMiddle extends React.Component {
         }
     }
     componentDidMount() {
-        this.props.getUserMessage();
-        this.props.getUserPlayList(JSON.parse(localStorage.userInfo).account.id);
-        this.props.getRecentPlay(JSON.parse(localStorage.userInfo).account.id);
+        if (localStorage.userInfo){
+            this.props.getUserMessage();
+            this.props.getUserPlayList(JSON.parse(localStorage.userInfo).account.id);
+            this.props.getRecentPlay(JSON.parse(localStorage.userInfo).account.id);
+        }
+
     }
     render() {
         // console.log(this.props.userMessage)
@@ -61,31 +64,35 @@ class MyMusicMiddle extends React.Component {
                         <div style={{fontSize:'0.5rem',background:'#fff'}} className={'iconfont MyMusic-Middle-left icon-zuijinbofang'}></div>
                         < div className={'MyMusic-Middle-right'} onClick={()=>{
                             this.props.history.push('/RecentPlay',JSON.parse(localStorage.userInfo).account.id)
-                        }}> 最近播放（{recentPlay.length}）
+                        }}> 最近播放（{recentPlay.length||0}）
                         </div>
                     </div>
                     < div style={{display: 'flex'}}>
                         <div style={{fontSize:'0.8rem',background:'#fff'}} className={'iconfont MyMusic-Middle-left icon-diantai'}></div>
                         < div className={'MyMusic-Middle-right'} onClick={()=>{
                             this.props.history.push('/MyFM')
-                        }}> 我的电台（{userMessage.djRadioCount}）
+                        }}> 我的电台（{userMessage.djRadioCount||0}）
                         </div>
                     </div>
                     <div style={{display: 'flex'}}>
                         <div style={{fontSize:'0.5rem',background:'#fff'}} className={'iconfont MyMusic-Middle-left icon-wodeshoucang'}></div>
-                        <div className={'MyMusic-Middle-right'}> 我的收藏（{userMessage.artistCount}）
+                        <div className={'MyMusic-Middle-right'}> 我的收藏（{userMessage.artistCount||0}）
                         </div>
                     </div>
                 </div>
-                <div className={'MyMusic-Bottom'}>
-                    {
-                        userMessage.createdPlaylistCount>0?<Fold myDianObj={this.myDianObj} message={playList[0]}>创建的歌单</Fold>:null
-                    }
-                    {
-                        userMessage.subPlaylistCount>0?<Fold myDianObj={this.myCountDianObj} message={playList[1]}>收藏的歌单</Fold>:null
-                    }
-                    <div style={{height:'1rem'}}></div>
-                </div>
+                {
+                    localStorage.userInfo?(<div className={'MyMusic-Bottom'}>
+                        {
+                            userMessage.createdPlaylistCount>0?<Fold myDianObj={this.myDianObj} message={playList[0]}>创建的歌单</Fold>:null
+                        }
+                        {
+                            userMessage.subPlaylistCount>0?<Fold myDianObj={this.myCountDianObj} message={playList[1]}>收藏的歌单</Fold>:null
+                        }
+                        <div style={{height:'1rem'}}></div></div>):(<Button onClick={()=>{
+                            this.props.history.push('/user/login')}} style={{marginTop:"1.5rem",borderRadius:"0.25rem",fontSize:"0.3rem",background:"#f00",color:"#fff"}}>请登录</Button>)
+
+                }
+
             </div>
         )
     }

@@ -53,7 +53,6 @@ class Search extends React.Component {
         }
         if (e.target.value !== '') {
             this.axios(`/search/suggest?keywords=${e.target.value}&type=mobile`).then(data => {
-                // console.log(1111, data)
                 if (data.result.allMatch) {
                     this.setState({
                         search: data.result.allMatch,
@@ -70,9 +69,7 @@ class Search extends React.Component {
     }
     //热搜
     searchHot() {
-        this.axios('/search/hot').then(data => {
-            console.log(data)
-        })
+        this.axios('/search/hot')
     }
     getHistory(theKey) {
         let searchArr = []

@@ -26,7 +26,6 @@ class Find extends React.Component {
     }
     getBanner() {
         this.axios.get('/banner').then(data => {
-            console.log(data)
             this.setState({
                 banner: data.banners
 
@@ -52,11 +51,9 @@ class Find extends React.Component {
     //歌单
     async getSonglist() {
         const data = await this.axios('/personalized')
-        // console.log(data)
         this.setState({
             sixsonglist: data.result.slice(0,6)
         })
-        console.log(this.state.sixsonglist)
     }
     render() {
         return (

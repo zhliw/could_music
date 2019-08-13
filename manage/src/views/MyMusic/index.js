@@ -7,12 +7,7 @@ import '../../assets/css/MyMusic.css'
     withRouter
  } from 'react-router-dom'
 class MyMusic extends React.Component{
-    componentWillMount() {
-        //判断是否登录
-        document.title = "我的音乐"
-        if(!localStorage.userInfo)
-            this.props.history.push('/user/login')
-    }
+
     render(){
         return(
             <div style={{display:'flex',flexDirection:'column',justifyContent:'space-between',width:'100%',height:'100%'}}>

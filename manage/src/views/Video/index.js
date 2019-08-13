@@ -23,6 +23,9 @@ export default class Video extends React.Component{
         return(
             <div className={"video"}>
                 <div className={"videoHeader"}>
+                    <div style={{height:"0.7rem",lineHeight:"0.7rem",fontWeight:"bold",color:"#000",fontSize:"0.3rem"}}>
+                        网易云视频
+                    </div>
                     <ul className={"videoHeaderUl"}>
                         {
                             this.state.routerChildren.map((v,i)=>{

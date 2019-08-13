@@ -16,7 +16,6 @@ class Code extends React.Component{
     }
     async verifyCode(){
         const data = await this.axios.get('/captcha/verify?phone='+localStorage.userPhone+'&captcha='+this.state.code)
-        console.log(data)
         if(data.code===200){
             this.props.history.push({
                 pathname:'/user/userregister',
@@ -38,9 +37,9 @@ class Code extends React.Component{
                     </div>
                     <div className={'codeInfo'}>
                         <p className={'codeTop'}>验证码已发送至</p>
-                        <p className={'codeDown'}>+86{localStorage.userPhone}</p>
+                        <p className={'codeDown'} style={{fontSize:"0.3rem"}}>+86{localStorage.userPhone}</p>
                     </div>
-                    <input type={'text'} value={this.state.code} onChange={this.handlerChange.bind(this)} name={'code'} placeholder={'请输入四位验证码'}/>
+                    <input type={'text'} value={this.state.code} style={{height:"0.84rem",paddingLeft:"0.2rem",border:"0.01rem solid #ccc",borderRadius:"0.2rem",fontSize:"0.3rem",width:"3rem"}} onChange={this.handlerChange.bind(this)} name={'code'} placeholder={'请输入四位验证码'}/>
                     <div  className={'upPSBtn'} style={{margin:'1rem auto'}} onClick={this.verifyCode.bind(this)}>提交</div>
                 </div>
                 
@@ -49,7 +48,6 @@ class Code extends React.Component{
     }
     async componentDidMount(){
         const data = await this.axios.get('/captcha/sent?phone='+localStorage.userPhone)
-        console.log(data)
     }
 }
 

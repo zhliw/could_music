@@ -30,9 +30,6 @@ class Search_To extends React.Component {
             this.props.searchList(this.props.location.state.searchWord)
         }
     }
-    componentWillReceiveProps(n) {
-        // console.log(11123232323, n)
-    }
     render() {
         return (
             <div>

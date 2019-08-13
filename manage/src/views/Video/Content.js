@@ -13,7 +13,6 @@ import {Spin, Alert, Modal, Button, Drawer} from 'antd';
 import scroll from "../../common/video/scroll"
 import {controlVideo} from "../../common/video/controlVideo"
 import filters from "../../common/filters";
-import Comment from "../../components/Video/Comment"
 
 
 class Content extends React.Component {
@@ -95,7 +94,6 @@ class Content extends React.Component {
     thumbsUp(vid) {
         if (localStorage.userPhone) {
             console.log(vid);
-
         } else {
             this.props.history.push("/user/login")
         }
@@ -157,13 +155,7 @@ class Content extends React.Component {
     }
 
     addCollect() {
-        this.axios.get("/video/sub?id=" + this.state.videoId + "&t=1").then(data => {
-            console.log(data)
-        })
-    }
-
-    isCollected() {
-        this.axios.get("")
+        this.axios.get("/video/sub?id=" + this.state.videoId + "&t=1")
     }
 
     isConcerned() {

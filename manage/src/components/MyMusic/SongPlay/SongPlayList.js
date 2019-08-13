@@ -30,7 +30,6 @@ class SongPlayList extends React.Component{
                 <Drawer
                     title="播放歌单"
                     height={"7rem"}
-                    placement="right"
                     closable={false}
                     placement={"bottom"}
                     onClose={this.onClose}

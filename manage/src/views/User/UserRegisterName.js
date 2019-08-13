@@ -6,9 +6,6 @@ class UserRegisterName extends React.Component{
             userName:''
         }
     }
-    componentWillMount(){
-        console.log(this.props.location.state)
-    }
     async userRegister(){
         const props = this.props.location.state
         const data = await this.axios.get(`/register/cellphone?phone=${localStorage.userPhone}&password=${props.userPassWord}&captcha=${props.code}&nickname=${this.state.userName}`)

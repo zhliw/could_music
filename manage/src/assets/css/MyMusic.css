@@ -20,12 +20,14 @@ html,body{
     height: 100%;
 }
 .MyMusic-header-top{
-    line-height: .6rem;
-    background: #ff4940;
+    line-height: 0.7rem;
+    font-size:0.3rem;
+    font-weight: bold;
+    color:#000;
 }
 .MyMusic-header-Bottom{
     height: 1.5rem;
-    border-bottom: 0.01rem solid #2c425a;
+    border-bottom: 0.01rem solid #ccc;
     overflow: auto;
 }
 .MyMusic-header-Bottom-Ul{
@@ -42,16 +44,18 @@ html,body{
 .MyMusic-Middle-left{
     width: 1rem;
     line-height: .9rem;
+    color: #000;
 }
 .MyMusic-Middle-right{
     line-height: .5rem;
     background:#fff;
+    font-size: 0.26rem;
     padding: 0.2rem;
-    border-bottom: 0.01rem solid #8b898a;
+    border-bottom: 0.01rem solid #ccc;
     flex-grow: 1;
     text-align: left;
+    color: #000;
 }
-
 .collage{
     line-height:0.8rem;
 }
@@ -59,7 +63,8 @@ html,body{
     display:flex;
 }
 .turnCircle{
-    width:0.8rem;height:0.8rem;
+    width:0.8rem;
+    height:0.8rem;
     font-size:0.6rem;
     line-height:0.7rem;
     transition:0.3s

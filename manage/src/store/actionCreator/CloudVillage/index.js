@@ -31,7 +31,6 @@ export default {
     getNewMV(i = 1,_this) {
         return async (dispatch) => {
             const {data} = await axios.get("/mv/first?limit=" + 10 * i);
-            console.log(_this.props.newMV.length,data.length)
             if (_this.props.newMV.length!==data.length) _this.waterfall(data);
             dispatch(getNewMV(data));
 

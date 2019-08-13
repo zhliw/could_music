@@ -14,12 +14,10 @@ class RecommendedDaily extends React.Component {
     }
     async componentDidMount() {
         const data = await this.axios('/recommend/songs')
-        console.log(data)
         this.setState({
             RecommendedDaily: data,
             isLoading:!this.state.isLoading
         })
-        console.log(this.state.RecommendedDaily)
     }
     render() {
         return (

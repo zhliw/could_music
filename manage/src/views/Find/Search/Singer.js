@@ -23,7 +23,6 @@ class Singer extends React.Component{
         let spin = document.getElementById('spin')
         if(document.documentElement.scrollTop+window.innerHeight-spin.offsetHeight>spin.offsetTop-20){
             this.getSinger(++this.pageIndex)
-            console.log(111111,this.pageIndex)
         }
     }
     async getSinger(pageIndex=0){
