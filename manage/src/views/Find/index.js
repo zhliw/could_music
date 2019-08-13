@@ -11,6 +11,10 @@ class Find extends React.Component {
             sixsonglist: []
         }
     }
+    componentWillMount() {
+        //判断是否登录
+        document.title = "网易云音乐"
+    }
     //为了打包不出错
     componentDidMount() {
         //轮播图调用

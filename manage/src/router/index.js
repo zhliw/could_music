@@ -57,7 +57,7 @@ export default [
         iconName: "icon-shipin",
         isShow: true,
         meta: {
-            title: "",
+            title: "网易云视频",
             keyword: "",
             descrieption: ""
         },
@@ -66,52 +66,102 @@ export default [
                 to:'/video',
                 path:"/video",
                 exact:true,
-                content:"说唱"
+                content:"说唱",
+                meta: {
+                    title: "说唱",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/3109',
                 path:"/video/3109",
-                content:"街舞"
+                content:"街舞",
+                meta: {
+                    title: "街舞",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/11106',
                 path:"/video/11106",
-                content:"热血动漫"
+                content:"热血动漫",
+                meta: {
+                    title: "热血动漫",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/26141',
                 path:"/video/26141",
-                content:"广告"
+                content:"广告",
+                meta: {
+                    title: "广告",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/58100',
                 path:"/video/58100",
-                content:"现场"
+                content:"现场",
+                meta: {
+                    title: "现场",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/60100',
                 path:"/video/60100",
-                content:"翻唱"
+                content:"翻唱",
+                meta: {
+                    title: "翻唱",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/3101',
                 path:"/video/3101",
-                content:"综艺"
+                content:"综艺",
+                meta: {
+                    title: "综艺",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/1101',
                 path:"/video/1101",
-                content:"舞蹈"
+                content:"舞蹈",
+                meta: {
+                    title:"舞蹈",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/57104',
                 path:"/video/57104",
-                content:"ACG音乐"
+                content:"ACG音乐",
+                meta: {
+                    title: "ACG音乐",
+                    keyword: "",
+                    descrieption: ""
+                },
             },
             {
                 to:'/video/58101',
                 path:"/video/58101",
-                content:"听BGM"
+                content:"听BGM",
+                meta: {
+                    title: "听BGM",
+                    keyword: "",
+                    descrieption: ""
+                }
             }
         ]
     },

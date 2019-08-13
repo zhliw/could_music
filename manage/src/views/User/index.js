@@ -12,6 +12,9 @@ class My extends React.Component{
             userActive:[]
         }
     }
+    componentWillMount() {
+        document.title = "我的网易云"
+    }
     componentDidMount(){
         if(localStorage.userInfo){
             this.props.getAttention(this.state.userInfo.profile.userId)

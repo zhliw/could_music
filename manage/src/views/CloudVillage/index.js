@@ -9,6 +9,10 @@ import Event from "./event";
 import Square from "./Square"
 
 export default class CloudVillage extends React.Component {
+    componentWillMount() {
+        //判断是否登录
+        document.title = "网易云云村"
+    }
     render() {
         return (
             <div className={"cv-scroll"}>

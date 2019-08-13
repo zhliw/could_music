@@ -9,6 +9,7 @@ import '../../assets/css/MyMusic.css'
 class MyMusic extends React.Component{
     componentWillMount() {
         //判断是否登录
+        document.title = "我的音乐"
         if(!localStorage.userInfo)
             this.props.history.push('/user/login')
     }

@@ -55,7 +55,7 @@ export default {
     },
     getAttention(uid){
         return async(dispatch)=>{
-            const data = await axios.get('/user/follows?uid='+uid)
+            const data = await axios.get('/user/follows?uid='+uid+'&limit=10000')
             dispatch(userAttention(data.follow))
         }
     },
