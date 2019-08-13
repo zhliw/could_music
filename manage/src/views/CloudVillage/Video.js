@@ -64,9 +64,9 @@ export default class CloudVillageVideo extends React.Component {
                     <div className={"cv-video-hotComments"}>
                         <h3>精彩评论</h3>
                         {
-                            this.state.comments.code === 200 ?(this.state.comments.hotComments.map((v,i)=>{
+                            this.state.comments.code === 200 ?(this.state.comments.comments.map((v,i)=>{
                                 return(
-                                    <div className={"cv-video-commentlist"}>
+                                    <div className={"cv-video-commentlist"} key={i}>
                                         <img src={v.user.avatarUrl} alt=""/>
                                         <span>{v.user.nickname}</span>
                                         <p>{v.time}</p>
@@ -78,6 +78,10 @@ export default class CloudVillageVideo extends React.Component {
                             })):""
                         }
                     </div>
+                    <div>
+                        <input type="text" ref={"comm"} placeholder={"发表你的评论~"}/> <input type="button" value={"提交"} onClick={this.submit.bind(this)}/>
+                    </div>
+
                 </Drawer>
             </div>
 
@@ -102,6 +106,13 @@ export default class CloudVillageVideo extends React.Component {
             });
         })
     };
+
+    submit(){
+        let comm = this.refs.comm.value;
+        this.axios.get("/comment?t=1&type=1&id="+this.props.match.params.id+"&content="+comm).then((data)=>{
+            console.log(data)
+        })
+    }
 
     foucs() {
 
