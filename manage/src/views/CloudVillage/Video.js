@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../assets/css/cloudVillage/video.scss"
 import {Drawer} from 'antd';
+import filter from "../../common/filters"
 
 export default class CloudVillageVideo extends React.Component {
     constructor() {
@@ -59,17 +60,26 @@ export default class CloudVillageVideo extends React.Component {
                     onClose={this.onClose}
                     visible={this.state.visible}
                 >
-                    <div className={"cv-video-comments-header"}>评论（{this.state.comments.total}）</div>
+                    <div className={"cv-video-comments-header"} style={{paddingLeft:"0.5rem"}}>评论（{this.state.comments.total}）</div>
                     <div className={"cv-video-hotComments"}>
                         <h3>精彩评论</h3>
                         {
                             this.state.comments.code === 200 ?(this.state.comments.comments.map((v,i)=>{
                                 return(
-                                    <div className={"cv-video-commentlist"} key={i}>
-                                        <img src={v.user.avatarUrl} alt=""/>
-                                        <span>{v.user.nickname}</span>
-                                        <p>{v.time}</p>
-                                        <p key={i}>{v.content}</p>
+                                    <div className={"cv-video-commentlist"} style={{borderBottom:"0.01rem solid #ccc",display:"flex",height:"auto",padding:".16rem 0"}} key={i}>
+                                        <div style={{marginRight:".2rem",width:"0.6rem",height:"100%"}}>
+                                            <img src={v.user.avatarUrl} alt="" onClick={()=>{this.props.history.push("/usermessage",v.user.userId)}}/>
+                                        </div>
+                                        <div >
+                                            <div style={{fontSize:".14rem"}}>
+                                                <span style={{fontWeight:"bold"}}>{v.user.nickname}</span>
+                                                <p>{filter.date2(v.time)}</p>
+                                            </div>
+                                            <div>
+                                                <p key={i}>{v.content}</p>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     )
@@ -77,8 +87,8 @@ export default class CloudVillageVideo extends React.Component {
                             })):""
                         }
                     </div>
-                    <div>
-                        <input type="text" ref={"comm"} placeholder={"发表你的评论~"}/> <input type="button" value={"提交"} onClick={this.submit.bind(this)}/>
+                    <div style={{position:"fixed",left:"0",bottom:"0",height:"1rem",border:"0.01rem solid #ccc",width:"100%",background:"#fff"}}>
+                        <input type="text" ref={"comm"} style={{height:"1rem",paddingLeft:"0.2rem",border:"0",width:"80%"}} placeholder={"发表你的评论~"}/> <input type="button" value={"提交"} style={{background:"#ccc",border:"0",height:"100%",width:"1.4rem",color:"#fff",fontSize:"0.3rem"}} onClick={this.submit.bind(this)}/>
                     </div>
 
                 </Drawer>

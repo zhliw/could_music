@@ -14,11 +14,9 @@ const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 class DjDetail extends React.Component {
     componentDidMount() {
         this.props.getDjDetail(this.props.location.state);
-
     }
 
     render() {
-
         let djdetail = this.props.djdetail || {};
         return (
             <div>

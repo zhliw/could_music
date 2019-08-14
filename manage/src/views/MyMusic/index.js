@@ -7,7 +7,9 @@ import '../../assets/css/MyMusic.css'
     withRouter
  } from 'react-router-dom'
 class MyMusic extends React.Component{
-
+    componentWillMount(){
+        document.title = "我的网易云"
+    }
     render(){
         return(
             <div style={{display:'flex',flexDirection:'column',justifyContent:'space-between',width:'100%',height:'100%'}}>

@@ -53,8 +53,16 @@
     border:none;
     border-radius: 0.3rem;
     text-align: center;
+    line-height: 0.7rem;
+}
+.serachIndex_wn input{
+    margin-left: 0.11rem;
+    outline: none;
+    border:none;
+    background: #f7f7f7;
 }
 .search_search_wn{
+    display: inline-block;
     color:#cfcfcf;
     width:5.25rem;
     height:0.7rem;
@@ -62,7 +70,13 @@
     border:none;
     border-radius: 0.3rem;
     text-align: center;
-    margin-top:0.3rem
+    margin-top:0.3rem;
+    line-height:0.7rem
+}
+.search_search_wn input{
+    border:none;
+    outline: none;
+    background:#f7f7f7;
 }
 .myFindBanner{
     margin-top:0.4rem
@@ -90,7 +104,8 @@
     text-align: left;
     word-wrap:break-word;
     margin-top: 0.18rem;
-    margin-bottom: 0.42rem
+    margin-bottom: 0.42rem;
+    line-height: 1.5;
 }
 .sonlistSquare{
     font-size: 0.25rem;
@@ -107,7 +122,7 @@
     justify-content:space-between ;
     padding:0 0.32rem;
 }
-.sonList_wn .recommend_wn{
+.sonList_wn .s{
     font-size: 0.34rem;
     font-weight: 800
 }
@@ -119,6 +134,7 @@
 }
 .presonglistName{
     width:2.91rem;
+    line-height: 1.5;
     word-wrap:break-word;
 }
 .presonglist{
@@ -135,6 +151,8 @@
 }
 .songlistName{
     width:2.09rem;
+    line-height: 1.5;
+    margin-top: 0.2rem;
     word-wrap:break-word;
 }
 .discription{

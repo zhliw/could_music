@@ -22,10 +22,6 @@ class DetailHeader extends React.Component {
     }
     render() {
         let djProgram = this.props.djProgram || {};
-        // console.log(this.props.location.state,55555555555)
-        // console.log(djProgram,23333333333333)
-
-        // console.log(this.props.djdetail.djRadio,2626565)  tabBarStyle={"detailRoute"}  className={"leftRoute"}  className={"rightRoute"}
         return (
             <div>
                 {

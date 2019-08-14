@@ -4,6 +4,7 @@ export default class DetailPage extends React.Component {
     render() {
         // console.log(this.props,82333333333333)
         // console.log(this.props.djdetail.djRadio,23333333333)
+        // document.getElementsByTagName("html")[0].scrollTop = 0
         return(
 
             <div className={"detailContent"} style={{padding:"0 0.2rem"}}>

@@ -3,6 +3,7 @@ import React from 'react'
 import '../../../assets/css/Find/SearchHot.css'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
+import pubsub from 'pubsub-js'
 class Search extends React.Component {
     constructor() {
         super()
@@ -15,6 +16,11 @@ class Search extends React.Component {
             keyword: '',
             isTrue: true
         }
+    }
+    componentWillMount(){
+        pubsub.subscribe('is',(isShow,isTrue)=>{
+            console.log(isShow)
+        })
     }
     componentDidMount() {
         new Swiper('.swiper-container', {
@@ -38,6 +44,7 @@ class Search extends React.Component {
             })
         })
         this.searchHot()
+        console.log(909909,this.state.isTrue)
     }
     search(e) {
         if (e.target.value !== '') {
@@ -57,7 +64,6 @@ class Search extends React.Component {
                     this.setState({
                         search: data.result.allMatch,
                         isTrue: true,
-                        searchArr:[]
                     })
                 } else {
                     this.setState({
@@ -71,25 +77,31 @@ class Search extends React.Component {
     searchHot() {
         this.axios('/search/hot')
     }
+    //获取搜索历史 判断存不存在，存在时是否重复
     getHistory(theKey) {
         let searchArr = []
         let searchText = localStorage.searchWord
         if (searchText) {
             searchArr = JSON.parse(searchText)
-            this.setState({
-                searchArr
-            })
+            if( searchArr.indexOf(theKey) > -1 ){
+                return
+            }
         }
         searchArr.unshift(theKey)
         localStorage.searchWord = JSON.stringify(searchArr)
+        this.setState({
+            searchArr
+        }) 
     }
+
     render() {
         return (
             <div>
                 <this.MyNav></this.MyNav>
                 <div className={'search'}>
-                    <span className={'icon-magnifier iconfont'}></span>
-                    <input autoComplete="off"  style={{outline:'none'}} autoFocus="autoFocus" name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e) => {
+                    <span className={'search_search_wn iconfont'}>
+                        <span className={'icon-magnifier iconfont'}></span>
+                        <input autoComplete="off"  style={{outline:'none'}} autoFocus="autoFocus" name={'keyword'} onChange={this.search.bind(this)} onKeyUp={(e) => {
                         if (e.keyCode === 13) {
                             this.props.history.push({
                                 pathname: '/Search_To/All',
@@ -99,7 +111,9 @@ class Search extends React.Component {
                             })
 
                         }
-                    }} className={'search_search_wn iconfont'} type='text' placeholder='' />
+                    }}  type='text' placeholder='' />
+                    </span>
+                    
                     <span style={{marginLeft:"0.24rem",marginRight:'0.30rem',fontSize:'0.26rem',fontWeight:'600'}} onClick={() => {
                         this.props.history.push('/')
                     }}>
@@ -108,32 +122,12 @@ class Search extends React.Component {
                     <span style={{fontSize:'0.34rem'}} className={'icon-geshou iconfont Singers'} onClick={() => {
                         this.props.history.push('/Singer')
                     }}></span>
-                    {
-                        <div style={{ display: !this.state.isShow ? 'block' : 'none' }} className={'searchList'}>
-                            <div style={{height:'0.7rem',fontSize:'0.21rem',marginLeft:'0.27rem',color:"#5e88a6",lineHeight:'0.7rem'}}>搜索 "{this.state.keyword}"</div>
-                            <div className={'searchSong'}></div>
-                            {
-                                this.state.isTrue ? this.state.search.map((v, i) => {
-                                    if (v.keyword) {
-                                        return <div>
-                                            <div style={{height:'0.7rem',marginLeft:'0.25rem',lineHeight:'0.7rem',color:'#5c6978'}} onClick={() => {
-                                            this.props.history.push({
-                                                pathname: '/Search_To',
-                                                state: {
-                                                    searchWord: v.keyword
-                                                }
-                                            })
-                                            this.getHistory(v.keyword)
-                                        }} key={i}><span style={{fontSize:'0.23rem',marginRight:'0.13rem'}} className={'icon-magnifier iconfont'}></span>{v.keyword}</div>
-                                        <div className={'searchSong'}></div>
-                                        </div>
-                                    
-                                    }
-                                }) : null
-                            }
 
-                        </div>
-                    }
+
+                    <this.SearchList isShow={this.state.isShow} isTrue={this.state.isTrue} search={this.state.search} getHistory={this.getHistory.bind(this)}></this.SearchList>
+
+
+
                     <div className='historyAndHot' style={{ display: this.state.isShow ? 'block' : 'none' }}>
                     {localStorage.searchWord? <div>
                         <div className={'his'}>
@@ -148,7 +142,14 @@ class Search extends React.Component {
                                 <div className="swiper-container" style={{height:'0.5rem',marginBottom:'0.86rem'}}>
                                     <div className="swiper-wrapper">
                                          {localStorage.searchWord?JSON.parse(localStorage.searchWord).map((v,i)=>{
-                                            return <div key={i} style={{background:'#f7f7f7',height:'0.5rem',textAlign:'center',lineHeight:'0.5rem',borderRadius:'0.2rem',padding:'0,0.24rem',marginLeft:'0.14rem'}} className="swiper-slide">{v}</div> 
+                                            return <div onClick={()=>{
+                                                this.props.history.push({
+                                                    pathname:'/search_To/All',
+                                                    state:{
+                                                        searchWord:v
+                                                    }
+                                                })
+                                            }} key={i} style={{background:'#f7f7f7',height:'0.5rem',textAlign:'center',lineHeight:'0.5rem',borderRadius:'0.2rem',padding:'0,0.24rem',marginLeft:'0.14rem'}} className="swiper-slide">{v}</div> 
                                          }):null
                                           }
                                     </div>
@@ -158,21 +159,20 @@ class Search extends React.Component {
                                             
                         </div>
                     </div>:null}
-                  
                         <div className={'SearchHot'}>
                             <p style={{fontSize:'0.2rem',fontWeight:'600',marginTop:localStorage.searchWord?'':'0.5rem'}}>热搜榜</p>
                             {
                                 this.state.searchHot.map((v, i) => {
-                            return < div style={{marginTop:' 0.05rem'}} onClick={() => {
+                            return < div key={i} style={{marginTop:' 0.05rem'}} onClick={() => {
+                                        this.getHistory(v.searchWord)
                                         this.props.history.push({
                                             pathname: '/Search_To',
                                             state: {
                                                 searchWord: v.searchWord
                                             }
                                         })
-                                        this.getHistory(v.searchWord)
 
-                                    }} className={'SearchHotList'} key={i}>
+                                    }} className={'SearchHotList'}>
                                         <span style={{ color: i + 1 <= 3 ? 'red' : '', lineHeight: '0.7rem' }}>{i + 1}</span>
                                         <span className={'searchWord'}>{v.searchWord}</span>
                                         <span className={'score'}>{v.score}</span>

@@ -9,8 +9,9 @@ class UserRegisterName extends React.Component{
     async userRegister(){
         const props = this.props.location.state
         const data = await this.axios.get(`/register/cellphone?phone=${localStorage.userPhone}&password=${props.userPassWord}&captcha=${props.code}&nickname=${this.state.userName}`)
-        if(data){
-            
+        console.log(data)
+        if(data.code === 200){
+            this.props.history.push('/user')
         }
     }
     handleChange(e){

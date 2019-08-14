@@ -1,6 +1,7 @@
 //歌手分类
 import React from 'react'
 import { Spin } from 'antd';
+import '../../../assets/css/Find/Search_To.css'
 class Singer extends React.Component{
     constructor(){
         super()
@@ -46,56 +47,57 @@ class Singer extends React.Component{
     }
     render(){
         return(
-             <div>  <this.Return />   
-            歌手分类
-           <span onClick={()=>{
-               this.props.history.push('/Play')
-           }}>播放</span>
-                    <div style={{marginTop:'1rem'}}>
-                        <span onClick={()=>{
+             <div>
+                 <div className={'singerHeader_wn'}>
+                    <span style={{fontSize:'0.48rem'}} className='icon-gouwuche iconfont'
+                    onClick={()=>{
+                        this.props.history.push('/Search')
+                    }}></span>  
+                          <span style={{fontSize:'0.28rem',fontWeight:'600'}}> 歌手分类  </span>
+                     <span style={{fontSize:'0.48rem'}} className={'icon-yinle1 iconfont'} onClick={()=>{
+                        this.props.history.push('/Play')
+                    }}></span>  
+                 </div>
+               
+                    <div className={'option_wn'} >
+                        <span style={{color:this.state.singerType==='1001'?'red':''}} onClick={()=>{
                             this.pageIndex = 1
                             this.state.singerList = []
                             this.state.singerType = '1001'
                             this.getTypeSinger()
                             }}>华语</span>
-                        <span onClick={()=>{
+                        <span style={{color:this.state.singerType==='2001'?'red':''}} onClick={()=>{
                             this.pageIndex = 1
                             this.state.singerList = []
                             this.state.singerType = '2001'
                             this.getTypeSinger()
                         }}>欧美</span>
-                        <span onClick={()=>{
+                        <span style={{color:this.state.singerType==='6001'?'red':''}} onClick={()=>{
                             this.pageIndex = 1
                             this.state.singerList = []
                             this.state.singerType = '6001'
                             this.getTypeSinger()    
                         }}>日本</span>
-                        <span onClick={()=>{
+                        <span style={{color:this.state.singerType==='7001'?'red':''}} onClick={()=>{
                             this.pageIndex = 1
                             this.state.singerList = []
                             this.state.singerType = '7001'
                             this.getTypeSinger()   
                         }}>韩国</span>
-                        <span onClick={()=>{
+                        <span style={{color:this.state.singerType==='4001'?'red':''}} onClick={()=>{
                             this.pageIndex = 1
                             this.state.singerList = []
                             this.state.singerType = '4001'
                             this.getTypeSinger()                                                                                                                                
                         }}>其他</span>
                     </div>
-                     <div>
-                        <span>男</span>
-                        <span>女</span>
-                        <span>乐队</span>
-                    </div>
-             <hr />
                     <div>
-                        <div>热门歌手</div>
+                        <div className={'hotSinger'}>热门歌手</div>
                         {
                             this.state.singerList.map((v,i)=>{
                                 return (
-                                    <div key={i}>
-                                        <img src={v.picUrl} style={{width:'0.77rem',height:'0.77rem',borderRadius:'50%'}}/>
+                                    <div className={'singerlist_wn'} key={i}>
+                                        <img src={v.picUrl} style={{width:'0.77rem',height:'0.77rem',borderRadius:'50%',marginRight:'0.19rem'}}/>
                                         {v.name}
                                     </div>
                                 )

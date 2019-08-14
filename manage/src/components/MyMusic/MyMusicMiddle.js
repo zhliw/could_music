@@ -71,7 +71,7 @@ class MyMusicMiddle extends React.Component {
                         <div style={{fontSize:'0.8rem',background:'#fff'}} className={'iconfont MyMusic-Middle-left icon-diantai'}></div>
                         < div className={'MyMusic-Middle-right'} onClick={()=>{
                             this.props.history.push('/MyFM')
-                        }}> 我的电台（{userMessage.djRadioCount||0}）
+                        }}> 我的电台（{userMessage.djRadioCount}）
                         </div>
                     </div>
                     <div style={{display: 'flex'}}>

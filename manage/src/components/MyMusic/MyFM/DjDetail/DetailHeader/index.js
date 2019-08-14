@@ -26,7 +26,9 @@ export default class DetailHeader extends React.Component{
             <div className={"detailHeader"} >
                 {
                     this.props.djdetail.djRadio?  <div className={"detailImg"}>
-                        <div className={"detailTop iconfont icon-fanhui"} onClick={()=>window.history.go(-1)} ><span>电台</span></div>
+                        <div style={{height:"1rem",position:"absolute",top:"0",left:"0",width:"100%",background:"rgba(0,0,0,0.5)"}}>
+                            <div className={"detailTop iconfont icon-fanhui"}  onClick={()=>window.history.go(-1)} ><span>电台</span></div>
+                        </div>
                         <div  className={"detailPic"}>
                             <img src={this.props.djdetail.djRadio.picUrl}/>
                         </div>

@@ -8,7 +8,25 @@ export default class Song extends React.Component {
             tracks:[],
             ar:[]
         }
+        this.handleScroll = this.handleScroll.bind(this)
     }
+    componentWillMount(){
+        window.addEventListener('scroll',this.handleScroll)
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll',this.handleScroll)
+    }
+    handleScroll(e){
+        let myDiv = document.getElementById('myDiv')
+        console.log(myDiv.offsetTop)
+        if(document.documentElement.scrollTop>'266'){
+            myDiv.style.position = 'fixed'
+            myDiv.style.top = '0'
+        }else{
+            myDiv.style.position = ''
+        }
+    }
+    
     componentDidMount() {
 
         this.getSonglist()
@@ -17,7 +35,8 @@ export default class Song extends React.Component {
     async getSonglist() {
         const data = await this.axios(`/playlist/detail?id=${this.props.location.state.id}`)
         this.setState({
-            songlist: data.playlist
+            songlist: data.playlist,
+            songlistId:data.playlist.id
         })
         let discription=this.state.songlist.description
         if(discription.length>26){
@@ -38,14 +57,14 @@ export default class Song extends React.Component {
             <div>
                 <this.MyNav></this.MyNav>
                 <div>
-                    <div className={'songlisthead'}>
+                    <div style={{marginTop:'0.32rem',height:'0.36rem',lineHeight:'0.36rem'}} className={'songlisthead'}>
                      <this.Return />
                     <span style={{fontSize:'0.36rem',fontWeight:'600'}}>歌单</span>
                     <span style={{ fontSize: '0.48rem' }} onClick={() => {
                         this.props.history.push('/Play')
                     }} className={'icon-yinle1 iconfont'}>
                     </span> 
-                </div>
+                     </div>
                 <div>
                     <div className={'discription'}>
                         <img style={{ width: '2.81rem', height: '2.81rem', }} src={this.state.songlist.coverImgUrl} alt="" />
@@ -60,55 +79,54 @@ export default class Song extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <div className={'fourIcon'}>
+                        <div style={{marginBottom:'0.2rem'}} className={'fourIcon'}>
                             <div>
                             <span style={{fontSize:'0.43rem'}} className={'icon-pinglun iconfont'}></span>
-                            <p style={{fontSize:'0.25rem'}}>{this.state.songlist.commentCount}</p>
+                            <p style={{fontSize:'0.25rem',marginTop:'0.09rem'}}>{this.state.songlist.commentCount}</p>
                             </div>
                             <div>
                             <span style={{fontSize:'0.43rem'}} className={'icon-fenxiang2 iconfont'}></span>
-                            <p style={{fontSize:'0.25rem'}}>{this.state.songlist.shareCount}</p>
+                            <p style={{fontSize:'0.25rem',marginTop:'0.09rem'}}>{this.state.songlist.shareCount}</p>
                             </div>
                             <div>
                             <span style={{fontSize:'0.43rem'}} className={'icon-xiazai1 iconfont'}></span>
-                            <p style={{fontSize:'0.25rem'}}>下载</p>
+                            <p style={{fontSize:'0.25rem',marginTop:'0.09rem'}}>下载</p>
                             </div>
                             <div>
                             <span style={{fontSize:'0.43rem'}} className={'icon-duoxuan iconfont'}></span>
-                            <p style={{fontSize:'0.25rem'}}>多选</p>
+                            <p style={{fontSize:'0.25rem',marginTop:'0.09rem'}}>多选</p>
                             </div>
                         </div>
                         <div>
-
                         </div>
                     </div>
-                        
                 </div>
                     <div>
                             <div className={'allSong'}>
-                            <div style={{height:'0.76rem',width:"100%" ,lineHeight:'0.76rem',background:'red',marginTop:'0.2rem',borderLeftTopRadius:'10px',borderRightTopRadius:'10px'}}>
-                                     <span>播放全部</span>
-                                    <span>共{this.state.songlist.trackCount}首</span>
-                                    <span className={'collect'}>+收藏({this.state.songlist.subscribedCount})</span>
+                            <div id='myDiv' style={{color:'white',borderTopLeftRadius:'0.3rem',borderTopRightRadius:'0.3rem',height:'0.76rem',width:"100%" ,lineHeight:'0.76rem',background:'#e0001a',borderLeftTopRadius:'10px',borderRightTopRadius:'10px',textAlign:'left'}}>
+                                    <span style={{fontWeight:'600',marginLeft:'0.2rem'}} className={'icon-rectangle1 iconfont'}></span>
+                                     <span style={{fontSize:'0.28rem',fontWeight:'600',marginLeft:'0.15rem'}}>播放全部</span>
+                                    <span>(共{this.state.songlist.trackCount}首)</span>
                                 </div>
                                <div style={{textAlign:'left',marginLeft:'0.25rem'}}> 
                                {
                                     this.state.tracks.map((v,i)=>{
                                     return <div  style={{height:'0.81rem',marginBottom:'0.4rem',width:'100%',marginTop:'0.2rem'}} 
                                     onClick={()=>{
-                                            this.props.history.push({
-                                                pathname:'/Play',
-                                                state:{
-                                                    id:v.id
+                                            this.props.history.push(
+                                                '/songplay',
+                                                {
+                                                    songid:v.id,
+                                                    songlistid:this.state.songlistId
                                                 }
-                                            })
+                                            )
                                      }} key={i}>
                                                     <span>{i+1}</span>
                                                 <span style={{marginLeft:'0.28rem',fontSize:'0.25rem'}}>{v.name}</span>
                                                     <div>
                                                     {
                                                         v.ar.map((v,i)=>{
-                                                    return <span style={{fontSize:'0.18rem'}} key={i}>{v.name}</span>
+                                                    return <span style={{fontSize:'0.18rem',marginLeft:'0.42rem'}} key={i}>{v.name}</span>
                                                         })
                                                     }
                                                     </div>
