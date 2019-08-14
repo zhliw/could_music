@@ -60,14 +60,20 @@ class Find extends React.Component {
             <div>
                 <this.MyNav></this.MyNav>
                 <header className={'wnHeader'}>
-                    <span style={{ fontSize: '0.48rem' }} onClick={() => {
+                    <span style={{marginTop:'0.1rem',fontSize: '0.48rem' }} onClick={() => {
                         this.props.history.push('/Identification')
                     }} className={'icon-huatong iconfont'}></span>
-                    <input type="text" placeholder='大家都在搜 陈奕迅' className={'serachIndex_wn'} onClick={() => {
+                    <span style={{marginTop:'0.02rem'}}  className='serachIndex_wn'>
+                        <span className={'icon-magnifier iconfont'}></span>
+                        <input type="text" placeholder='大家都在搜 陈奕迅' onClick={() => {
                         this.props.history.push('/Search')
                     }} />
+                    </span>
+                    
                     <span style={{ fontSize: '0.48rem' }} onClick={() => {
-                        this.props.history.push('/SongPlay')
+                        // this.props.history.push('/SongPlay',{
+                            
+                        // })
                     }} className={'icon-yinle1 iconfont'}></span>
                 </header>
                 <div className="myFindBanner">
@@ -161,21 +167,11 @@ class Find extends React.Component {
                 </div>
 
                 <hr />
-                <div className='newDish'>
-                    <div className='newDish_wn'>
-                        <span>新碟</span><span>新歌</span>
-                        <span>更多新碟</span>
-                    </div>
-                    <div>
-                        <span>一个歌单块</span>
-                        <span>2个歌单块</span>
-                        <span>3个歌单块</span>
-                    </div>
-                </div>
-                <hr />
-                <div>
-                    云村精选
-                 </div>
+                
+
+
+
+
             </div>
         )
     }

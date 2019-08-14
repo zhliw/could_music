@@ -37,12 +37,14 @@ class Search_To extends React.Component {
         return (
             <div>
                 <this.MyNav></this.MyNav>
-                <div>
-                    <span className={'icon-gouwuche iconfont'} onClick={() => {
+                <div style={{marginBottom:'0.34rem'}}>
+                    <span style={{marginRight:'0.5rem',fontSize:'0.48rem',marginTop:'0.1rem'}} className={'icon-gouwuche iconfont'} onClick={() => {
                         this.props.history.push('/Search')
                     }}></span>
+
                     <input autoComplete="off" style={{outline:'none'}}   className={'search_search_wn'} type='text'
                     onClick={()=>{
+                        
                     }} 
                     />
                 </div>
@@ -50,7 +52,7 @@ class Search_To extends React.Component {
                 {this.state.findnav.map((v, i) => {
                     return (
                         <React.Fragment key={i}>
-                            <NavLink activeStyle={{color:'red'}} to={v.to}>{v.context} </NavLink>
+                            <NavLink style={{fontSize:'0.28rem'}} activeStyle={{color:'red'}} to={v.to}>{v.context} </NavLink>
                         </React.Fragment>
                     )
                 })}

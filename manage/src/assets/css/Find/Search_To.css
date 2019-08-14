@@ -1,1 +1,31 @@
-
+.singerHeader_wn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding:0 0.32rem;
+    line-height: 0.48rem
+}
+.option_wn{
+    margin-top: 0.52rem;
+    font-size: 0.21rem;
+    text-align: left;
+    margin-left: 0.25rem;
+    margin-bottom: 0.33rem;
+}
+.option_wn span{
+    color: "#848484";
+    margin-right: 0.5rem
+}
+.hotSinger{
+    height: 0.38rem;
+    background: #f8f8f8;
+    font-size: 0.17rem;
+    text-align: left;
+    line-height: 0.38rem;
+    margin-left: 0.25rem
+}
+.singerlist_wn{
+    text-align: left;
+    margin-left: 0.25rem;
+    height: 1.07rem
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../assets/css/cloudVillage/video.scss"
+import {Drawer} from 'antd';
 
 export default class CloudVillageVideo extends React.Component {
     constructor() {
@@ -8,20 +9,22 @@ export default class CloudVillageVideo extends React.Component {
             data: [],
             pauseBtn: true,
             detail: [],
-            foucsState: 1
+            foucsState: 1,
+            visible:false,
+            comments:''
         }
     }
 
     render() {
-        console.log(32, this.state.foucsState)
+        console.log(this.state.comments)
         return (
             <div className={"cv"}>
                 <div className={"cv-video"}>
 
                     <button className={"iconfont cv-mv-back "}
                             onClick={() => this.props.history.go(-1)}>&#xe6ac;</button>
-                    <video className={"cv-mv-bottom"} src={this.state.data.url}></video>
-                    <video className={"cv-mv-top"} src={this.state.data.url} onClick={this.pause.bind(this)}></video>
+                    <video className={"cv-mv-bottom"} src={this.state.data.url} poster={this.state.detail.cover}></video>
+                    <video className={"cv-mv-top"} src={this.state.data.url} poster={this.state.detail.cover} onClick={this.pause.bind(this)}></video>
                     {
                         this.state.pauseBtn ? <button className={"iconfont cv-mv-btn"}
                                                       style={{position: "absolute", zIndex: "6", width: ".5rem"}}
@@ -45,13 +48,70 @@ export default class CloudVillageVideo extends React.Component {
                     {/*转*/}
                     <span className={"iconfont cv-video-relay"}>&#xe616;<i>{this.state.detail.shareCount}</i></span>
                     {/*评*/}
-                    <span className={"iconfont cv-video-commit"}>&#xe641;<i>{this.state.detail.shareCount}</i></span>
+                    <span className={"iconfont cv-video-comment"} onClick={this.comment.bind(this)}>&#xe641;<i>{this.state.detail.commentCount}</i></span>
                     {/*赞*/}
-                    <span className={"iconfont cv-video-up"}>&#xe613;<i>{this.state.detail.shareCount}</i></span>
+                    <span className={"iconfont cv-video-up"}>&#xe613;<i>{this.state.detail.likeCount}</i></span>
                 </div>
+                <Drawer
+                    className={"cv-video-comment"}
+                    height={"11rem"}
+                    placement="bottom"
+                    closable={false}
+                    onClose={this.onClose}
+                    visible={this.state.visible}
+                >
+                    <div className={"cv-video-comments-header"}>评论（{this.state.comments.total}）</div>
+                    <div className={"cv-video-hotComments"}>
+                        <h3>精彩评论</h3>
+                        {
+                            this.state.comments.code === 200 ?(this.state.comments.comments.map((v,i)=>{
+                                return(
+                                    <div className={"cv-video-commentlist"} key={i}>
+                                        <img src={v.user.avatarUrl} alt=""/>
+                                        <span>{v.user.nickname}</span>
+                                        <p>{v.time}</p>
+                                        <p key={i}>{v.content}</p>
+                                    </div>
+
+                                    )
+
+                            })):""
+                        }
+                    </div>
+                    <div>
+                        <input type="text" ref={"comm"} placeholder={"发表你的评论~"}/> <input type="button" value={"提交"} onClick={this.submit.bind(this)}/>
+                    </div>
+
+                </Drawer>
             </div>
 
         );
+    }div
+    comment(){
+        this.setState({
+            visible:true
+        })
+        this.axios.get("/comment/mv?id="+this.props.match.params.id).then((data)=>{
+            console.log(data)
+            this.setState({
+                comments:data
+            })
+        })
+    }
+    //点击遮罩层 关闭弹窗
+    onClose = () => {
+        document.getElementsByClassName("ant-drawer-mask")[0].onclick=(()=>{
+            this.setState({
+                visible: false,
+            });
+        })
+    };
+
+    submit(){
+        let comm = this.refs.comm.value;
+        this.axios.get("/comment?t=1&type=1&id="+this.props.match.params.id+"&content="+comm).then((data)=>{
+            console.log(data)
+        })
     }
 
     foucs() {
@@ -69,7 +129,7 @@ export default class CloudVillageVideo extends React.Component {
                     this.setState({
                         foucsState: 0
                     })
-                } 
+                }
             })
         }
     }
@@ -97,9 +157,9 @@ export default class CloudVillageVideo extends React.Component {
             data,
             detail: detail.data
         })
+        console.log(detail.data)
         if (localStorage.userInfo) {
             const sublist = await this.axios.get("/artist/sublist")
-            console.log(10, sublist.data)
             const isHave = sublist.data.findIndex((v, i) => v.id === this.state.detail.artistId);
             if (isHave >= 0) {
                 document.getElementsByClassName("cv-isHave")[0].remove();

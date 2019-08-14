@@ -31,10 +31,10 @@ export default class Program extends React.Component{
                                         <div className={"programIntroName"}>{v.name}</div>
                                         <div className={"programInfro"}>
                                             <span>{filters.date2(v.createTime)}</span>
-                                            <span>点击量{v.listenerCount}</span>
+                                            <span className={"iconfont icon-bofang3"}>{v.listenerCount}</span>
                                         </div>
                                     </div>
-                                    <div className={"programDetail"}>详情</div>
+                                    <div className={"programDetail iconfont icon-dashujukeshihuaico-"}></div>
                                 </div>
                             )
 

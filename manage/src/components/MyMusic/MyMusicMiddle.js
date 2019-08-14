@@ -10,9 +10,10 @@ import myMusicCreator from "../../store/actionCreator/MyMusic";
 import Fold from './common/Fold'
 import { Collapse } from 'antd';
 import MyFM from "./MyFM"
+import RecentPlay from "./RecentPlay"
 import myMusic from "../../store/reducers/MyMusic";
-const { Panel } = Collapse;
 
+const { Panel } = Collapse;
 class MyMusicMiddle extends React.Component {
     constructor(){
         super()
@@ -47,7 +48,7 @@ class MyMusicMiddle extends React.Component {
         this.props.getRecentPlay(JSON.parse(localStorage.userInfo).account.id);
     }
     render() {
-        console.log(this.props.userMessage)
+        // console.log(this.props.userMessage)
         let userMessage=this.props.userMessage||{};
         let playList=this.props.playList||[];
         let recentPlay=this.props.recentPlay||[];
@@ -58,7 +59,9 @@ class MyMusicMiddle extends React.Component {
                 <div className={'MyMusic-Middle'}>
                     < div style={{display: 'flex'}}>
                         <div style={{fontSize:'0.5rem',background:'#fff'}} className={'iconfont MyMusic-Middle-left icon-zuijinbofang'}></div>
-                        < div className={'MyMusic-Middle-right'}> 最近播放（{recentPlay.length}）
+                        < div className={'MyMusic-Middle-right'} onClick={()=>{
+                            this.props.history.push('/RecentPlay',JSON.parse(localStorage.userInfo).account.id)
+                        }}> 最近播放（{recentPlay.length}）
                         </div>
                     </div>
                     < div style={{display: 'flex'}}>

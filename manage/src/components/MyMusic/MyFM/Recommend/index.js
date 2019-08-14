@@ -26,7 +26,7 @@ class Recommend extends React.Component{
         // console.log(this.props)
         return(
             <div className={"djTuijian"}>
-                <h3>为你推荐</h3>
+                <h3><span className={"iconfont icon-xin2"}></span>为你推荐</h3>
                 <div className={"tuijianShow"}>
                     {
                         this.props.recommend.map((v, i) => {

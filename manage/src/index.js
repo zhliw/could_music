@@ -9,9 +9,11 @@ import MyNav from "./router/NavLink";
 import "./assets/font/iconfont.css"
 import "./assets/css/all.css";
 import axios from "axios";
+import SearchList from './common/find/SearchList'
 import * as serviceWorker from './serviceWorker';
 //Find_Return
 import Return from './components/Find/return'
+import searchBar from './components/Find/searchBar'
 import Play from './views/Find/indexComponent/Play'
 //Find返回的全局组件
 import store from './store'
@@ -21,6 +23,8 @@ import {
 import 'swiper/dist/css/swiper.min.css'
 import filters from './common/filters'
 React.Component.prototype.Return=Return
+React.Component.prototype.searchBar=searchBar
+React.Component.prototype.SearchList=SearchList
 React.Component.prototype.Play=Play
 React.Component.prototype.MyNav = MyNav;
 React.Component.prototype.axios = axios;

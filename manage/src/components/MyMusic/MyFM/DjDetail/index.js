@@ -9,7 +9,8 @@ import {bindActionCreators} from "redux";
 import myMusicCreator from "../../../../store/actionCreator/MyMusic";
 import DetailHeader from "./DetailHeader"
 import DetailContent from "./DetailContent"
-
+import { Spin, Icon } from 'antd';
+const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 class DjDetail extends React.Component {
     componentDidMount() {
         this.props.getDjDetail(this.props.location.state);
@@ -17,12 +18,17 @@ class DjDetail extends React.Component {
     }
 
     render() {
+
         let djdetail = this.props.djdetail || {};
-        // console.log(djdetail);
         return (
             <div>
-                <DetailHeader djdetail={djdetail}></DetailHeader>
-                <DetailContent djdetail={djdetail} programId={this.props.location.state} ></DetailContent>
+                {
+                    Object.keys(djdetail).length?
+                    <>
+                    <DetailHeader djdetail={djdetail}></DetailHeader>
+                    <DetailContent djdetail={djdetail} programId={this.props.location.state} ></DetailContent></>:<Spin indicator={antIcon} />
+            }
+
             </div>
         )
     }

@@ -6,7 +6,7 @@ import {
 class Return extends React.Component{
     render(){
         return(
-           <span className={'icon-gouwuche iconfont'} onClick={()=>{
+           <span style={{fontSize:'0.48rem'}} className={'icon-gouwuche iconfont'} onClick={()=>{
                this.props.history.go(-1)
            }}></span>
             

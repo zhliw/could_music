@@ -70,6 +70,7 @@ export default {
         return async (dispatch) => {
             const data = await axios.get('/user/record?uid=' + id + '&type=1');
             dispatch(getRecentPlay(data.weekData));
+            console.log(data,23333333);
         }
     },
     getCommend() {

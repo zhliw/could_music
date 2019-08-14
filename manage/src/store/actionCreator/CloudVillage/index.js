@@ -28,16 +28,27 @@ export default {
             dispatch(getHotComments(data.hotComments));
         }
     },
-    getNewMV(i = 1) {
+    getNewMV(i = 1,_this) {
         return async (dispatch) => {
             const {data} = await axios.get("/mv/first?limit=" + 10 * i);
-            dispatch(getNewMV(data))
+            console.log(_this.props.newMV.length,data.length)
+            if (_this.props.newMV.length!==data.length) _this.waterfall(data);
+            dispatch(getNewMV(data));
+
         }
     },
     getEventsList(m = 1) {
         return async (dispatch) => {
             const data = await axios.get("/event?pagesize=" + 20 * m + "&lasttime=1556740526369");
             dispatch(getEventsList(data.event))
+        }
+    },
+    del() {
+        return (dispatch) => {
+           dispatch({
+               type:"DEL",
+               payload:[]
+           })
         }
     }
 

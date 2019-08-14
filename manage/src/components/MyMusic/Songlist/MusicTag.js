@@ -14,7 +14,7 @@ import myPublicCreator from "../../../store/actionCreator/Public";
     render() {
         return (
             <div style={{background:this.props.background?'#cccccc':""}} className={'MusicTag'} onClick={!this.props.background?()=>{
-                this.props.history.push('/SongPlay',{songid:this.props.id,songlistid:this.props.songs.playlist.id})
+                this.props.history.push('/SongPlay',{songid:this.props.id,songlistid:this.props.songs?this.props.songs.playlist.id:null})
             }:()=>{
                 message.info('暂无版权')
             }}>
